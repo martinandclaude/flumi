@@ -1,0 +1,25 @@
+[package]
+name = "flumi"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.88"
+description = "Collapse ONT PCR-cDNA (SQK-PCB114.24) reads to one read per original RNA molecule using the pre-PCR UMI"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/martinandclaude/flumi"
+
+[dependencies]
+rust-htslib = { version = "1.0.1", default-features = false, features = ["libdeflate"] }
+clap = { version = "4.5", features = ["derive"] }
+flate2 = "1"
+anyhow = "1"
+log = "0.4"
+env_logger = { version = "0.11", default-features = false, features = ["auto-color", "humantime"] }
+rustc-hash = "2"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

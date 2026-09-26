@@ -1,0 +1,7 @@
+target/
+__pycache__/
+*.pyc
+*.bam
+*.bai
+*.tsv
+.DS_Store
