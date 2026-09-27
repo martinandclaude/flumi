@@ -23,14 +23,21 @@ reads). It deduplicates 2.1 M reads in 19 s using 74 MB of memory
 
 ## Input
 
-* Basecalled with **dorado ≥ 0.9.5**, `--kit-name SQK-PCB114-24`, trimming on.
-  dorado moves the UMI into `RX:Z` and records the read orientation it inferred
-  from the primers in `TS:A`. With `--estimate-poly-a` it also writes `pt:i`
-  (optional, used for the poly(A) evidence).
-* Aligned spliced and **coordinate-sorted**, with those tags carried over:
-  `dorado aligner`, or
-  `samtools fastq -T RX,TS,pt,qs calls.bam | minimap2 -ax splice -y ref.fa -`.
-  The input is read twice, so it must be a file, not a pipe.
+```bash
+# One basecalling pass: barcodes, UMI (RX), strand (TS) and poly(A) (pt)
+dorado basecaller sup pod5/ --kit-name SQK-PCB114-24 --estimate-poly-a > calls.bam
+
+# Split by the barcodes already recorded; no second classification
+dorado demux --no-classify --emit-summary --output-dir demux/ calls.bam
+
+# Per barcode: spliced alignment (tags are kept), sort, deduplicate
+for bam in $(find demux -name '*barcode*.bam'); do
+  s=$(basename "$bam" .bam)
+  dorado aligner --mm2-opts "-x splice" ref.fa "$bam" | samtools sort -o "$s.sorted.bam"
+  flumi --bam "$s.sorted.bam" --out "$s.molecules.bam" ...
+done
+```
+
 * A GTF is optional. Deduplication never uses it; it only labels genes and
   calls full-length transcripts.
 
