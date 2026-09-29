@@ -1,9 +1,14 @@
 # flumi
 
-**F**ul**l**-length **UMI** deduplication for Oxford Nanopore PCR-cDNA
+<p align="center"><img src="img/FLUMI.png" alt="flumi" width="560"></p>
+
+**F**ul**L**-length **UMI** deduplication for Oxford Nanopore PCR-cDNA
 (**SQK-PCB114.24**): collapse reads to **one representative read per original
 RNA molecule**, using the UMI that strand switching attaches to every molecule
 *before* PCR, and flag full-length molecules.
+
+Site with usage and the benchmark and real-data results:
+<https://martinandclaude.github.io/flumi/>
 
 flumi reads a coordinate-sorted, splice-aligned BAM and writes a
 coordinate-sorted BAM, so it drops into a pipeline between the aligner and the
@@ -262,6 +267,17 @@ In the three 29 k-molecule genes flumi undercounts by 0.5–0.6 %. At that
 density UMIs one edit apart are sometimes different molecules, and neither the
 UMI nor the shared 5′ end can tell them apart. That is the capacity limit of a
 16-base UMI.
+
+**Real data.** `bench/realdata/run_sample.sh` runs flumi on the public ONT
+dataset [UHRR_HG002_2026.06](https://epi2me.nanoporetech.com/uhrr_hg002_2026.06/)
+(HG002, SQK-PCB114-24, two flow cells of four barcodes, basecalled with
+`--no-trim`): it streams a barcode's reads (one chromosome or all), adds
+`RX`/`TS` with `dorado trim`, realigns and runs flumi. `bench/realdata/summarize.py`
+tabulates the runs, re-derives every gene label and full-length call from the
+CIGAR, tests the densest locus for UMIs left unmerged, and compares replicates.
+There is no molecule truth in real data, so this shows consistency, not
+accuracy. The current results are on the
+[site](https://martinandclaude.github.io/flumi/#real).
 
 Reproduce with:
 

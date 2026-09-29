@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>flumi</title>
+<meta name="description" content="Full-length UMI deduplication for Oxford Nanopore PCR-cDNA (SQK-PCB114.24): one representative read per original RNA molecule.">
+<link rel="icon" href="favicon.png">
+<style>
+:root {
+  --bg: #0b0806;
+  --panel: #16100c;
+  --panel-2: #1f1611;
+  --line: #3a2a1f;
+  --text: #f3ebe4;
+  --muted: #b9a89a;
+  --accent: #ff7a1a;
+  --accent-2: #ffc34d;
+  --good: #7ed69a;
+  --code-bg: #120d0a;
+  --radius: 10px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent-2); }
+a:hover { color: var(--accent); }
+.banner { display: block; width: 100%; max-width: 1100px; margin: 0 auto; }
+.banner img { display: block; width: 100%; height: auto; }
+header.hero { text-align: center; padding: 0 16px 8px; }
+.tagline { font-size: 1.25rem; max-width: 760px; margin: 0 auto 18px; color: var(--text); }
+.tagline b { color: var(--accent-2); }
+.buttons { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 8px; }
+.btn {
+  display: inline-block; padding: 9px 16px; border-radius: 999px; text-decoration: none;
+  border: 1px solid var(--line); background: var(--panel-2); color: var(--text); font-weight: 600;
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #1a0d03; }
+.btn:hover { border-color: var(--accent); color: var(--text); }
+.btn.primary:hover { color: #1a0d03; filter: brightness(1.08); }
+nav.toc {
+  position: sticky; top: 0; z-index: 5; background: rgba(11, 8, 6, 0.92); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line); overflow-x: auto; white-space: nowrap;
+}
+nav.toc .inner { max-width: 1000px; margin: 0 auto; padding: 10px 16px; display: flex; gap: 18px; }
+nav.toc a { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
+nav.toc a:hover { color: var(--accent-2); }
+main { max-width: 1000px; margin: 0 auto; padding: 8px 16px 64px; }
+section { padding-top: 36px; scroll-margin-top: 44px; }
+h2 { font-size: 1.6rem; margin: 0 0 12px; color: var(--accent-2); }
+h3 { font-size: 1.15rem; margin: 26px 0 8px; }
+p, li { color: var(--text); }
+.muted { color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.card h3 { margin-top: 0; color: var(--accent-2); }
+.card p { margin: 0; color: var(--muted); }
+pre {
+  background: var(--code-bg); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px 16px; overflow-x: auto; font: 14px/1.5 var(--mono); color: #f7e7d6;
+}
+code { font-family: var(--mono); font-size: 0.92em; }
+:not(pre) > code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); margin: 12px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+th, td { padding: 7px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+thead th { background: var(--panel-2); color: var(--accent-2); font-weight: 600; }
+tbody tr:nth-child(odd) { background: var(--panel); }
+tr.sub td:first-child { padding-left: 26px; color: var(--muted); }
+tr.check td { color: var(--good); }
+tr.check td:first-child { color: var(--text); }
+.note {
+  border-left: 3px solid var(--accent); background: var(--panel); padding: 12px 16px;
+  border-radius: 0 var(--radius) var(--radius) 0; margin: 14px 0;
+}
+.note.status { border-left-color: var(--accent-2); }
+ol.steps li { margin-bottom: 8px; }
+footer { border-top: 1px solid var(--line); color: var(--muted); text-align: center; padding: 24px 16px; font-size: 0.9rem; }
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+  .tagline { font-size: 1.08rem; }
+  h2 { font-size: 1.35rem; }
+  pre { font-size: 12.5px; }
+}
+</style>
+</head>
+<body>
+
+<a class="banner" href="https://github.com/martinandclaude/flumi" aria-label="flumi on GitHub">
+  <img src="banner.jpg" width="1400" height="788" alt="flumi logo">
+</a>
+
+<header class="hero">
+  <p class="tagline"><b>Full-length UMI deduplication</b> for Oxford Nanopore PCR-cDNA (SQK-PCB114.24):
+  collapse reads to <b>one representative read per original RNA molecule</b>, using the UMI that strand
+  switching attaches <i>before</i> PCR.</p>
+  <div class="buttons">
+    <a class="btn primary" href="https://github.com/martinandclaude/flumi/releases">Download</a>
+    <a class="btn" href="https://github.com/martinandclaude/flumi">Source on GitHub</a>
+    <a class="btn" href="https://github.com/martinandclaude/flumi/blob/main/README.md">Full documentation</a>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <div class="inner">
+    <a href="#what">What it does</a>
+    <a href="#install">Install</a>
+    <a href="#run">From pod5 to flumi</a>
+    <a href="#output">Output</a>
+    <a href="#simulated">Simulated benchmark</a>
+    <a href="#real">Real data</a>
+    <a href="#limits">Limitations</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="what">
+  <h2>What it does</h2>
+  <p>flumi reads a coordinate-sorted, splice-aligned BAM and writes a coordinate-sorted BAM, so it drops into a
+  pipeline between the aligner and the isoform quantifier.</p>
+  <div class="cards">
+    <div class="card"><h3>UMIs the way dorado made them</h3>
+      <p>dorado stores the UMI in <code>RX</code> with substitutions and indels anywhere in the tag. flumi re-aligns
+      <code>RX</code> to the UMI pattern instead of cutting at fixed offsets, and keeps damaged UMIs, attaching
+      them to their molecule rather than throwing them away.</p></div>
+    <div class="card"><h3>Molecules without annotation</h3>
+      <p>A molecule is its strand, 5&prime; end and UMI. UMIs are merged with UMI-tools' directional rule; merges
+      beyond one edit are allowed only where the local molecule density makes a coincidence unlikely.</p></div>
+    <div class="card"><h3>A representative that is right</h3>
+      <p>Each molecule's read is chosen by majority-vote junction consensus among its PCR copies, then poly(A)
+      completeness, then exonic footprint. PCR chimeras are dropped.</p></div>
+    <div class="card"><h3>Fast and small</h3>
+      <p>Two streaming passes; the first keeps ~56 bytes per read of the open loci only. 2.1 M reads in 19 s
+      using 74 MB.</p></div>
+  </div>
+</section>
+
+<section id="install">
+  <h2>Install</h2>
+  <p>Every <a href="https://github.com/martinandclaude/flumi/releases">release</a> has prebuilt binaries with
+  SHA-256 checksums: Linux x86-64 and ARM64 (glibc &ge; 2.17, RHEL/CentOS 7 and later) and macOS 11+ (Apple
+  silicon and Intel).</p>
+<pre><code>tar xzf flumi-v1.0.0-x86_64-unknown-linux-gnu.tar.gz
+./flumi-v1.0.0-x86_64-unknown-linux-gnu/flumi --help</code></pre>
+  <p>Or build from source (Rust &ge; 1.88, a C compiler and CMake):</p>
+<pre><code>cargo install --git https://github.com/martinandclaude/flumi</code></pre>
+</section>
+
+<section id="run">
+  <h2>From pod5 to flumi</h2>
+  <p>Basecalling is the expensive step, so do it once. With <code>--kit-name</code>, dorado classifies the
+  barcode and extracts the UMI (<code>RX</code>) and read orientation (<code>TS</code>) from the untrimmed read,
+  then trims, and records the barcode in <code>BC</code> and the read group. <code>dorado demux --no-classify</code>
+  splits by that record. Basecalling with <code>--no-trim</code> instead keeps the barcodes but loses
+  <code>RX</code> and <code>TS</code>; <code>dorado trim --sequencing-kit SQK-PCB114-24</code> adds them
+  afterwards (that is how the public data below was processed).</p>
+<pre><code># One basecalling pass: barcodes, UMI (RX), strand (TS) and poly(A) (pt)
+dorado basecaller sup pod5/ --kit-name SQK-PCB114-24 --estimate-poly-a &gt; calls.bam
+
+# Split by the barcodes already recorded; no second classification
+dorado demux --no-classify --emit-summary --output-dir demux/ calls.bam
+
+# Per barcode: spliced alignment keeping the tags, sort, deduplicate
+for bam in $(find demux -name '*barcode*.bam'); do
+  s=$(basename "$bam" .bam)
+  samtools fastq -T RX,TS,pt,qs "$bam" | minimap2 -ax splice -y ref.fa - \
+    | samtools sort -o "$s.sorted.bam"
+  flumi --bam "$s.sorted.bam" --out "$s.molecules.bam" \
+        --gtf genes.gtf.gz --stats "$s.stats.tsv" --molecules "$s.molecules.tsv"
+done</code></pre>
+  <ul>
+    <li>Input: dorado &ge; 0.9.5, trimming on, aligned spliced and <b>coordinate-sorted</b>, with
+      <code>RX</code>/<code>TS</code> (and optionally <code>pt</code>) carried over. The BAM is read twice, so it
+      must be a file, not a pipe.</li>
+    <li>A GTF is optional. Deduplication never uses it; it only labels genes and calls full-length
+      transcripts.</li>
+  </ul>
+</section>
+
+<section id="output">
+  <h2>Output</h2>
+  <p><b><code>--mode filter</code></b> (default) writes one record per molecule, the representative.
+  <b><code>--mode mark</code></b> writes every record: molecule members carry <code>MI</code>, <code>uN</code> and
+  <code>uS</code>, and all but the representative get the duplicate flag <code>0x400</code>.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Tag</th><th style="text-align:left">Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><code>MI:Z</code></td><td style="text-align:left">molecule id</td></tr>
+      <tr><td><code>uN:Z</code>, <code>uS:i</code></td><td style="text-align:left">the molecule's UMI; reads in the molecule</td></tr>
+      <tr><td><code>uJ:i</code>, <code>uD:i</code></td><td style="text-align:left">copies sharing the representative's junctions; its disagreements with their consensus</td></tr>
+      <tr><td><code>uA:A</code>, <code>uP:i</code></td><td style="text-align:left">poly(A) anchor pooled over copies; median tail length</td></tr>
+      <tr><td><code>uF:A</code>, <code>uT:Z</code>, <code>uG:Z</code></td><td style="text-align:left">full length against the GTF, the transcript, the genes under the aligned blocks</td></tr>
+    </tbody>
+  </table></div>
+  <p><code>--stats</code> writes run statistics and <code>--molecules</code> one row per molecule. The
+  <a href="https://github.com/martinandclaude/flumi/blob/main/README.md#output">README</a> documents every column.</p>
+</section>
+
+<section id="simulated">
+  <h2>How well it works: simulated reads</h2>
+  <p>Real data never says which reads came from the same molecule, so accuracy is measured on simulated reads
+  whose names encode their true molecule. The simulator runs dorado's own UMI extraction on read fronts with
+  nanopore errors, and adds PCR copy-number overdispersion, 5&prime; jitter, junction wobble, truncated reads,
+  PCR chimeras and a gene with 20,000 molecules at one TSS, where genuine UMI collisions occur.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>regime</th><th>true molecules</th><th>split</th><th>lost</th><th>chimeric</th><th>count error</th><th>per-gene error median / p90</th><th>representative exact</th></tr></thead>
+    <tbody>
+      <tr><td>typical UMI errors, 3 reads/molecule</td><td>57,603</td><td>164</td><td>184</td><td>0</td><td>&minus;0.03 %</td><td>0.0 / 0.0 %</td><td>98.4 %</td></tr>
+      <tr><td>noisy, 3 reads/molecule</td><td>57,652</td><td>1,204</td><td>339</td><td>0</td><td>+1.50 %</td><td>0.0 / 2.8 %</td><td>98.4 %</td></tr>
+      <tr><td>typical, 8 reads/molecule</td><td>59,065</td><td>384</td><td>137</td><td>0</td><td>+0.42 %</td><td>0.0 / 0.0 %</td><td>99.7 %</td></tr>
+      <tr><td>good, 1.5 reads/molecule</td><td>52,281</td><td>14</td><td>164</td><td>0</td><td>&minus;0.29 %</td><td>0.0 / 0.0 %</td><td>95.5 %</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted"><i>split</i>: extra representatives of one molecule; <i>lost</i>: molecules without one (mostly
+  genuine collisions in the 20 k-molecule gene). Scripts: <code>bench/benchmark.py</code>.</p>
+</section>
+
+<section id="real">
+  <h2>How well it works: real data</h2>
+  <p>The public ONT dataset <a href="https://epi2me.nanoporetech.com/uhrr_hg002_2026.06/">UHRR_HG002_2026.06</a>
+  includes HG002 RNA sequenced with SQK-PCB114-24 on two PromethION flow cells, four barcodes each, basecalled
+  with dorado 2.0.0 (HAC v6.0.0) and <code>--no-trim</code>. We take each barcode's primary reads from the
+  dataset's wf-transcriptomes alignment, add <code>RX</code>/<code>TS</code> with <code>dorado trim</code>,
+  realign with minimap2 and run flumi (<code>bench/realdata/run_sample.sh</code>, summarised by
+  <code>bench/realdata/summarize.py</code>).</p>
+
+  <div class="note status" id="real-status">Loading results&hellip;</div>
+
+  <div class="table-wrap"><table id="real-table"><thead></thead><tbody></tbody></table></div>
+
+  <h3>Agreement between replicates</h3>
+  <p class="muted">Spearman &rho; of per-gene molecule counts and, for comparison, of the same genes' read counts
+  (single-gene molecules, genes with &ge; 20 molecules in both samples); median |log<sub>2</sub> ratio| of molecule
+  counts after scaling to equal totals.</p>
+  <div class="table-wrap"><table id="real-comparisons"><thead><tr><th>samples</th><th>genes</th><th>&rho; molecules</th><th>&rho; reads</th><th>median |log<sub>2</sub> ratio|</th></tr></thead><tbody></tbody></table></div>
+
+  <h3>How to read this</h3>
+  <ul>
+    <li><b>No truth.</b> Real data cannot say how many molecules there were, so these numbers show that flumi runs
+      on real dorado output and behaves consistently, not that each molecule is right. Accuracy rests on the
+      simulation above.</li>
+    <li><b>The checks</b> are independent of flumi's code: every full-length call and gene label is re-derived
+      from the representative's CIGAR. Both counts must be zero.</li>
+    <li><b>The densest locus</b> test looks for UMIs flumi left apart that it should have merged: singletons one or
+      two substitutions from a molecule with &ge; 3 reads at the same 5&prime; end, compared with UMIs drawn from
+      other loci (<i>null</i>). Observed at the null rate means no detectable under-merging. In HG002, a
+      B-lymphoblastoid line, this locus is the rearranged immunoglobulin lambda light chain, with ~30,000 molecules
+      at one 5&prime; end.</li>
+    <li><b>Replicates</b> agree about as well on read counts as on molecule counts, so the agreement shows that
+      the runs are reproducible, not that deduplication is right. Molecule counts agree slightly better in every
+      pair, as removing PCR copy-number noise should make them.</li>
+    <li><b>Chromosome-only runs</b> realign to that chromosome alone, so supplementary alignments elsewhere are not
+      seen and chimera detection is slightly weaker than genome-wide.</li>
+  </ul>
+</section>
+
+<section id="limits">
+  <h2>Limitations</h2>
+  <ul>
+    <li>The density gate assumes uniformly drawn UMIs. Biased UMI synthesis makes collisions likelier than it
+      predicts; lower the budgets if you suspect that.</li>
+    <li>At ~29,000 molecules sharing one 5&prime; end, UMIs one edit apart are sometimes different molecules and
+      nothing can tell them apart: flumi undercounts such genes by ~0.5 %. That is the capacity of a 16-base UMI.</li>
+    <li>Reads without <code>RX</code> cannot be assigned: dropped in filter mode, passed through unmarked in mark
+      mode.</li>
+    <li>flumi 1.0.0 labelled genes and called full length from the representative's genomic span, so genes inside
+      its introns were counted; fixed in 1.0.1 (see the
+      <a href="https://github.com/martinandclaude/flumi/blob/main/CHANGELOG.md">changelog</a>). Deduplication was
+      not affected.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  flumi is MIT licensed &middot; <a href="https://github.com/martinandclaude/flumi">github.com/martinandclaude/flumi</a>
+</footer>
+
+<script>
+(function () {
+  var status = document.getElementById("real-status");
+  function cell(tag, text, cls) {
+    var el = document.createElement(tag);
+    el.textContent = text;
+    if (cls) el.className = cls;
+    return el;
+  }
+  fetch("results.json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) {
+      var samples = d.samples || [];
+      var region = d.region === "genome" ? "whole genome" : d.region;
+      status.textContent = "";
+      status.appendChild(document.createTextNode(
+        "Current results: " + samples.length + " of 8 HG002 PCB114-24 barcodes, " + region +
+        (d.note ? ". " + d.note : ".")));
+
+      var table = document.getElementById("real-table");
+      var hr = document.createElement("tr");
+      hr.appendChild(cell("th", "metric"));
+      samples.forEach(function (s) { hr.appendChild(cell("th", s.sample)); });
+      table.tHead.appendChild(hr);
+      (d.metrics || []).forEach(function (m) {
+        var tr = document.createElement("tr");
+        var name = m.trim();
+        if (m !== name) tr.className = "sub";
+        if (name.indexOf("check:") === 0) { tr.className = "check"; name = name.slice(6).trim(); }
+        tr.appendChild(cell("td", name));
+        samples.forEach(function (s) { tr.appendChild(cell("td", s[m] == null ? "" : s[m])); });
+        table.tBodies[0].appendChild(tr);
+      });
+
+      var cmp = document.getElementById("real-comparisons").tBodies[0];
+      (d.comparisons || []).forEach(function (c) {
+        var tr = document.createElement("tr");
+        tr.appendChild(cell("td", c.a + " vs " + c.b));
+        tr.appendChild(cell("td", c.genes.toLocaleString("en-US")));
+        tr.appendChild(cell("td", c.rho.toFixed(3)));
+        tr.appendChild(cell("td", c.rho_reads == null ? "" : c.rho_reads.toFixed(3)));
+        tr.appendChild(cell("td", c.median_abs_log2.toFixed(3)));
+        cmp.appendChild(tr);
+      });
+    })
+    .catch(function () {
+      status.textContent = "The results table could not be loaded; see docs/results.json in the repository.";
+    });
+})();
+</script>
+</body>
+</html>
