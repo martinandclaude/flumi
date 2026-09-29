@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.1 (unreleased)
+
+- **Gene labels and full-length calls use the representative's aligned
+  blocks, not its genomic span.** Before, a gene lying inside one of the read's
+  introns on the same strand was listed in `uG`, and the molecule could be
+  called full-length (`uF`/`uT`) against it without a single base on it. On
+  real HG002 PCB114-24 data (chr22, one barcode) 27 % of full-length calls were
+  spurious in this way, and 30 % of molecules listed more than five genes; the
+  full-length rate falls from 96.1 % to 88.6 %. Deduplication never used the
+  annotation, so molecules, representatives and every deduplication statistic
+  are unchanged.
+
 ## 1.0.0 (2026-09-26)
 
 First release. flumi collapses ONT PCR-cDNA (SQK-PCB114.24) reads to one

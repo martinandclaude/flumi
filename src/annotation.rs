@@ -33,8 +33,8 @@ pub struct Transcript {
     pub id: String,
     pub start: u32,
     pub end: u32,
-    pub first_exon_end: u32,
-    pub last_exon_start: u32,
+    /// Sorted half-open exons.
+    pub exons: Box<[(u32, u32)]>,
     pub exonic_len: u32,
 }
 
@@ -42,6 +42,9 @@ pub struct Annotation {
     by_tid: Vec<ChromGenes>,
     introns: Vec<FxHashSet<(u32, u32)>>,
     gene_ids: Vec<String>,
+    /// Union of each gene's transcript exons; empty for a gene known only
+    /// from a `gene` record, which then overlaps by its span.
+    gene_exons: Vec<Box<[(u32, u32)]>>,
     transcripts: Vec<Transcript>,
     /// Transcripts of each gene, as a range into `tx_of_gene`.
     gene_tx: Vec<(u32, u32)>,
@@ -61,6 +64,24 @@ fn attr<'a>(attrs: &'a str, key: &str) -> Option<&'a str> {
         rest = after;
     }
     None
+}
+
+/// Bases shared by two sorted lists of half-open intervals, each free of
+/// internal overlaps.
+fn overlap(a: &[(u32, u32)], b: &[(u32, u32)]) -> u64 {
+    let (mut i, mut j, mut n) = (0, 0, 0u64);
+    while i < a.len() && j < b.len() {
+        let (s, e) = (a[i].0.max(b[j].0), a[i].1.min(b[j].1));
+        if s < e {
+            n += u64::from(e - s);
+        }
+        if a[i].1 < b[j].1 {
+            i += 1;
+        } else {
+            j += 1;
+        }
+    }
+    n
 }
 
 fn parse_strand(s: &str) -> Strand {
@@ -215,8 +236,7 @@ impl Annotation {
         let mut per_gene: Vec<Vec<u32>> = vec![Vec::new(); gene_ids.len()];
         for (_, id, mut acc) in all_txs {
             acc.exons.sort_unstable();
-            let first = acc.exons[0];
-            let last = *acc.exons.last().expect("non-empty");
+            acc.exons.dedup();
             let exonic_len = acc.exons.iter().map(|&(s, e)| e - s).sum();
             for w in acc.exons.windows(2) {
                 if w[0].1 < w[1].0 {
@@ -226,16 +246,29 @@ impl Annotation {
             per_gene[acc.gene as usize].push(transcripts.len() as u32);
             transcripts.push(Transcript {
                 id,
-                start: first.0,
+                start: acc.exons[0].0,
                 end: acc.exons.iter().map(|e| e.1).max().expect("non-empty"),
-                first_exon_end: first.1,
-                last_exon_start: last.0,
+                exons: acc.exons.into_boxed_slice(),
                 exonic_len,
             });
         }
         let mut gene_tx = Vec::with_capacity(per_gene.len());
         let mut tx_of_gene = Vec::new();
+        let mut gene_exons = Vec::with_capacity(per_gene.len());
         for list in per_gene {
+            let mut exons: Vec<(u32, u32)> = list
+                .iter()
+                .flat_map(|&t| transcripts[t as usize].exons.iter().copied())
+                .collect();
+            exons.sort_unstable();
+            let mut merged: Vec<(u32, u32)> = Vec::with_capacity(exons.len());
+            for (s, e) in exons {
+                match merged.last_mut() {
+                    Some(last) if s <= last.1 => last.1 = last.1.max(e),
+                    _ => merged.push((s, e)),
+                }
+            }
+            gene_exons.push(merged.into_boxed_slice());
             gene_tx.push((tx_of_gene.len() as u32, list.len() as u32));
             tx_of_gene.extend(list);
         }
@@ -243,6 +276,7 @@ impl Annotation {
             by_tid,
             introns,
             gene_ids,
+            gene_exons,
             transcripts,
             gene_tx,
             tx_of_gene,
@@ -265,11 +299,14 @@ impl Annotation {
         &self.transcripts[idx as usize]
     }
 
-    /// Genes overlapping `[start, end)` on `strand` (any strand if unknown),
-    /// sorted by index.
-    pub fn overlapping_genes(&self, tid: u32, start: u32, end: u32, strand: Strand, out: &mut Vec<u32>) {
+    /// Genes on `strand` (any strand if unknown) whose exons share a base
+    /// with the aligned `blocks`, sorted by index. A gene inside one of the
+    /// read's introns does not count.
+    pub fn overlapping_genes(&self, tid: u32, blocks: &[(u32, u32)], strand: Strand, out: &mut Vec<u32>) {
         out.clear();
-        let Some(cg) = self.by_tid.get(tid as usize) else {
+        let (Some(cg), Some(&(start, _)), Some(&(_, end))) =
+            (self.by_tid.get(tid as usize), blocks.first(), blocks.last())
+        else {
             return;
         };
         let hi = cg.genes.partition_point(|g| g.start < end);
@@ -279,7 +316,16 @@ impl Annotation {
             }
             let g = &cg.genes[i];
             let strand_ok = strand == Strand::Unknown || g.strand == Strand::Unknown || g.strand == strand;
-            if g.end > start && strand_ok {
+            if g.end <= start || !strand_ok {
+                continue;
+            }
+            let exons = &self.gene_exons[g.idx as usize];
+            let hit = if exons.is_empty() {
+                overlap(blocks, &[(g.start, g.end)]) > 0
+            } else {
+                overlap(blocks, exons) > 0
+            };
+            if hit {
                 out.push(g.idx);
             }
         }
@@ -290,31 +336,21 @@ impl Annotation {
         self.introns.get(tid as usize).is_some_and(|s| s.contains(&junction))
     }
 
-    /// UMImap's full-length criterion: the read covers more than `cov` of a
-    /// transcript's exonic length and reaches `term` bases into both its
-    /// terminal exons. Returns the longest qualifying transcript.
-    pub fn full_length(
-        &self,
-        genes: &[u32],
-        start: u32,
-        end: u32,
-        exonic_len: u32,
-        cov: f64,
-        term: u32,
-    ) -> Option<u32> {
-        let (start, end, term) = (i64::from(start), i64::from(end), i64::from(term));
+    /// Full-length criterion: the read's aligned `blocks` cover more than
+    /// `cov` of a transcript's exonic bases and at least `term` bases of each
+    /// of its terminal exons. Returns the longest qualifying transcript.
+    pub fn full_length(&self, genes: &[u32], blocks: &[(u32, u32)], cov: f64, term: u32) -> Option<u32> {
+        let term = u64::from(term);
         let mut best: Option<u32> = None;
         for &g in genes {
             let (first, n) = self.gene_tx[g as usize];
             for &t in &self.tx_of_gene[first as usize..(first + n) as usize] {
                 let tx = &self.transcripts[t as usize];
-                if f64::from(exonic_len) <= cov * f64::from(tx.exonic_len) {
+                if overlap(blocks, &tx.exons) as f64 <= cov * f64::from(tx.exonic_len) {
                     continue;
                 }
-                if end.min(i64::from(tx.first_exon_end)) - start.max(i64::from(tx.start)) < term {
-                    continue;
-                }
-                if end.min(i64::from(tx.end)) - start.max(i64::from(tx.last_exon_start)) < term {
+                let (first_exon, last_exon) = (tx.exons[0], tx.exons[tx.exons.len() - 1]);
+                if overlap(blocks, &[first_exon]) < term || overlap(blocks, &[last_exon]) < term {
                     continue;
                 }
                 if best.is_none_or(|b| tx.exonic_len > self.transcripts[b as usize].exonic_len) {
@@ -351,9 +387,55 @@ chrY\tt\texon\t9001\t9100\t.\t+\t.\tgene_id \"P\"; transcript_id \"TP\";
         assert_eq!(a.n_transcripts(), 2);
         assert_eq!(a.n_genes(), 2);
         let mut out = Vec::new();
-        a.overlapping_genes(0, 150, 450, Strand::Plus, &mut out);
-        let t = a.full_length(&out, 100, 500, 200, 0.8, 25).unwrap();
+        a.overlapping_genes(0, &[(150, 450)], Strand::Plus, &mut out);
+        let t = a.full_length(&out, &[(100, 200), (400, 500)], 0.8, 25).unwrap();
         assert_eq!((a.transcript(t).start, a.transcript(t).end), (100, 500));
+    }
+
+    #[test]
+    fn overlap_of_interval_lists() {
+        assert_eq!(overlap(&[(0, 10), (20, 30)], &[(5, 25)]), 10);
+        assert_eq!(overlap(&[(0, 10)], &[(10, 20)]), 0);
+        assert_eq!(overlap(&[(0, 100)], &[(10, 20), (30, 40), (90, 120)]), 30);
+        assert_eq!(overlap(&[], &[(0, 1)]), 0);
+    }
+
+    #[test]
+    fn gene_inside_an_intron_is_not_the_reads_gene() {
+        // Host H spliced 100-200 / 900-1000; N is a single-exon gene inside
+        // H's intron on the same strand.
+        let gtf = "\
+chr1\tt\texon\t101\t200\t.\t+\t.\tgene_id \"H\"; transcript_id \"TH\";
+chr1\tt\texon\t901\t1000\t.\t+\t.\tgene_id \"H\"; transcript_id \"TH\";
+chr1\tt\texon\t401\t480\t.\t+\t.\tgene_id \"N\"; transcript_id \"TN\";
+";
+        let a = load(gtf);
+        let read = [(100, 200), (900, 1000)];
+        let mut out = Vec::new();
+        a.overlapping_genes(0, &read, Strand::Plus, &mut out);
+        assert_eq!(out.iter().map(|&g| a.gene_id(g)).collect::<Vec<_>>(), vec!["H"]);
+        // Even offered N, the read is not full-length for it: no base on it.
+        let all: Vec<u32> = (0..a.n_genes() as u32).collect();
+        let t = a.full_length(&all, &read, 0.8, 25).unwrap();
+        assert_eq!(a.transcript(t).id, "TH");
+        assert_eq!(a.full_length(&all, &[(100, 200), (950, 1000)], 0.8, 25), None);
+    }
+
+    #[test]
+    fn full_length_counts_bases_on_the_transcript() {
+        let gtf = "\
+chr1\tt\texon\t101\t200\t.\t+\t.\tgene_id \"G\"; transcript_id \"T\";
+chr1\tt\texon\t401\t500\t.\t+\t.\tgene_id \"G\"; transcript_id \"T\";
+";
+        let a = load(gtf);
+        // 170 of 200 exonic bases, 70 into the last exon.
+        assert!(a.full_length(&[0], &[(100, 200), (430, 500)], 0.8, 25).is_some());
+        // Enough coverage overall would need the last exon: 20 < 25 bases.
+        assert_eq!(a.full_length(&[0], &[(100, 200), (480, 500)], 0.8, 25), None);
+        // A retained intron still covers every exonic base.
+        assert!(a.full_length(&[0], &[(100, 500)], 0.8, 25).is_some());
+        // A long footprint elsewhere does not count.
+        assert_eq!(a.full_length(&[0], &[(100, 130), (600, 2000)], 0.8, 25), None);
     }
 
     #[test]
@@ -377,14 +459,19 @@ chr2\tt\tgene\t1\t900\t.\t-\t.\tgene_id \"G3\";
         assert_eq!(a.n_genes(), 2);
         assert_eq!(a.n_transcripts(), 1);
         let mut out = Vec::new();
-        a.overlapping_genes(0, 150, 460, Strand::Plus, &mut out);
+        a.overlapping_genes(0, &[(150, 460)], Strand::Plus, &mut out);
         assert_eq!(out.iter().map(|&g| a.gene_id(g)).collect::<Vec<_>>(), vec!["G1"]);
-        a.overlapping_genes(0, 150, 460, Strand::Unknown, &mut out);
+        a.overlapping_genes(0, &[(150, 460)], Strand::Unknown, &mut out);
         assert_eq!(out.len(), 2);
+        // G2 has no exons, so its span counts; G1's intron alone does not.
+        a.overlapping_genes(0, &[(250, 300)], Strand::Unknown, &mut out);
+        assert!(out.is_empty());
+        a.overlapping_genes(0, &[(600, 700)], Strand::Unknown, &mut out);
+        assert_eq!(out.iter().map(|&g| a.gene_id(g)).collect::<Vec<_>>(), vec!["G2"]);
         assert!(a.is_intron(0, (200, 400)));
         assert!(!a.is_intron(0, (200, 401)));
-        let t = a.full_length(&[0], 100, 500, 200, 0.8, 25).unwrap();
+        let t = a.full_length(&[0], &[(100, 200), (400, 500)], 0.8, 25).unwrap();
         assert_eq!(a.transcript(t).id, "T1");
-        assert_eq!(a.full_length(&[0], 290, 500, 110, 0.8, 25), None);
+        assert_eq!(a.full_length(&[0], &[(290, 500)], 0.8, 25), None);
     }
 }

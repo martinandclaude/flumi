@@ -1,6 +1,6 @@
 [package]
 name = "flumi"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 rust-version = "1.88"
 description = "Collapse ONT PCR-cDNA (SQK-PCB114.24) reads to one read per original RNA molecule using the pre-PCR UMI"

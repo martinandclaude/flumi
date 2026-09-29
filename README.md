@@ -138,9 +138,11 @@ without a supplementary alignment, then the largest exonic footprint (not
 genomic span), then basecall quality. `--rep longest` ranks by footprint alone.
 
 **5. Full-length calls** (unless `--no-full-length`).
-- `uF`/`uT`: against the annotation, with UMImap's criterion: more than
-  `--fl-cov` of a transcript's exonic length covered, and at least
-  `--fl-terminal` bases into both terminal exons.
+- `uF`/`uT`: against the annotation. The representative's aligned blocks
+  (its exons as aligned, not its genomic span) must cover more than `--fl-cov`
+  of a transcript's exonic bases and at least `--fl-terminal` bases of each
+  terminal exon. A gene inside one of the read's introns is neither labelled
+  nor called.
 - `uA`/`uP`: from dorado's poly(A) anchor, pooled over the molecule's copies.
   One copy that found the 3′ anchor proves the molecule reached it. `uP` is the
   median tail estimate over copies.
@@ -174,7 +176,7 @@ tags and a duplicate flag left by an earlier flumi run.
 | `uA:A` | representative | poly(A) anchor pooled over copies: `Y`, `N`, or `?` (no `pt` tags) |
 | `uP:i` | representative | median poly(A) tail length over copies |
 | `uF:A`, `uT:Z` | representative | full-length against the annotation, and the transcript covered (GTF with exons) |
-| `uG:Z` | representative | genes overlapping the representative on the molecule's strand (GTF) |
+| `uG:Z` | representative | genes on the molecule's strand with an exon under the representative's aligned blocks (GTF) |
 
 `--molecules` writes one row per molecule: id, chromosome, strand, 5′ end
 (median over copies, 1-based), UMI, whether it is damaged, reads, `uJ`, `uD`,

@@ -120,6 +120,18 @@ pub fn scan_tags(rec: &Record, max_umi_edits: u8) -> Tags {
     t
 }
 
+/// Aligned reference blocks of an alignment spanning `[start, end)` with the
+/// given introns: the exons as the read saw them.
+pub fn aligned_blocks(start: u32, end: u32, junctions: &[(u32, u32)], out: &mut Vec<(u32, u32)>) {
+    out.clear();
+    let mut s = start;
+    for &(js, je) in junctions {
+        out.push((s, js));
+        s = je;
+    }
+    out.push((s, end));
+}
+
 /// Alignment geometry from the CIGAR.
 #[derive(Debug, Default, Clone)]
 pub struct Geometry {
@@ -219,6 +231,15 @@ impl Geometry {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn blocks_between_junctions() {
+        let mut out = Vec::new();
+        aligned_blocks(100, 500, &[(200, 300), (350, 400)], &mut out);
+        assert_eq!(out, vec![(100, 200), (300, 350), (400, 500)]);
+        aligned_blocks(100, 150, &[], &mut out);
+        assert_eq!(out, vec![(100, 150)]);
+    }
 
     fn cig(ops: &[(u32, u32)]) -> Vec<u32> {
         ops.iter().map(|&(op, len)| (len << 4) | op).collect()

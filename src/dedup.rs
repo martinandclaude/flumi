@@ -24,7 +24,7 @@ use crate::annotation::Annotation;
 use crate::bundle::{Bundle, BundleRead};
 use crate::cluster::{self, Params};
 use crate::consensus::{self, RepParams};
-use crate::features::{self, Geometry, Strand, StrandSource, NO_POS, PT_NO_ANCHOR};
+use crate::features::{self, aligned_blocks, Geometry, Strand, StrandSource, NO_POS, PT_NO_ANCHOR};
 use crate::stats::Stats;
 use crate::umi;
 
@@ -114,6 +114,7 @@ struct Pass1<'a> {
     last_pos: u32,
     geom: Geometry,
     gene_buf: Vec<u32>,
+    block_buf: Vec<(u32, u32)>,
     gene_list_index: FxHashMap<Vec<u32>, u32>,
     plan: Plan,
     stats: Stats,
@@ -156,6 +157,7 @@ impl<'a> Pass1<'a> {
             last_pos: 0,
             geom: Geometry::default(),
             gene_buf: Vec::new(),
+            block_buf: Vec::new(),
             gene_list_index: FxHashMap::default(),
             plan: Plan {
                 molecules: Vec::new(),
@@ -364,17 +366,11 @@ impl<'a> Pass1<'a> {
             let (mut fl, mut fl_tx, mut genes) = (0u8, NONE, NONE);
             if let Some(a) = ann {
                 let mut buf = std::mem::take(&mut self.gene_buf);
-                a.overlapping_genes(tid, rep.start, rep.end, bundle.strand, &mut buf);
+                aligned_blocks(rep.start, rep.end, bundle.chains.get(rep.chain), &mut self.block_buf);
+                a.overlapping_genes(tid, &self.block_buf, bundle.strand, &mut buf);
                 genes = self.gene_list(&buf);
                 if self.cfg.full_length && a.n_transcripts() > 0 {
-                    let t = a.full_length(
-                        &buf,
-                        rep.start,
-                        rep.end,
-                        rep.exonic_len,
-                        self.cfg.fl_cov,
-                        self.cfg.fl_terminal,
-                    );
+                    let t = a.full_length(&buf, &self.block_buf, self.cfg.fl_cov, self.cfg.fl_terminal);
                     fl = if t.is_some() { b'Y' } else { b'N' };
                     fl_tx = t.unwrap_or(NONE);
                 }

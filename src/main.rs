@@ -96,10 +96,10 @@ struct Cli {
     /// Skip full-length calling (uF/uT from the GTF, uA/uP from dorado's pt:i).
     #[arg(long)]
     no_full_length: bool,
-    /// Fraction of a transcript's exonic length a full-length read must exceed.
+    /// Fraction of a transcript's exonic bases a full-length read's aligned blocks must exceed.
     #[arg(long, default_value_t = 0.8)]
     fl_cov: f64,
-    /// Bases a full-length read must reach into the transcript's first and last exon.
+    /// Bases of the transcript's first and last exon a full-length read's aligned blocks must cover.
     #[arg(long, default_value_t = 25)]
     fl_terminal: u32,
     /// Threads for BAM compression and decompression.
