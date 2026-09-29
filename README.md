@@ -307,8 +307,8 @@ binaries, each with a SHA-256 checksum:
 | `flumi-<tag>-x86_64-apple-darwin.tar.gz` | macOS 11+ on Intel |
 
 ```bash
-tar xzf flumi-v1.0.0-x86_64-unknown-linux-gnu.tar.gz
-./flumi-v1.0.0-x86_64-unknown-linux-gnu/flumi --help
+tar xzf flumi-v1.0.1-x86_64-unknown-linux-gnu.tar.gz
+./flumi-v1.0.1-x86_64-unknown-linux-gnu/flumi --help
 ```
 
 ## Build and test

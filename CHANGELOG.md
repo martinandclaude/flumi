@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1 (unreleased)
+## 1.0.1 (2026-09-29)
 
 - **Gene labels and full-length calls use the representative's aligned
   blocks, not its genomic span.** Before, a gene lying inside one of the read's
