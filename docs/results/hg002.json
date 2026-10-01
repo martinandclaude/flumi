@@ -1,0 +1,1410 @@
+{
+ "generated": "2026-10-01",
+ "region": "genome",
+ "annotation": "gencode.v49.annotation.gtf.gz",
+ "note": "flumi 1.0.1, 2026-10-01",
+ "samples": [
+  {
+   "sample": "fc1_bc01",
+   "flumi": "1.0.1",
+   "primary_reads": 17685833,
+   "rx_pct": 94.244,
+   "umi_block_damaged_pct": 10.11,
+   "chimeras_dropped_pct": 1.286,
+   "reads_used": 16384318,
+   "molecules": 6607685,
+   "pcr_duplicate_pct": 59.67,
+   "singleton_molecules_pct": 50.469,
+   "reads_per_molecule_p90": 5,
+   "reads_per_molecule_max": 1242,
+   "full_length_pct": 88.07,
+   "polya_anchor_pct": 98.71,
+   "trim_wall_s": 913.7,
+   "trim_peak_gb": 0.9,
+   "minimap2_wall_s": 7959.0,
+   "minimap2_peak_gb": 19.853,
+   "flumi.filter_wall_s": 149.2,
+   "flumi.filter_peak_gb": 0.678,
+   "flumi.mark_wall_s": 246.6,
+   "flumi.mark_peak_gb": 0.676,
+   "check": {
+    "full_length_calls": 5819402,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 7733955,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 6862,
+    "molecules": 4445534,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.27,
+    "two_sub_pct": 3.721,
+    "two_sub_null_pct": 3.183
+   },
+   "false_merges": {
+    "original_molecules": 6607685,
+    "new_molecules": 6577860,
+    "molecules_in_a_false_merge": 115386,
+    "false_merge_pct": 1.7462,
+    "molecules_lost_to_false_merges_pct": 0.8863,
+    "false_merge_events": 56866,
+    "events_with_donors_from_one_neighbourhood": 53,
+    "absorbed_by_kind": {
+     "clean_singleton": 40427,
+     "clean_multi": 10302,
+     "damaged_singleton": 7475,
+     "damaged_multi": 357
+    },
+    "split_pct": 0.4275,
+    "by_density": {
+     "1": {
+      "molecules": 180295,
+      "false_merge_pct": 0.0033
+     },
+     "2-10": {
+      "molecules": 288839,
+      "false_merge_pct": 0.0183
+     },
+     "11-100": {
+      "molecules": 745011,
+      "false_merge_pct": 0.1122
+     },
+     "101-1000": {
+      "molecules": 1879894,
+      "false_merge_pct": 0.7497
+     },
+     ">1000": {
+      "molecules": 3513646,
+      "false_merge_pct": 2.8573
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1639724,
+     1379490
+    ],
+    [
+     0.25,
+     4099044,
+     2838033
+    ],
+    [
+     0.5,
+     8194591,
+     4492518
+    ],
+    [
+     0.75,
+     12290114,
+     5676356
+    ],
+    [
+     1.0,
+     16384318,
+     6607685
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3272836,
+     "spliced": 3130116,
+     "all_junctions_annotated_pct": 87.707,
+     "five_prime_at_annotated_tss_pct": 91.614
+    },
+    "longest": {
+     "molecules": 3272836,
+     "spliced": 3130739,
+     "all_junctions_annotated_pct": 85.591,
+     "five_prime_at_annotated_tss_pct": 91.626
+    },
+    "random_copy": {
+     "molecules": 3272836,
+     "spliced": 3128692,
+     "all_junctions_annotated_pct": 86.03,
+     "five_prime_at_annotated_tss_pct": 91.364
+    }
+   },
+   "position_baseline": {
+    "groups": 1124477,
+    "molecules": 6607685,
+    "dense_neighbourhoods": 545,
+    "dense_groups": 58509,
+    "dense_molecules": 3217420
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  },
+  {
+   "sample": "fc1_bc02",
+   "flumi": "1.0.1",
+   "primary_reads": 17840883,
+   "rx_pct": 94.382,
+   "umi_block_damaged_pct": 9.83,
+   "chimeras_dropped_pct": 1.326,
+   "reads_used": 16554996,
+   "molecules": 6282660,
+   "pcr_duplicate_pct": 62.05,
+   "singleton_molecules_pct": 49.878,
+   "reads_per_molecule_p90": 6,
+   "reads_per_molecule_max": 1648,
+   "full_length_pct": 88.4,
+   "polya_anchor_pct": 98.71,
+   "trim_wall_s": 961.6,
+   "trim_peak_gb": 0.916,
+   "minimap2_wall_s": 8773.0,
+   "minimap2_peak_gb": 19.956,
+   "flumi.filter_wall_s": 144.8,
+   "flumi.filter_peak_gb": 0.657,
+   "flumi.mark_wall_s": 248.7,
+   "flumi.mark_peak_gb": 0.666,
+   "check": {
+    "full_length_calls": 5553728,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 7348813,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 6681,
+    "molecules": 4188667,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.251,
+    "two_sub_pct": 3.692,
+    "two_sub_null_pct": 3.099
+   },
+   "false_merges": {
+    "original_molecules": 6282660,
+    "new_molecules": 6256522,
+    "molecules_in_a_false_merge": 105217,
+    "false_merge_pct": 1.6747,
+    "molecules_lost_to_false_merges_pct": 0.849,
+    "false_merge_events": 51935,
+    "events_with_donors_from_one_neighbourhood": 68,
+    "absorbed_by_kind": {
+     "clean_singleton": 36429,
+     "damaged_multi": 366,
+     "clean_multi": 9856,
+     "damaged_singleton": 6690
+    },
+    "split_pct": 0.4261,
+    "by_density": {
+     "1": {
+      "molecules": 173779,
+      "false_merge_pct": 0.0029
+     },
+     "2-10": {
+      "molecules": 279048,
+      "false_merge_pct": 0.0179
+     },
+     "11-100": {
+      "molecules": 731242,
+      "false_merge_pct": 0.1048
+     },
+     "101-1000": {
+      "molecules": 1839553,
+      "false_merge_pct": 0.7339
+     },
+     ">1000": {
+      "molecules": 3259038,
+      "false_merge_pct": 2.789
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1656066,
+     1361379
+    ],
+    [
+     0.25,
+     4139742,
+     2751984
+    ],
+    [
+     0.5,
+     8278043,
+     4303790
+    ],
+    [
+     0.75,
+     12418001,
+     5410313
+    ],
+    [
+     1.0,
+     16554996,
+     6282660
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3148964,
+     "spliced": 3019501,
+     "all_junctions_annotated_pct": 87.526,
+     "five_prime_at_annotated_tss_pct": 91.616
+    },
+    "longest": {
+     "molecules": 3148964,
+     "spliced": 3020094,
+     "all_junctions_annotated_pct": 85.274,
+     "five_prime_at_annotated_tss_pct": 91.627
+    },
+    "random_copy": {
+     "molecules": 3148964,
+     "spliced": 3018153,
+     "all_junctions_annotated_pct": 85.842,
+     "five_prime_at_annotated_tss_pct": 91.385
+    }
+   },
+   "position_baseline": {
+    "groups": 1115742,
+    "molecules": 6282660,
+    "dense_neighbourhoods": 518,
+    "dense_groups": 55475,
+    "dense_molecules": 2981094
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  },
+  {
+   "sample": "fc1_bc03",
+   "flumi": "1.0.1",
+   "primary_reads": 18089758,
+   "rx_pct": 94.449,
+   "umi_block_damaged_pct": 10.16,
+   "chimeras_dropped_pct": 1.271,
+   "reads_used": 16801793,
+   "molecules": 6671871,
+   "pcr_duplicate_pct": 60.29,
+   "singleton_molecules_pct": 49.464,
+   "reads_per_molecule_p90": 6,
+   "reads_per_molecule_max": 1564,
+   "full_length_pct": 88.19,
+   "polya_anchor_pct": 98.78,
+   "trim_wall_s": 919.4,
+   "trim_peak_gb": 0.891,
+   "minimap2_wall_s": 7405.0,
+   "minimap2_peak_gb": 19.937,
+   "flumi.filter_wall_s": 152.0,
+   "flumi.filter_peak_gb": 0.68,
+   "flumi.mark_wall_s": 250.1,
+   "flumi.mark_peak_gb": 0.691,
+   "check": {
+    "full_length_calls": 5884135,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 7824328,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 6845,
+    "molecules": 4504902,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.29,
+    "two_sub_pct": 4.218,
+    "two_sub_null_pct": 3.624
+   },
+   "false_merges": {
+    "original_molecules": 6671871,
+    "new_molecules": 6642454,
+    "molecules_in_a_false_merge": 118778,
+    "false_merge_pct": 1.7803,
+    "molecules_lost_to_false_merges_pct": 0.9035,
+    "false_merge_events": 58541,
+    "events_with_donors_from_one_neighbourhood": 78,
+    "absorbed_by_kind": {
+     "clean_singleton": 40943,
+     "clean_multi": 11135,
+     "damaged_singleton": 7797,
+     "damaged_multi": 403
+    },
+    "split_pct": 0.4553,
+    "by_density": {
+     "1": {
+      "molecules": 177174,
+      "false_merge_pct": 0.0017
+     },
+     "2-10": {
+      "molecules": 287959,
+      "false_merge_pct": 0.0215
+     },
+     "11-100": {
+      "molecules": 739901,
+      "false_merge_pct": 0.1081
+     },
+     "101-1000": {
+      "molecules": 1881835,
+      "false_merge_pct": 0.7437
+     },
+     ">1000": {
+      "molecules": 3585002,
+      "false_merge_pct": 2.8987
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1679601,
+     1408121
+    ],
+    [
+     0.25,
+     4198811,
+     2890719
+    ],
+    [
+     0.5,
+     8399004,
+     4560952
+    ],
+    [
+     0.75,
+     12604496,
+     5747190
+    ],
+    [
+     1.0,
+     16801793,
+     6671871
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3371669,
+     "spliced": 3225766,
+     "all_junctions_annotated_pct": 87.885,
+     "five_prime_at_annotated_tss_pct": 91.807
+    },
+    "longest": {
+     "molecules": 3371669,
+     "spliced": 3226390,
+     "all_junctions_annotated_pct": 85.794,
+     "five_prime_at_annotated_tss_pct": 91.817
+    },
+    "random_copy": {
+     "molecules": 3371669,
+     "spliced": 3224493,
+     "all_junctions_annotated_pct": 86.243,
+     "five_prime_at_annotated_tss_pct": 91.543
+    }
+   },
+   "position_baseline": {
+    "groups": 1125372,
+    "molecules": 6671871,
+    "dense_neighbourhoods": 546,
+    "dense_groups": 58775,
+    "dense_molecules": 3281605
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  },
+  {
+   "sample": "fc1_bc04",
+   "flumi": "1.0.1",
+   "primary_reads": 16978535,
+   "rx_pct": 94.201,
+   "umi_block_damaged_pct": 9.96,
+   "chimeras_dropped_pct": 1.334,
+   "reads_used": 15718751,
+   "molecules": 6159069,
+   "pcr_duplicate_pct": 60.82,
+   "singleton_molecules_pct": 50.832,
+   "reads_per_molecule_p90": 6,
+   "reads_per_molecule_max": 1529,
+   "full_length_pct": 88.26,
+   "polya_anchor_pct": 98.7,
+   "trim_wall_s": 921.9,
+   "trim_peak_gb": 0.905,
+   "minimap2_wall_s": 7328.0,
+   "minimap2_peak_gb": 19.844,
+   "flumi.filter_wall_s": 140.6,
+   "flumi.filter_peak_gb": 0.646,
+   "flumi.mark_wall_s": 239.7,
+   "flumi.mark_peak_gb": 0.641,
+   "check": {
+    "full_length_calls": 5436097,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 7194046,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 6614,
+    "molecules": 4086720,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.225,
+    "two_sub_pct": 3.384,
+    "two_sub_null_pct": 2.855
+   },
+   "false_merges": {
+    "original_molecules": 6159069,
+    "new_molecules": 6132762,
+    "molecules_in_a_false_merge": 101327,
+    "false_merge_pct": 1.6452,
+    "molecules_lost_to_false_merges_pct": 0.8341,
+    "false_merge_events": 50005,
+    "events_with_donors_from_one_neighbourhood": 57,
+    "absorbed_by_kind": {
+     "clean_singleton": 35646,
+     "clean_multi": 8987,
+     "damaged_singleton": 6425,
+     "damaged_multi": 317
+    },
+    "split_pct": 0.401,
+    "by_density": {
+     "1": {
+      "molecules": 174047,
+      "false_merge_pct": 0.0017
+     },
+     "2-10": {
+      "molecules": 275910,
+      "false_merge_pct": 0.012
+     },
+     "11-100": {
+      "molecules": 731148,
+      "false_merge_pct": 0.1031
+     },
+     "101-1000": {
+      "molecules": 1818262,
+      "false_merge_pct": 0.73
+     },
+     ">1000": {
+      "molecules": 3159702,
+      "false_merge_pct": 2.7618
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1573689,
+     1306531
+    ],
+    [
+     0.25,
+     3930649,
+     2661842
+    ],
+    [
+     0.5,
+     7858788,
+     4189205
+    ],
+    [
+     0.75,
+     11787096,
+     5288200
+    ],
+    [
+     1.0,
+     15718751,
+     6159069
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3028284,
+     "spliced": 2901382,
+     "all_junctions_annotated_pct": 87.383,
+     "five_prime_at_annotated_tss_pct": 91.509
+    },
+    "longest": {
+     "molecules": 3028284,
+     "spliced": 2901984,
+     "all_junctions_annotated_pct": 85.147,
+     "five_prime_at_annotated_tss_pct": 91.519
+    },
+    "random_copy": {
+     "molecules": 3028284,
+     "spliced": 2900127,
+     "all_junctions_annotated_pct": 85.68,
+     "five_prime_at_annotated_tss_pct": 91.271
+    }
+   },
+   "position_baseline": {
+    "groups": 1097933,
+    "molecules": 6159069,
+    "dense_neighbourhoods": 506,
+    "dense_groups": 54793,
+    "dense_molecules": 2893625
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  },
+  {
+   "sample": "fc2_bc01",
+   "flumi": "1.0.1",
+   "primary_reads": 20574705,
+   "rx_pct": 94.108,
+   "umi_block_damaged_pct": 11.36,
+   "chimeras_dropped_pct": 1.205,
+   "reads_used": 19033118,
+   "molecules": 8104538,
+   "pcr_duplicate_pct": 57.42,
+   "singleton_molecules_pct": 52.401,
+   "reads_per_molecule_p90": 5,
+   "reads_per_molecule_max": 1592,
+   "full_length_pct": 88.0,
+   "polya_anchor_pct": 98.61,
+   "trim_wall_s": 1027.7,
+   "trim_peak_gb": 0.902,
+   "minimap2_wall_s": 8758.0,
+   "minimap2_peak_gb": 19.928,
+   "flumi.filter_wall_s": 194.1,
+   "flumi.filter_peak_gb": 0.81,
+   "flumi.mark_wall_s": 302.7,
+   "flumi.mark_peak_gb": 0.803,
+   "check": {
+    "full_length_calls": 7131826,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 9492258,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 8020,
+    "molecules": 5523286,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.295,
+    "two_sub_pct": 4.403,
+    "two_sub_null_pct": 3.83
+   },
+   "false_merges": {
+    "original_molecules": 8104538,
+    "new_molecules": 8059454,
+    "molecules_in_a_false_merge": 169285,
+    "false_merge_pct": 2.0888,
+    "molecules_lost_to_false_merges_pct": 1.0628,
+    "false_merge_events": 83274,
+    "events_with_donors_from_one_neighbourhood": 118,
+    "absorbed_by_kind": {
+     "clean_singleton": 58513,
+     "clean_multi": 14229,
+     "damaged_singleton": 12859,
+     "damaged_multi": 533
+    },
+    "split_pct": 0.4979,
+    "by_density": {
+     "1": {
+      "molecules": 197286,
+      "false_merge_pct": 0.0035
+     },
+     "2-10": {
+      "molecules": 337015,
+      "false_merge_pct": 0.0122
+     },
+     "11-100": {
+      "molecules": 815326,
+      "false_merge_pct": 0.1104
+     },
+     "101-1000": {
+      "molecules": 2180383,
+      "false_merge_pct": 0.7911
+     },
+     ">1000": {
+      "molecules": 4574528,
+      "false_merge_pct": 3.3028
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1902786,
+     1622284
+    ],
+    [
+     0.25,
+     4756909,
+     3386231
+    ],
+    [
+     0.5,
+     9515324,
+     5434006
+    ],
+    [
+     0.75,
+     14273207,
+     6921490
+    ],
+    [
+     1.0,
+     19033118,
+     8104538
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3857649,
+     "spliced": 3688436,
+     "all_junctions_annotated_pct": 87.94,
+     "five_prime_at_annotated_tss_pct": 91.825
+    },
+    "longest": {
+     "molecules": 3857649,
+     "spliced": 3689112,
+     "all_junctions_annotated_pct": 85.644,
+     "five_prime_at_annotated_tss_pct": 91.839
+    },
+    "random_copy": {
+     "molecules": 3857649,
+     "spliced": 3687313,
+     "all_junctions_annotated_pct": 85.902,
+     "five_prime_at_annotated_tss_pct": 91.495
+    }
+   },
+   "position_baseline": {
+    "groups": 1284071,
+    "molecules": 8104538,
+    "dense_neighbourhoods": 690,
+    "dense_groups": 73673,
+    "dense_molecules": 4165219
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  },
+  {
+   "sample": "fc2_bc02",
+   "flumi": "1.0.1",
+   "primary_reads": 20934538,
+   "rx_pct": 94.168,
+   "umi_block_damaged_pct": 11.15,
+   "chimeras_dropped_pct": 1.24,
+   "reads_used": 19378571,
+   "molecules": 7882187,
+   "pcr_duplicate_pct": 59.33,
+   "singleton_molecules_pct": 52.223,
+   "reads_per_molecule_p90": 5,
+   "reads_per_molecule_max": 1731,
+   "full_length_pct": 88.16,
+   "polya_anchor_pct": 98.53,
+   "trim_wall_s": 1158.2,
+   "trim_peak_gb": 0.896,
+   "minimap2_wall_s": 8815.0,
+   "minimap2_peak_gb": 19.958,
+   "flumi.filter_wall_s": 194.0,
+   "flumi.filter_peak_gb": 0.788,
+   "flumi.mark_wall_s": 318.0,
+   "flumi.mark_peak_gb": 0.78,
+   "check": {
+    "full_length_calls": 6949137,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 9219440,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 7920,
+    "molecules": 5335676,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.28,
+    "two_sub_pct": 4.266,
+    "two_sub_null_pct": 3.494
+   },
+   "false_merges": {
+    "original_molecules": 7882187,
+    "new_molecules": 7841996,
+    "molecules_in_a_false_merge": 157425,
+    "false_merge_pct": 1.9972,
+    "molecules_lost_to_false_merges_pct": 1.0163,
+    "false_merge_events": 77426,
+    "events_with_donors_from_one_neighbourhood": 83,
+    "absorbed_by_kind": {
+     "damaged_singleton": 11905,
+     "clean_singleton": 54175,
+     "clean_multi": 13500,
+     "damaged_multi": 523
+    },
+    "split_pct": 0.4969,
+    "by_density": {
+     "1": {
+      "molecules": 195515,
+      "false_merge_pct": 0.0036
+     },
+     "2-10": {
+      "molecules": 331113,
+      "false_merge_pct": 0.0112
+     },
+     "11-100": {
+      "molecules": 809520,
+      "false_merge_pct": 0.1175
+     },
+     "101-1000": {
+      "molecules": 2182049,
+      "false_merge_pct": 0.7866
+     },
+     ">1000": {
+      "molecules": 4363990,
+      "false_merge_pct": 3.1912
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1937738,
+     1621900
+    ],
+    [
+     0.25,
+     4847719,
+     3339453
+    ],
+    [
+     0.5,
+     9695890,
+     5307445
+    ],
+    [
+     0.75,
+     14538241,
+     6739324
+    ],
+    [
+     1.0,
+     19378571,
+     7882187
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3765881,
+     "spliced": 3606405,
+     "all_junctions_annotated_pct": 87.704,
+     "five_prime_at_annotated_tss_pct": 91.774
+    },
+    "longest": {
+     "molecules": 3765881,
+     "spliced": 3607144,
+     "all_junctions_annotated_pct": 85.235,
+     "five_prime_at_annotated_tss_pct": 91.787
+    },
+    "random_copy": {
+     "molecules": 3765881,
+     "spliced": 3605196,
+     "all_junctions_annotated_pct": 85.637,
+     "five_prime_at_annotated_tss_pct": 91.47
+    }
+   },
+   "position_baseline": {
+    "groups": 1293675,
+    "molecules": 7882187,
+    "dense_neighbourhoods": 663,
+    "dense_groups": 71562,
+    "dense_molecules": 3967455
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  },
+  {
+   "sample": "fc2_bc03",
+   "flumi": "1.0.1",
+   "primary_reads": 20916670,
+   "rx_pct": 94.186,
+   "umi_block_damaged_pct": 11.53,
+   "chimeras_dropped_pct": 1.172,
+   "reads_used": 19369026,
+   "molecules": 8174057,
+   "pcr_duplicate_pct": 57.8,
+   "singleton_molecules_pct": 51.413,
+   "reads_per_molecule_p90": 5,
+   "reads_per_molecule_max": 1530,
+   "full_length_pct": 87.91,
+   "polya_anchor_pct": 98.63,
+   "trim_wall_s": 1013.5,
+   "trim_peak_gb": 0.839,
+   "minimap2_wall_s": 9462.0,
+   "minimap2_peak_gb": 19.936,
+   "flumi.filter_wall_s": 197.9,
+   "flumi.filter_peak_gb": 0.833,
+   "flumi.mark_wall_s": 306.5,
+   "flumi.mark_peak_gb": 0.82,
+   "check": {
+    "full_length_calls": 7185911,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 9596162,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 7873,
+    "molecules": 5582767,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.32,
+    "two_sub_pct": 4.928,
+    "two_sub_null_pct": 4.306
+   },
+   "false_merges": {
+    "original_molecules": 8174057,
+    "new_molecules": 8128095,
+    "molecules_in_a_false_merge": 178514,
+    "false_merge_pct": 2.1839,
+    "molecules_lost_to_false_merges_pct": 1.1117,
+    "false_merge_events": 87768,
+    "events_with_donors_from_one_neighbourhood": 121,
+    "absorbed_by_kind": {
+     "damaged_singleton": 14252,
+     "clean_singleton": 60695,
+     "clean_multi": 15305,
+     "damaged_multi": 615
+    },
+    "split_pct": 0.5395,
+    "by_density": {
+     "1": {
+      "molecules": 194432,
+      "false_merge_pct": 0.0062
+     },
+     "2-10": {
+      "molecules": 334209,
+      "false_merge_pct": 0.0177
+     },
+     "11-100": {
+      "molecules": 811796,
+      "false_merge_pct": 0.1147
+     },
+     "101-1000": {
+      "molecules": 2136343,
+      "false_merge_pct": 0.8006
+     },
+     ">1000": {
+      "molecules": 4697277,
+      "false_merge_pct": 3.4149
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1937687,
+     1651379
+    ],
+    [
+     0.25,
+     4841620,
+     3440202
+    ],
+    [
+     0.5,
+     9686267,
+     5508910
+    ],
+    [
+     0.75,
+     14526814,
+     6998128
+    ],
+    [
+     1.0,
+     19369026,
+     8174057
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3971565,
+     "spliced": 3791504,
+     "all_junctions_annotated_pct": 88.183,
+     "five_prime_at_annotated_tss_pct": 92.03
+    },
+    "longest": {
+     "molecules": 3971565,
+     "spliced": 3792200,
+     "all_junctions_annotated_pct": 85.922,
+     "five_prime_at_annotated_tss_pct": 92.043
+    },
+    "random_copy": {
+     "molecules": 3971565,
+     "spliced": 3790415,
+     "all_junctions_annotated_pct": 86.185,
+     "five_prime_at_annotated_tss_pct": 91.681
+    }
+   },
+   "position_baseline": {
+    "groups": 1276653,
+    "molecules": 8174057,
+    "dense_neighbourhoods": 692,
+    "dense_groups": 74756,
+    "dense_molecules": 4283856
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  },
+  {
+   "sample": "fc2_bc04",
+   "flumi": "1.0.1",
+   "primary_reads": 19663194,
+   "rx_pct": 94.077,
+   "umi_block_damaged_pct": 11.17,
+   "chimeras_dropped_pct": 1.251,
+   "reads_used": 18183488,
+   "molecules": 7522444,
+   "pcr_duplicate_pct": 58.63,
+   "singleton_molecules_pct": 52.693,
+   "reads_per_molecule_p90": 5,
+   "reads_per_molecule_max": 1751,
+   "full_length_pct": 88.22,
+   "polya_anchor_pct": 98.61,
+   "trim_wall_s": 1100.9,
+   "trim_peak_gb": 0.88,
+   "minimap2_wall_s": 9431.0,
+   "minimap2_peak_gb": 19.806,
+   "flumi.filter_wall_s": 190.4,
+   "flumi.filter_peak_gb": 0.765,
+   "flumi.mark_wall_s": 300.6,
+   "flumi.mark_peak_gb": 0.762,
+   "check": {
+    "full_length_calls": 6636016,
+    "full_length_calls_below_80pct": 0,
+    "gene_labels": 8792548,
+    "gene_labels_without_exon_base": 0
+   },
+   "missed_merges": {
+    "neighbourhoods": 7673,
+    "molecules": 5057361,
+    "singletons_tested": 200000,
+    "one_sub_pct": 0.0,
+    "one_sub_null_pct": 0.259,
+    "two_sub_pct": 3.789,
+    "two_sub_null_pct": 3.279
+   },
+   "false_merges": {
+    "original_molecules": 7522444,
+    "new_molecules": 7486256,
+    "molecules_in_a_false_merge": 144572,
+    "false_merge_pct": 1.9219,
+    "molecules_lost_to_false_merges_pct": 0.9764,
+    "false_merge_events": 71212,
+    "events_with_donors_from_one_neighbourhood": 95,
+    "absorbed_by_kind": {
+     "clean_singleton": 50030,
+     "clean_multi": 12065,
+     "damaged_singleton": 10927,
+     "damaged_multi": 427
+    },
+    "split_pct": 0.487,
+    "by_density": {
+     "1": {
+      "molecules": 190421,
+      "false_merge_pct": 0.0042
+     },
+     "2-10": {
+      "molecules": 319681,
+      "false_merge_pct": 0.0153
+     },
+     "11-100": {
+      "molecules": 796657,
+      "false_merge_pct": 0.1169
+     },
+     "101-1000": {
+      "molecules": 2109367,
+      "false_merge_pct": 0.7728
+     },
+     ">1000": {
+      "molecules": 4106318,
+      "false_merge_pct": 3.0997
+     }
+    }
+   },
+   "saturation": [
+    [
+     0.1,
+     1818891,
+     1531123
+    ],
+    [
+     0.25,
+     4543794,
+     3163000
+    ],
+    [
+     0.5,
+     9094961,
+     5050114
+    ],
+    [
+     0.75,
+     13636540,
+     6422511
+    ],
+    [
+     1.0,
+     18183488,
+     7522444
+    ]
+   ],
+   "representatives": {
+    "flumi": {
+     "molecules": 3558626,
+     "spliced": 3410100,
+     "all_junctions_annotated_pct": 87.585,
+     "five_prime_at_annotated_tss_pct": 91.714
+    },
+    "longest": {
+     "molecules": 3558626,
+     "spliced": 3410745,
+     "all_junctions_annotated_pct": 85.128,
+     "five_prime_at_annotated_tss_pct": 91.725
+    },
+    "random_copy": {
+     "molecules": 3558626,
+     "spliced": 3409024,
+     "all_junctions_annotated_pct": 85.507,
+     "five_prime_at_annotated_tss_pct": 91.411
+    }
+   },
+   "position_baseline": {
+    "groups": 1250440,
+    "molecules": 7522444,
+    "dense_neighbourhoods": 635,
+    "dense_groups": 68387,
+    "dense_molecules": 3732754
+   },
+   "region": "genome",
+   "annotation": "gencode.v49.annotation.gtf.gz"
+  }
+ ],
+ "replicates": [
+  {
+   "a": "fc1_bc01",
+   "b": "fc1_bc02",
+   "same_flowcell": true,
+   "genes": 9521,
+   "rho_molecules": 0.9925,
+   "rho_reads": 0.9885,
+   "excess_var_molecules": 0.0008,
+   "excess_var_reads": 0.03236,
+   "rho_positions": 0.9753,
+   "excess_var_positions": -0.00663
+  },
+  {
+   "a": "fc1_bc01",
+   "b": "fc1_bc03",
+   "same_flowcell": true,
+   "genes": 9539,
+   "rho_molecules": 0.9923,
+   "rho_reads": 0.9889,
+   "excess_var_molecules": 0.00123,
+   "excess_var_reads": 0.02995,
+   "rho_positions": 0.9754,
+   "excess_var_positions": -0.0066
+  },
+  {
+   "a": "fc1_bc01",
+   "b": "fc1_bc04",
+   "same_flowcell": true,
+   "genes": 9524,
+   "rho_molecules": 0.9921,
+   "rho_reads": 0.9879,
+   "excess_var_molecules": 0.00187,
+   "excess_var_reads": 0.03281,
+   "rho_positions": 0.9745,
+   "excess_var_positions": -0.00585
+  },
+  {
+   "a": "fc1_bc01",
+   "b": "fc2_bc01",
+   "same_flowcell": false,
+   "genes": 9676,
+   "rho_molecules": 0.992,
+   "rho_reads": 0.9889,
+   "excess_var_molecules": 0.00393,
+   "excess_var_reads": 0.031,
+   "rho_positions": 0.9759,
+   "excess_var_positions": -0.00472
+  },
+  {
+   "a": "fc1_bc01",
+   "b": "fc2_bc02",
+   "same_flowcell": false,
+   "genes": 9673,
+   "rho_molecules": 0.992,
+   "rho_reads": 0.9889,
+   "excess_var_molecules": 0.00382,
+   "excess_var_reads": 0.03164,
+   "rho_positions": 0.9754,
+   "excess_var_positions": -0.00362
+  },
+  {
+   "a": "fc1_bc01",
+   "b": "fc2_bc03",
+   "same_flowcell": false,
+   "genes": 9678,
+   "rho_molecules": 0.9912,
+   "rho_reads": 0.9863,
+   "excess_var_molecules": 0.00626,
+   "excess_var_reads": 0.03952,
+   "rho_positions": 0.9737,
+   "excess_var_positions": -0.00272
+  },
+  {
+   "a": "fc1_bc01",
+   "b": "fc2_bc04",
+   "same_flowcell": false,
+   "genes": 9663,
+   "rho_molecules": 0.9922,
+   "rho_reads": 0.9894,
+   "excess_var_molecules": 0.00267,
+   "excess_var_reads": 0.02942,
+   "rho_positions": 0.9759,
+   "excess_var_positions": -0.00519
+  },
+  {
+   "a": "fc1_bc02",
+   "b": "fc1_bc03",
+   "same_flowcell": true,
+   "genes": 9506,
+   "rho_molecules": 0.9918,
+   "rho_reads": 0.9863,
+   "excess_var_molecules": 0.00261,
+   "excess_var_reads": 0.0369,
+   "rho_positions": 0.973,
+   "excess_var_positions": -0.00531
+  },
+  {
+   "a": "fc1_bc02",
+   "b": "fc1_bc04",
+   "same_flowcell": true,
+   "genes": 9478,
+   "rho_molecules": 0.9923,
+   "rho_reads": 0.989,
+   "excess_var_molecules": 0.00058,
+   "excess_var_reads": 0.02935,
+   "rho_positions": 0.9747,
+   "excess_var_positions": -0.00659
+  },
+  {
+   "a": "fc1_bc02",
+   "b": "fc2_bc01",
+   "same_flowcell": false,
+   "genes": 9623,
+   "rho_molecules": 0.9908,
+   "rho_reads": 0.9851,
+   "excess_var_molecules": 0.00741,
+   "excess_var_reads": 0.04445,
+   "rho_positions": 0.9735,
+   "excess_var_positions": -0.00192
+  },
+  {
+   "a": "fc1_bc02",
+   "b": "fc2_bc02",
+   "same_flowcell": false,
+   "genes": 9611,
+   "rho_molecules": 0.9916,
+   "rho_reads": 0.9881,
+   "excess_var_molecules": 0.00526,
+   "excess_var_reads": 0.03472,
+   "rho_positions": 0.9748,
+   "excess_var_positions": -0.00356
+  },
+  {
+   "a": "fc1_bc02",
+   "b": "fc2_bc03",
+   "same_flowcell": false,
+   "genes": 9613,
+   "rho_molecules": 0.9895,
+   "rho_reads": 0.9807,
+   "excess_var_molecules": 0.01141,
+   "excess_var_reads": 0.05783,
+   "rho_positions": 0.9707,
+   "excess_var_positions": 0.0006
+  },
+  {
+   "a": "fc1_bc02",
+   "b": "fc2_bc04",
+   "same_flowcell": false,
+   "genes": 9599,
+   "rho_molecules": 0.9916,
+   "rho_reads": 0.9885,
+   "excess_var_molecules": 0.00443,
+   "excess_var_reads": 0.03269,
+   "rho_positions": 0.9747,
+   "excess_var_positions": -0.00373
+  },
+  {
+   "a": "fc1_bc03",
+   "b": "fc1_bc04",
+   "same_flowcell": true,
+   "genes": 9514,
+   "rho_molecules": 0.9914,
+   "rho_reads": 0.986,
+   "excess_var_molecules": 0.00346,
+   "excess_var_reads": 0.03727,
+   "rho_positions": 0.9727,
+   "excess_var_positions": -0.00435
+  },
+  {
+   "a": "fc1_bc03",
+   "b": "fc2_bc01",
+   "same_flowcell": false,
+   "genes": 9666,
+   "rho_molecules": 0.9919,
+   "rho_reads": 0.9891,
+   "excess_var_molecules": 0.00435,
+   "excess_var_reads": 0.0315,
+   "rho_positions": 0.9752,
+   "excess_var_positions": -0.00436
+  },
+  {
+   "a": "fc1_bc03",
+   "b": "fc2_bc02",
+   "same_flowcell": false,
+   "genes": 9657,
+   "rho_molecules": 0.9918,
+   "rho_reads": 0.9883,
+   "excess_var_molecules": 0.00463,
+   "excess_var_reads": 0.0337,
+   "rho_positions": 0.9755,
+   "excess_var_positions": -0.00409
+  },
+  {
+   "a": "fc1_bc03",
+   "b": "fc2_bc03",
+   "same_flowcell": false,
+   "genes": 9658,
+   "rho_molecules": 0.9912,
+   "rho_reads": 0.9875,
+   "excess_var_molecules": 0.00636,
+   "excess_var_reads": 0.03688,
+   "rho_positions": 0.9747,
+   "excess_var_positions": -0.00351
+  },
+  {
+   "a": "fc1_bc03",
+   "b": "fc2_bc04",
+   "same_flowcell": false,
+   "genes": 9644,
+   "rho_molecules": 0.9917,
+   "rho_reads": 0.988,
+   "excess_var_molecules": 0.00442,
+   "excess_var_reads": 0.03363,
+   "rho_positions": 0.9751,
+   "excess_var_positions": -0.00488
+  },
+  {
+   "a": "fc1_bc04",
+   "b": "fc2_bc01",
+   "same_flowcell": false,
+   "genes": 9632,
+   "rho_molecules": 0.9908,
+   "rho_reads": 0.9849,
+   "excess_var_molecules": 0.00788,
+   "excess_var_reads": 0.04415,
+   "rho_positions": 0.973,
+   "excess_var_positions": -0.00162
+  },
+  {
+   "a": "fc1_bc04",
+   "b": "fc2_bc02",
+   "same_flowcell": false,
+   "genes": 9631,
+   "rho_molecules": 0.9916,
+   "rho_reads": 0.9883,
+   "excess_var_molecules": 0.00513,
+   "excess_var_reads": 0.0334,
+   "rho_positions": 0.9752,
+   "excess_var_positions": -0.00447
+  },
+  {
+   "a": "fc1_bc04",
+   "b": "fc2_bc03",
+   "same_flowcell": false,
+   "genes": 9626,
+   "rho_molecules": 0.989,
+   "rho_reads": 0.9805,
+   "excess_var_molecules": 0.01299,
+   "excess_var_reads": 0.05725,
+   "rho_positions": 0.9705,
+   "excess_var_positions": 0.00127
+  },
+  {
+   "a": "fc1_bc04",
+   "b": "fc2_bc04",
+   "same_flowcell": false,
+   "genes": 9619,
+   "rho_molecules": 0.9917,
+   "rho_reads": 0.9885,
+   "excess_var_molecules": 0.0043,
+   "excess_var_reads": 0.03291,
+   "rho_positions": 0.9751,
+   "excess_var_positions": -0.00469
+  },
+  {
+   "a": "fc2_bc01",
+   "b": "fc2_bc02",
+   "same_flowcell": true,
+   "genes": 9869,
+   "rho_molecules": 0.9934,
+   "rho_reads": 0.9898,
+   "excess_var_molecules": 0.00155,
+   "excess_var_reads": 0.03084,
+   "rho_positions": 0.9783,
+   "excess_var_positions": -0.00503
+  },
+  {
+   "a": "fc2_bc01",
+   "b": "fc2_bc03",
+   "same_flowcell": true,
+   "genes": 9901,
+   "rho_molecules": 0.9933,
+   "rho_reads": 0.9903,
+   "excess_var_molecules": 0.00142,
+   "excess_var_reads": 0.02855,
+   "rho_positions": 0.9776,
+   "excess_var_positions": -0.0051
+  },
+  {
+   "a": "fc2_bc01",
+   "b": "fc2_bc04",
+   "same_flowcell": true,
+   "genes": 9835,
+   "rho_molecules": 0.993,
+   "rho_reads": 0.9893,
+   "excess_var_molecules": 0.00229,
+   "excess_var_reads": 0.03129,
+   "rho_positions": 0.9774,
+   "excess_var_positions": -0.00469
+  },
+  {
+   "a": "fc2_bc02",
+   "b": "fc2_bc03",
+   "same_flowcell": true,
+   "genes": 9866,
+   "rho_molecules": 0.9925,
+   "rho_reads": 0.9869,
+   "excess_var_molecules": 0.0045,
+   "excess_var_reads": 0.04009,
+   "rho_positions": 0.9758,
+   "excess_var_positions": -0.00232
+  },
+  {
+   "a": "fc2_bc02",
+   "b": "fc2_bc04",
+   "same_flowcell": true,
+   "genes": 9828,
+   "rho_molecules": 0.9934,
+   "rho_reads": 0.991,
+   "excess_var_molecules": 0.00124,
+   "excess_var_reads": 0.02645,
+   "rho_positions": 0.9786,
+   "excess_var_positions": -0.00516
+  },
+  {
+   "a": "fc2_bc03",
+   "b": "fc2_bc04",
+   "same_flowcell": true,
+   "genes": 9822,
+   "rho_molecules": 0.992,
+   "rho_reads": 0.9862,
+   "excess_var_molecules": 0.00531,
+   "excess_var_reads": 0.04031,
+   "rho_positions": 0.975,
+   "excess_var_positions": -0.00196
+  }
+ ]
+}

@@ -80,6 +80,27 @@ tr.check td:first-child { color: var(--text); }
 }
 .note.status { border-left-color: var(--accent-2); }
 ol.steps li { margin-bottom: 8px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+.tile .value { font-size: 1.7rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+.tile .label { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+figure.chart { margin: 14px 0 6px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 10px 12px 6px; position: relative; }
+figure.chart { overflow-x: auto; }
+figure.chart svg { display: block; width: 100%; min-width: 600px; height: auto; overflow: visible; }
+figure.chart .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.88rem; color: var(--muted); padding: 2px 4px 6px; }
+figure.chart .legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  margin-right: 6px; vertical-align: -1px; background: var(--c); }
+.viz { --grid: #2c2c2a; --axis: #383835; --ink-2: #c3c2b7; --ink-3: #898781;
+  --s-flumi: #d95926; --s-reads: #3987e5; --s-pos: #199e70; }
+.viz text { fill: var(--ink-3); font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
+.viz text.value { fill: var(--ink-2); font-weight: 600; }
+.viz .grid { stroke: var(--grid); stroke-width: 1; }
+.viz .axis { stroke: var(--axis); stroke-width: 1; }
+.tip { position: absolute; pointer-events: none; background: #241a14; border: 1px solid var(--line); color: var(--text);
+  border-radius: 6px; padding: 6px 9px; font-size: 0.85rem; white-space: nowrap; opacity: 0; transition: opacity .1s; z-index: 3; }
+details.per-sample { margin: 18px 0 4px; }
+details.per-sample summary { cursor: pointer; color: var(--accent-2); font-weight: 600; }
 footer { border-top: 1px solid var(--line); color: var(--muted); text-align: center; padding: 24px 16px; font-size: 0.9rem; }
 @media (max-width: 600px) {
   body { font-size: 15px; }
@@ -224,51 +245,88 @@ done</code></pre>
 <section id="real">
   <h2>How well it works: real data</h2>
   <p>The public ONT dataset <a href="https://epi2me.nanoporetech.com/uhrr_hg002_2026.06/">UHRR_HG002_2026.06</a>
-  includes HG002 RNA sequenced with SQK-PCB114-24 on two PromethION flow cells, four barcodes each, basecalled
-  with dorado 2.0.0 (HAC v6.0.0) and <code>--no-trim</code>. We take each barcode's primary reads from the
-  dataset's wf-transcriptomes alignment, add <code>RX</code>/<code>TS</code> with <code>dorado trim</code>,
-  realign with minimap2 and run flumi (<code>bench/realdata/run_sample.sh</code>, summarised by
-  <code>bench/realdata/summarize.py</code>).</p>
+  includes HG002 RNA sequenced with SQK-PCB114-24 on two PromethION flow cells, four barcodes each, basecalled with
+  dorado 2.0.0 (HAC v6.0.0) and <code>--no-trim</code>. For each barcode we add <code>RX</code>/<code>TS</code>
+  with <code>dorado trim --sequencing-kit SQK-PCB114-24</code>, align genome-wide to GRCh38 (no-alt analysis set)
+  with minimap2 2.30 using the dataset's own wf-transcriptomes settings, and run flumi with GENCODE v49, the
+  annotation wf-transcriptomes used. The barcodes are independent libraries: no molecule is shared between them
+  (matching UMI and 5&prime; end occur at chance level), so they are replicates, not a truth.</p>
 
   <div class="note status" id="real-status">Loading results&hellip;</div>
 
-  <div class="table-wrap"><table id="real-table"><thead></thead><tbody></tbody></table></div>
+  <div class="tiles" id="real-tiles"></div>
 
-  <h3>Agreement between replicates</h3>
-  <p class="muted">Spearman &rho; of per-gene molecule counts and, for comparison, of the same genes' read counts
-  (single-gene molecules, genes with &ge; 20 molecules in both samples); median |log<sub>2</sub> ratio| of molecule
-  counts after scaling to equal totals.</p>
-  <div class="table-wrap"><table id="real-comparisons"><thead><tr><th>samples</th><th>genes</th><th>&rho; molecules</th><th>&rho; reads</th><th>median |log<sub>2</sub> ratio|</th></tr></thead><tbody></tbody></table></div>
+  <h3>False merges: the UMI-swap control</h3>
+  <p>Every molecule is given the UMIs of an unrelated molecule on another chromosome, keeping its own copies' error
+  pattern, and flumi is rerun on the same alignments. Molecules that share a locus now carry unrelated UMIs, so every
+  merge of two of them is a false merge, measured at the real local densities.</p>
+  <figure class="chart" id="chart-false-merges" aria-label="False-merge rate by local molecule density"></figure>
+  <p class="muted" id="false-merge-note"></p>
+
+  <h3>Missed merges</h3>
+  <p class="muted">In 5&prime; neighbourhoods of &ge; 100 molecules: singletons whose UMI is one or two substitutions
+  from a molecule with &ge; 3 reads, against UMIs drawn from other loci (<i>chance</i>), 200,000 singletons per
+  barcode.</p>
+  <div class="table-wrap"><table id="missed-table"><thead><tr><th>distance</th><th>left apart</th><th>chance</th><th>beyond chance</th></tr></thead><tbody></tbody></table></div>
+  <p class="muted" id="missed-note"></p>
+
+  <h3>PCR noise between replicates</h3>
+  <p>Per-gene counts of two barcodes vary by sampling (Poisson) and by everything else; for read counts, that is
+  mostly PCR copy number. The variance of the per-gene log ratio beyond Poisson, for every pair of barcodes, for
+  reads, for flumi's molecules, and for grouping the same reads by 5&prime; end without UMIs:</p>
+  <figure class="chart" id="chart-replicates" aria-label="Variance beyond Poisson between replicate barcodes"></figure>
+  <p class="muted">Genes with &ge; 20 single-gene molecules in both barcodes (~9,500 per pair). 5&prime;-end groups
+  fall below zero because a gene cannot have more groups than distinct start positions: their counts saturate,
+  which compresses the variance. That is a loss of information, not precision.</p>
+
+  <h3>What the UMI adds: grouping by 5&prime; end</h3>
+  <p id="position-text"></p>
+
+  <h3>Saturation</h3>
+  <figure class="chart" id="chart-saturation" aria-label="Molecules against reads over random subsamples"></figure>
+  <p class="muted" id="saturation-note">flumi on random 10, 25, 50 and 75 % read subsets of each barcode.</p>
+
+  <h3>Representatives</h3>
+  <p>For molecules with &ge; 2 reads: how often the chosen read's junctions are all annotated in GENCODE v49, for
+  flumi's choice (junction consensus), the longest copy (<code>--rep longest</code>) and a random copy of the same
+  molecules.</p>
+  <figure class="chart" id="chart-reps" aria-label="Representatives with all junctions annotated"></figure>
+  <p class="muted" id="reps-note"></p>
+
+  <details class="per-sample">
+    <summary>Per-barcode table</summary>
+    <div class="table-wrap"><table id="real-table"><thead></thead><tbody></tbody></table></div>
+  </details>
 
   <h3>How to read this</h3>
   <ul>
-    <li><b>No truth.</b> Real data cannot say how many molecules there were, so these numbers show that flumi runs
-      on real dorado output and behaves consistently, not that each molecule is right. Accuracy rests on the
-      simulation above.</li>
-    <li><b>The checks</b> are independent of flumi's code: every full-length call and gene label is re-derived
-      from the representative's CIGAR. Both counts must be zero.</li>
-    <li><b>The densest locus</b> test looks for UMIs flumi left apart that it should have merged: singletons one or
-      two substitutions from a molecule with &ge; 3 reads at the same 5&prime; end, compared with UMIs drawn from
-      other loci (<i>null</i>). Observed at the null rate means no detectable under-merging. In HG002, a
-      B-lymphoblastoid line, this locus is the rearranged immunoglobulin lambda light chain, with ~30,000 molecules
-      at one 5&prime; end.</li>
-    <li><b>Replicates</b> agree about as well on read counts as on molecule counts, so the agreement shows that
-      the runs are reproducible, not that deduplication is right. Molecule counts agree slightly better in every
-      pair, as removing PCR copy-number noise should make them.</li>
-    <li><b>Chromosome-only runs</b> realign to that chromosome alone, so supplementary alignments elsewhere are not
-      seen and chimera detection is slightly weaker than genome-wide.</li>
+    <li><b>No molecule truth.</b> HG002 cannot say how many molecules there were. These numbers show how flumi behaves
+      on real dorado output at scale and bound its errors with controls; per-molecule accuracy rests on the
+      simulation above and, soon, on the UHRR spike-ins.</li>
+    <li><b>The checks</b> are independent of flumi's code: every full-length call and gene label is re-derived from
+      the representative's CIGAR and the GTF, and both error counts must be zero.</li>
+    <li><b>Dense loci are where the errors are.</b> Over half of all molecules sit in 5&prime; neighbourhoods of more
+      than 1,000 molecules; there, about 3 % of molecules are merged with an unrelated one, and a few true copies two
+      substitutions away stay apart. A 16-base UMI cannot separate every molecule at that density, and flumi's
+      density gate trades the two errors off.</li>
+    <li><b>Replicate agreement</b> mixes biology, library preparation and counting. Molecules removing most of the
+      excess variance shows that PCR copy number, not sampling, dominated the read counts; it does not show that every
+      molecule is right.</li>
   </ul>
+  <p class="muted">The evaluation pipeline (downloads, SLURM jobs, controls and scoring) will be published alongside the
+  UHRR results.</p>
 </section>
 
 <section id="limits">
   <h2>Limitations</h2>
   <ul>
+    <li>At high molecule density a 16-base UMI runs out of room. On HG002, 0.8&ndash;1.1 % of molecules are lost to
+      false merges overall, about 3 % in neighbourhoods of more than 1,000 molecules (mostly unrelated singletons one
+      substitution from a larger molecule, which nothing distinguishes from a PCR copy with one error).</li>
     <li>The density gate assumes uniformly drawn UMIs. Biased UMI synthesis makes collisions likelier than it
       predicts; lower the budgets if you suspect that.</li>
-    <li>At ~29,000 molecules sharing one 5&prime; end, UMIs one edit apart are sometimes different molecules and
-      nothing can tell them apart: flumi undercounts such genes by ~0.5 %. That is the capacity of a 16-base UMI.</li>
-    <li>Reads without <code>RX</code> cannot be assigned: dropped in filter mode, passed through unmarked in mark
-      mode.</li>
+    <li>Reads without <code>RX</code> cannot be assigned (5&ndash;6 % of reads on HG002): dropped in filter mode,
+      passed through unmarked in mark mode.</li>
     <li>flumi 1.0.0 labelled genes and called full length from the representative's genomic span, so genes inside
       its introns were counted; fixed in 1.0.1 (see the
       <a href="https://github.com/martinandclaude/flumi/blob/main/CHANGELOG.md">changelog</a>). Deduplication was
@@ -284,51 +342,256 @@ done</code></pre>
 
 <script>
 (function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
   var status = document.getElementById("real-status");
-  function cell(tag, text, cls) {
-    var el = document.createElement(tag);
-    el.textContent = text;
-    if (cls) el.className = cls;
-    return el;
+  var fmt = function (x, d) { return x.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d }); };
+  var median = function (v) { var s = v.slice().sort(function (a, b) { return a - b; }); var n = s.length;
+    return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2; };
+  var range = function (v, d, unit) { unit = unit || ""; return fmt(Math.min.apply(null, v), d) + "–" + fmt(Math.max.apply(null, v), d) + unit; };
+  function el(tag, attrs, parent, text) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    if (parent) parent.appendChild(e);
+    return e;
   }
-  fetch("results.json", { cache: "no-cache" })
+  function html(tag, text, cls) { var e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; }
+
+  // One tooltip per figure; marks get a larger invisible hit target.
+  function tipFor(fig) {
+    var tip = html("div", "", "tip"); fig.appendChild(tip);
+    return {
+      show: function (evt, text) {
+        tip.textContent = text; tip.style.opacity = 1;
+        var r = fig.getBoundingClientRect();
+        var x = evt.clientX - r.left + 12, y = evt.clientY - r.top - 30;
+        if (x + tip.offsetWidth > r.width) x = evt.clientX - r.left - tip.offsetWidth - 12;
+        tip.style.left = x + "px"; tip.style.top = Math.max(0, y) + "px";
+      },
+      hide: function () { tip.style.opacity = 0; }
+    };
+  }
+  function hover(tip, mark, text) {
+    mark.addEventListener("mousemove", function (e) { tip.show(e, text); });
+    mark.addEventListener("mouseleave", tip.hide);
+    mark.style.cursor = "default";
+  }
+  function legend(fig, items) {
+    var lg = html("div", null, "legend");
+    items.forEach(function (it) { var s = html("span", it[0]); s.style.setProperty("--c", it[1]); lg.appendChild(s); });
+    fig.appendChild(lg);
+  }
+  function svg(fig, w, h) { var s = el("svg", { viewBox: "0 0 " + w + " " + h, role: "img", class: "viz" }); fig.appendChild(s); return s; }
+  var css = getComputedStyle(document.documentElement);
+  var C = { flumi: "#d95926", reads: "#3987e5", pos: "#199e70" };
+
+  function tiles(S) {
+    var box = document.getElementById("real-tiles");
+    var calls = 0, labels = 0, bad = 0;
+    S.forEach(function (s) { calls += s.check.full_length_calls; labels += s.check.gene_labels;
+      bad += s.check.full_length_calls_below_80pct + s.check.gene_labels_without_exon_base; });
+    [[fmt(median(S.map(function (s) { return s.primary_reads; })) / 1e6, 1) + " M", "reads per barcode (median of " + S.length + ")"],
+     [fmt(median(S.map(function (s) { return s.molecules; })) / 1e6, 1) + " M", "molecules per barcode; " +
+        range(S.map(function (s) { return s.pcr_duplicate_pct; }), 0, " %") + " PCR duplicates"],
+     [fmt(median(S.map(function (s) { return s["flumi.filter_wall_s"]; })) / 60, 1) + " min",
+        "flumi per barcode, " + fmt(median(S.map(function (s) { return s["flumi.filter_peak_gb"]; })) * 1000, 0) + " MB peak memory"],
+     [String(bad), "errors in " + fmt(calls / 1e6, 1) + " M full-length calls and " + fmt(labels / 1e6, 1) + " M gene labels, re-derived from the CIGAR"]
+    ].forEach(function (t) { var d = html("div", null, "tile"); d.appendChild(html("div", t[0], "value")); d.appendChild(html("div", t[1], "label")); box.appendChild(d); });
+  }
+
+  function falseMerges(S) {
+    var fig = document.getElementById("chart-false-merges"), tip = tipFor(fig);
+    var bins = ["1", "2-10", "11-100", "101-1000", ">1000"];
+    var W = 720, H = 300, L = 54, R = 12, T = 22, B = 62, pw = W - L - R, ph = H - T - B;
+    var s = svg(fig, W, H);
+    var rows = bins.map(function (b) {
+      var v = S.map(function (x) { return x.false_merges.by_density[b].false_merge_pct; });
+      var share = S.map(function (x) { return 100 * x.false_merges.by_density[b].molecules / x.false_merges.original_molecules; });
+      return { bin: b, med: median(v), lo: Math.min.apply(null, v), hi: Math.max.apply(null, v), share: median(share) };
+    });
+    var top = Math.ceil(Math.max.apply(null, rows.map(function (r) { return r.hi; })));
+    var y = function (v) { return T + ph - v / top * ph; };
+    for (var g = 0; g <= top; g++) { el("line", { x1: L, x2: W - R, y1: y(g), y2: y(g), class: g ? "grid" : "axis" }, s);
+      el("text", { x: L - 8, y: y(g) + 4, "text-anchor": "end" }, s, g + " %"); }
+    var bw = pw / bins.length;
+    rows.forEach(function (r, i) {
+      var cx = L + bw * i + bw / 2, w = Math.min(56, bw * 0.5);
+      var h = Math.max(1, y(0) - y(r.med));
+      var p = el("path", { d: "M" + (cx - w / 2) + "," + y(0) + "v" + (-(h - 4)) + "q0,-4 4,-4h" + (w - 8) + "q4,0 4,4v" + (h - 4) + "z", fill: C.flumi }, s);
+      if (h < 5) p.setAttribute("d", "M" + (cx - w / 2) + "," + y(0) + "h" + w + "v" + (-h) + "h" + (-w) + "z");
+      el("line", { x1: cx, x2: cx, y1: y(r.lo), y2: y(r.hi), stroke: "#c3c2b7", "stroke-width": 1.5 }, s);
+      el("text", { x: cx, y: y(r.hi) - 7, "text-anchor": "middle", class: "value" }, s, fmt(r.med, r.med < 0.1 ? 3 : 2) + " %");
+      el("text", { x: cx, y: H - B + 18, "text-anchor": "middle" }, s, r.bin);
+      el("text", { x: cx, y: H - B + 34, "text-anchor": "middle" }, s, fmt(r.share, 1) + " % of molecules");
+      var hit = el("rect", { x: cx - bw / 2, y: T, width: bw, height: ph, fill: "transparent" }, s);
+      hover(tip, hit, r.bin + " molecules in the neighbourhood: " + fmt(r.med, 3) + " % merged falsely (" +
+        fmt(r.lo, 3) + "–" + fmt(r.hi, 3) + " % over " + S.length + " barcodes); " + fmt(r.share, 1) + " % of all molecules");
+    });
+    el("text", { x: L + pw / 2, y: H - 6, "text-anchor": "middle" }, s, "molecules sharing the 5′ neighbourhood (±20 bp, same strand)");
+    var lost = S.map(function (x) { return x.false_merges.molecules_lost_to_false_merges_pct; });
+    var ks = S.map(function (x) { var k = x.false_merges.absorbed_by_kind, n = 0; for (var q in k) n += k[q]; return 100 * k.clean_singleton / n; });
+    var art = S.map(function (x) { return 100 * x.false_merges.events_with_donors_from_one_neighbourhood / x.false_merges.false_merge_events; });
+    document.getElementById("false-merge-note").textContent = "Bars: median false-merge rate over the " + S.length +
+      " barcodes, whiskers their range. Overall " + range(lost, 2, " %") + " of molecules are lost to false merges. " +
+      fmt(median(ks), 0) + " % of what is absorbed are clean singletons, typically one substitution from a larger molecule. " +
+      "At most " + fmt(Math.max.apply(null, art), 2) + " % of false merges could instead be two halves of one molecule the original run had split.";
+  }
+
+  function missed(S) {
+    var tb = document.querySelector("#missed-table tbody");
+    var get = function (k) { return S.map(function (s) { return s.missed_merges[k]; }); };
+    var ex = S.map(function (s) { return s.missed_merges.two_sub_pct - s.missed_merges.two_sub_null_pct; });
+    [["1 substitution", "none (always merged)", range(get("one_sub_null_pct"), 2, " %"), "\u2014"],
+     ["2 substitutions", range(get("two_sub_pct"), 2, " %"), range(get("two_sub_null_pct"), 2, " %"), range(ex, 2, " points")]
+    ].forEach(function (r) { var tr = html("tr"); r.forEach(function (c) { tr.appendChild(html("td", c)); }); tb.appendChild(tr); });
+    document.getElementById("missed-note").textContent = "flumi merges every singleton one substitution from a larger " +
+      "molecule, including the " + range(get("one_sub_null_pct"), 2, " %") + " that chance alone would put there: those are " +
+      "among the false merges above. Two substitutions apart, merges need the density gate; " + range(ex, 2, " %") +
+      " of singletons in these dense neighbourhoods are left apart beyond what chance explains, likely copies with two UMI errors.";
+  }
+
+  function replicates(R) {
+    var fig = document.getElementById("chart-replicates"), tip = tipFor(fig);
+    var series = [["reads", "excess_var_reads", C.reads], ["5′-end groups (no UMI)", "excess_var_positions", C.pos], ["flumi molecules", "excess_var_molecules", C.flumi]];
+    legend(fig, series.map(function (x) { return [x[0], x[2]]; }));
+    var groups = [["same flow cell", true], ["different flow cells", false]];
+    var W = 720, H = 250, L = 150, Rm = 16, T = 10, B = 40, pw = W - L - Rm;
+    var s = svg(fig, W, H);
+    var all = []; R.forEach(function (p) { series.forEach(function (x) { if (p[x[1]] != null) all.push(p[x[1]]); }); });
+    var lo = Math.min(-0.01, Math.min.apply(null, all)), hi = Math.ceil(Math.max.apply(null, all) * 100) / 100;
+    var x = function (v) { return L + (v - lo) / (hi - lo) * pw; };
+    for (var g = Math.ceil(lo * 100) / 100; g <= hi + 1e-9; g += 0.01) {
+      el("line", { x1: x(g), x2: x(g), y1: T, y2: H - B, class: Math.abs(g) < 1e-9 ? "axis" : "grid" }, s);
+      el("text", { x: x(g), y: H - B + 16, "text-anchor": "middle" }, s, fmt(g, 2));
+    }
+    el("text", { x: x(0), y: H - 6, "text-anchor": "middle" }, s, "0 = Poisson only");
+    var rowH = (H - T - B) / groups.length;
+    groups.forEach(function (gr, gi) {
+      var pairs = R.filter(function (p) { return p.same_flowcell === gr[1]; });
+      var y0 = T + gi * rowH;
+      el("text", { x: 4, y: y0 + rowH / 2 - 4 }, s, gr[0]);
+      el("text", { x: 4, y: y0 + rowH / 2 + 12 }, s, pairs.length + " pairs");
+      series.forEach(function (sr, si) {
+        var yy = y0 + rowH * (si + 1) / (series.length + 1);
+        var vals = pairs.map(function (p) { return p[sr[1]]; }).filter(function (v) { return v != null; });
+        pairs.forEach(function (p) {
+          if (p[sr[1]] == null) return;
+          var c = el("circle", { cx: x(p[sr[1]]), cy: yy, r: 4.5, fill: sr[2], stroke: "#16100c", "stroke-width": 2 }, s);
+          hover(tip, c, sr[0] + ", " + p.a + " vs " + p.b + ": " + fmt(p[sr[1]], 4));
+        });
+        var m = median(vals);
+        el("line", { x1: x(m), x2: x(m), y1: yy - 9, y2: yy + 9, stroke: "#f3ebe4", "stroke-width": 2 }, s);
+      });
+    });
+  }
+
+  function positions(S, R) {
+    var ratio = S.map(function (s) { return s.molecules / s.position_baseline.groups; });
+    var dense = S.map(function (s) { return s.position_baseline.dense_molecules / s.position_baseline.dense_groups; });
+    var rm = R.map(function (p) { return p.rho_molecules; }), rp = R.map(function (p) { return p.rho_positions; }), rr = R.map(function (p) { return p.rho_reads; });
+    document.getElementById("position-text").textContent = "Grouping the same reads by chromosome, strand and 5′ end, " +
+      "as single-end duplicate marking does, gives " + range(ratio, 1, "×") + " fewer groups than flumi finds molecules, and " +
+      range(dense, 0, "×") + " fewer in the 5′ neighbourhoods of more than 1,000 molecules: full-length cDNA molecules " +
+      "of one transcript start at its TSS. Between replicates, per-gene 5′-end group counts agree less (Spearman ρ " +
+      range(rp, 3) + ") than molecule counts (" + range(rm, 3) + ") or even read counts (" + range(rr, 3) + ").";
+  }
+
+  function saturation(S) {
+    var fig = document.getElementById("chart-saturation"), tip = tipFor(fig);
+    legend(fig, [["flow cell 1", C.reads], ["flow cell 2", C.flumi]]);
+    var W = 720, H = 300, L = 54, Rm = 16, T = 12, B = 44, pw = W - L - Rm, ph = H - T - B;
+    var s = svg(fig, W, H);
+    var mx = Math.ceil(Math.max.apply(null, S.map(function (x) { return x.saturation[x.saturation.length - 1][1]; })) / 2e6) * 2;
+    var my = Math.ceil(Math.max.apply(null, S.map(function (x) { return x.saturation[x.saturation.length - 1][2]; })) / 1e6) + 1;
+    var X = function (v) { return L + v / 1e6 / mx * pw; }, Y = function (v) { return T + ph - v / 1e6 / my * ph; };
+    for (var gx = 0; gx <= mx; gx += 4) { el("line", { x1: X(gx * 1e6), x2: X(gx * 1e6), y1: T, y2: T + ph, class: gx ? "grid" : "axis" }, s);
+      el("text", { x: X(gx * 1e6), y: T + ph + 16, "text-anchor": "middle" }, s, gx + " M"); }
+    for (var gy = 0; gy <= my; gy += 2) { el("line", { x1: L, x2: W - Rm, y1: Y(gy * 1e6), y2: Y(gy * 1e6), class: gy ? "grid" : "axis" }, s);
+      el("text", { x: L - 8, y: Y(gy * 1e6) + 4, "text-anchor": "end" }, s, gy + " M"); }
+    el("line", { x1: X(0), y1: Y(0), x2: X(my * 1e6), y2: Y(my * 1e6), stroke: "#898781", "stroke-width": 1, "stroke-dasharray": "4 4" }, s);
+    el("text", { x: X(my * 1e6) + 6, y: Y(my * 1e6) + 14 }, s, "every read a new molecule");
+    S.forEach(function (x) {
+      var col = x.sample.indexOf("fc2") === 0 ? C.flumi : C.reads;
+      var pts = [[0, 0]].concat(x.saturation.map(function (p) { return [p[1], p[2]]; }));
+      el("path", { d: pts.map(function (p, i) { return (i ? "L" : "M") + X(p[0]) + "," + Y(p[1]); }).join(""), fill: "none", stroke: col, "stroke-width": 2 }, s);
+      x.saturation.forEach(function (p) {
+        var c = el("circle", { cx: X(p[1]), cy: Y(p[2]), r: 4, fill: col, stroke: "#16100c", "stroke-width": 2 }, s);
+        hover(tip, c, x.sample + ", " + fmt(p[0] * 100, 0) + " % of reads: " + fmt(p[1] / 1e6, 2) + " M reads, " + fmt(p[2] / 1e6, 2) + " M molecules");
+      });
+    });
+    el("text", { x: L + pw / 2, y: H - 6, "text-anchor": "middle" }, s, "reads used");
+    el("text", { x: 12, y: T + ph / 2, transform: "rotate(-90 12 " + (T + ph / 2) + ")", "text-anchor": "middle" }, s, "molecules");
+    var gain = S.map(function (x) { var a = x.saturation[x.saturation.length - 2], b = x.saturation[x.saturation.length - 1];
+      return 100 * (b[2] - a[2]) / (b[1] - a[1]); });
+    document.getElementById("saturation-note").textContent = "flumi on random 10, 25, 50 and 75 % read subsets of each barcode. " +
+      "Between 75 and 100 % of the reads, an added read still found a new molecule " + range(gain, 0, " %") +
+      " of the time: the libraries are not sequenced out.";
+  }
+
+  function reps(S) {
+    var fig = document.getElementById("chart-reps"), tip = tipFor(fig);
+    var rows = [["flumi (junction consensus)", "flumi", C.flumi], ["longest copy", "longest", C.reads], ["random copy", "random_copy", C.pos]];
+    var W = 720, H = 190, L = 190, Rm = 20, T = 10, B = 40, pw = W - L - Rm;
+    var s = svg(fig, W, H);
+    var all = []; S.forEach(function (x) { rows.forEach(function (r) { all.push(x.representatives[r[1]].all_junctions_annotated_pct); }); });
+    var lo = Math.floor(Math.min.apply(null, all)) - 0.5, hi = Math.ceil(Math.max.apply(null, all)) + 0.5;
+    var X = function (v) { return L + (v - lo) / (hi - lo) * pw; };
+    for (var g = Math.ceil(lo); g <= hi; g++) { el("line", { x1: X(g), x2: X(g), y1: T, y2: H - B, class: "grid" }, s);
+      el("text", { x: X(g), y: H - B + 16, "text-anchor": "middle" }, s, g + " %"); }
+    el("text", { x: L + pw / 2, y: H - 6, "text-anchor": "middle" }, s, "representatives with all junctions annotated (molecules with ≥ 2 reads)");
+    var rh = (H - T - B) / rows.length;
+    rows.forEach(function (r, i) {
+      var yy = T + rh * i + rh / 2;
+      el("text", { x: 4, y: yy + 4 }, s, r[0]);
+      var v = S.map(function (x) { return x.representatives[r[1]].all_junctions_annotated_pct; });
+      S.forEach(function (x) {
+        var c = el("circle", { cx: X(x.representatives[r[1]].all_junctions_annotated_pct), cy: yy, r: 5, fill: r[2], stroke: "#16100c", "stroke-width": 2 }, s);
+        hover(tip, c, r[0] + ", " + x.sample + ": " + fmt(x.representatives[r[1]].all_junctions_annotated_pct, 2) + " %");
+      });
+      var m = median(v);
+      el("line", { x1: X(m), x2: X(m), y1: yy - 11, y2: yy + 11, stroke: "#f3ebe4", "stroke-width": 2 }, s);
+      el("text", { x: X(Math.max.apply(null, v)) + 12, y: yy + 4, class: "value" }, s, fmt(m, 1) + " %");
+    });
+    var gain = S.map(function (x) { return x.representatives.flumi.all_junctions_annotated_pct - x.representatives.longest.all_junctions_annotated_pct; });
+    var tss = S.map(function (x) { return x.representatives.flumi.five_prime_at_annotated_tss_pct; });
+    var tssL = S.map(function (x) { return x.representatives.longest.five_prime_at_annotated_tss_pct; });
+    document.getElementById("reps-note").textContent = "Dots: barcodes; ticks: medians. flumi's choice is " + range(gain, 1, " points") +
+      " more often fully annotated than the longest copy, on every barcode. The 5′ end lies within 50 bp of an annotated " +
+      "transcript start for " + range(tss, 1, " %") + " of flumi's representatives and " + range(tssL, 1, " %") + " of the longest copies: " +
+      "the choice changes the junctions, not the start. Annotation is not truth (unannotated junctions can be real); the SIRV spike-ins will test structure against known isoforms.";
+  }
+
+  function table(S) {
+    var t = document.getElementById("real-table");
+    var cols = [["primary reads", function (s) { return fmt(s.primary_reads, 0); }],
+      ["with RX", function (s) { return fmt(s.rx_pct, 1) + " %"; }],
+      ["UMI block-damaged", function (s) { return fmt(s.umi_block_damaged_pct, 1) + " %"; }],
+      ["chimeras dropped", function (s) { return fmt(s.chimeras_dropped_pct, 2) + " %"; }],
+      ["molecules", function (s) { return fmt(s.molecules, 0); }],
+      ["PCR duplicates", function (s) { return fmt(s.pcr_duplicate_pct, 1) + " %"; }],
+      ["singleton molecules", function (s) { return fmt(s.singleton_molecules_pct, 1) + " %"; }],
+      ["reads/molecule p90 / max", function (s) { return s.reads_per_molecule_p90 + " / " + fmt(s.reads_per_molecule_max, 0); }],
+      ["full length (GTF)", function (s) { return fmt(s.full_length_pct, 1) + " %"; }],
+      ["poly(A) anchor", function (s) { return fmt(s.polya_anchor_pct, 1) + " %"; }],
+      ["lost to false merges", function (s) { return fmt(s.false_merges.molecules_lost_to_false_merges_pct, 2) + " %"; }],
+      ["flumi filter: time / memory", function (s) { return fmt(s["flumi.filter_wall_s"], 0) + " s / " + fmt(s["flumi.filter_peak_gb"] * 1000, 0) + " MB"; }],
+      ["flumi mark: time / memory", function (s) { return fmt(s["flumi.mark_wall_s"], 0) + " s / " + fmt(s["flumi.mark_peak_gb"] * 1000, 0) + " MB"; }],
+      ["for scale, minimap2", function (s) { return fmt(s.minimap2_wall_s / 3600, 1) + " h / " + fmt(s.minimap2_peak_gb, 1) + " GB"; }]];
+    var hr = html("tr"); hr.appendChild(html("th", "metric")); S.forEach(function (s) { hr.appendChild(html("th", s.sample)); }); t.tHead.appendChild(hr);
+    cols.forEach(function (c) { var tr = html("tr"); tr.appendChild(html("td", c[0])); S.forEach(function (s) { tr.appendChild(html("td", c[1](s))); }); t.tBodies[0].appendChild(tr); });
+  }
+
+  fetch("results/hg002.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (d) {
-      var samples = d.samples || [];
-      var region = d.region === "genome" ? "whole genome" : d.region;
-      status.textContent = "";
-      status.appendChild(document.createTextNode(
-        "Current results: " + samples.length + " of 8 HG002 PCB114-24 barcodes, " + region +
-        (d.note ? ". " + d.note : ".")));
-
-      var table = document.getElementById("real-table");
-      var hr = document.createElement("tr");
-      hr.appendChild(cell("th", "metric"));
-      samples.forEach(function (s) { hr.appendChild(cell("th", s.sample)); });
-      table.tHead.appendChild(hr);
-      (d.metrics || []).forEach(function (m) {
-        var tr = document.createElement("tr");
-        var name = m.trim();
-        if (m !== name) tr.className = "sub";
-        if (name.indexOf("check:") === 0) { tr.className = "check"; name = name.slice(6).trim(); }
-        tr.appendChild(cell("td", name));
-        samples.forEach(function (s) { tr.appendChild(cell("td", s[m] == null ? "" : s[m])); });
-        table.tBodies[0].appendChild(tr);
-      });
-
-      var cmp = document.getElementById("real-comparisons").tBodies[0];
-      (d.comparisons || []).forEach(function (c) {
-        var tr = document.createElement("tr");
-        tr.appendChild(cell("td", c.a + " vs " + c.b));
-        tr.appendChild(cell("td", c.genes.toLocaleString("en-US")));
-        tr.appendChild(cell("td", c.rho.toFixed(3)));
-        tr.appendChild(cell("td", c.rho_reads == null ? "" : c.rho_reads.toFixed(3)));
-        tr.appendChild(cell("td", c.median_abs_log2.toFixed(3)));
-        cmp.appendChild(tr);
-      });
+      var S = d.samples || [], R = d.replicates || [];
+      status.textContent = "HG002: " + S.length + " of 8 barcodes, " + (d.region === "genome" ? "genome-wide" : d.region) +
+        ", " + d.note + ". UHRR with the SIRV-Set 4 spike-ins (the only truth in this dataset) is being processed.";
+      tiles(S); falseMerges(S); missed(S); replicates(R); positions(S, R); saturation(S); reps(S); table(S);
     })
-    .catch(function () {
-      status.textContent = "The results table could not be loaded; see docs/results.json in the repository.";
+    .catch(function (e) {
+      status.textContent = "The results could not be loaded (" + e.message + "); see docs/results/hg002.json in the repository.";
     });
 })();
 </script>
