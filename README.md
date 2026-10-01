@@ -282,8 +282,12 @@ noise beyond Poisson than read counts (median 19 times less within a flow cell,
 bounds and consistency checks, not accuracy; the site has the full results,
 charts and what they do and do not show:
 [martinandclaude.github.io/flumi](https://martinandclaude.github.io/flumi/#real).
-The evaluation scripts are not yet public; they will be released with the UHRR
-spike-in results.
+The same dataset's UHRR libraries carry SIRV-Set 4 spike-ins with known
+isoforms: on 48 re-basecalled barcodes, flumi's representative has exactly the
+known intron chain for 88 % of molecules with at least two reads, against 83 %
+for the longest copy and 80 % for a random copy, better on every barcode
+([spike-in results](https://martinandclaude.github.io/flumi/#spikes)). The
+evaluation scripts are not yet public.
 
 Reproduce with:
 

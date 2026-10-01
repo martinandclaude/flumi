@@ -1,0 +1,6060 @@
+[
+ {
+  "sample": "fc1_barcode01",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 51,
+   "molecules": {
+    "slope": 0.7456,
+    "r2": 0.8779,
+    "spearman": 0.9723
+   },
+   "positions": {
+    "slope": 0.4897,
+    "r2": 0.8486,
+    "spearman": 0.9431
+   },
+   "reads": {
+    "slope": 0.7349,
+    "r2": 0.8591,
+    "spearman": 0.9574
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.1,
+    "ERCC-00004": 1.052,
+    "ERCC-00136": 1.066,
+    "ERCC-00108": 1.115,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.0,
+    "ERCC-00095": 1.188,
+    "ERCC-00131": 1.143,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.2,
+    "ERCC-00144": 1.75,
+    "ERCC-00170": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00033": 2.0,
+    "ERCC-00096": 1.094,
+    "ERCC-00171": 1.039,
+    "ERCC-00009": 1.065,
+    "ERCC-00042": 1.167,
+    "ERCC-00060": 1.046,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.286,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00158": 1.0,
+    "ERCC-00104": 1.0,
+    "ERCC-00074": 1.047,
+    "ERCC-00113": 1.061,
+    "ERCC-00145": 1.136,
+    "ERCC-00111": 1.15,
+    "ERCC-00076": 1.045,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.167,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00024": 2.0,
+    "ERCC-00002": 1.099,
+    "ERCC-00046": 1.054,
+    "ERCC-00003": 1.078,
+    "ERCC-00043": 1.086,
+    "ERCC-00022": 1.091,
+    "ERCC-00112": 1.143,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.167,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00014": 1.0,
+    "ERCC-00013": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3944,
+    "exact_pct": 88.413,
+    "consistent_pct": 92.723
+   },
+   "longest": {
+    "molecules": 3944,
+    "exact_pct": 83.519,
+    "consistent_pct": 87.475
+   },
+   "random_copy": {
+    "molecules": 3944,
+    "exact_pct": 79.97,
+    "consistent_pct": 85.319
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5315,
+   "cv_reads": 1.5813
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 18756,
+    "full_length_pct": 88.82
+   },
+   "2-4 kb": {
+    "molecules": 14213,
+    "full_length_pct": 87.95
+   },
+   "4-6 kb": {
+    "molecules": 119,
+    "full_length_pct": 90.76
+   },
+   "6-8 kb": {
+    "molecules": 229,
+    "full_length_pct": 31.0
+   },
+   "8-10 kb": {
+    "molecules": 755,
+    "full_length_pct": 11.66
+   },
+   ">=10 kb": {
+    "molecules": 168,
+    "full_length_pct": 2.38
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode02",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 46,
+   "molecules": {
+    "slope": 0.9092,
+    "r2": 0.916,
+    "spearman": 0.9387
+   },
+   "positions": {
+    "slope": 0.5789,
+    "r2": 0.9069,
+    "spearman": 0.934
+   },
+   "reads": {
+    "slope": 0.9091,
+    "r2": 0.916,
+    "spearman": 0.9352
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.114,
+    "ERCC-00004": 1.046,
+    "ERCC-00136": 1.136,
+    "ERCC-00108": 1.103,
+    "ERCC-00116": 1.286,
+    "ERCC-00092": 1.115,
+    "ERCC-00095": 1.25,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.5,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00096": 1.095,
+    "ERCC-00171": 1.052,
+    "ERCC-00009": 1.09,
+    "ERCC-00042": 1.05,
+    "ERCC-00060": 1.06,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.375,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00074": 1.068,
+    "ERCC-00113": 1.077,
+    "ERCC-00145": 1.08,
+    "ERCC-00111": 1.162,
+    "ERCC-00076": 1.056,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.111,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.333,
+    "ERCC-00099": 1.5,
+    "ERCC-00058": 1.0,
+    "ERCC-00002": 1.101,
+    "ERCC-00046": 1.049,
+    "ERCC-00003": 1.137,
+    "ERCC-00043": 1.03,
+    "ERCC-00022": 1.118,
+    "ERCC-00112": 1.333,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.5,
+    "ERCC-00163": 1.0,
+    "ERCC-00014": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3745,
+    "exact_pct": 89.426,
+    "consistent_pct": 93.645
+   },
+   "longest": {
+    "molecules": 3745,
+    "exact_pct": 84.166,
+    "consistent_pct": 87.85
+   },
+   "random_copy": {
+    "molecules": 3745,
+    "exact_pct": 81.175,
+    "consistent_pct": 85.981
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.566,
+   "cv_reads": 1.6184
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 17293,
+    "full_length_pct": 89.44
+   },
+   "2-4 kb": {
+    "molecules": 13442,
+    "full_length_pct": 88.79
+   },
+   "4-6 kb": {
+    "molecules": 111,
+    "full_length_pct": 86.49
+   },
+   "6-8 kb": {
+    "molecules": 240,
+    "full_length_pct": 27.5
+   },
+   "8-10 kb": {
+    "molecules": 750,
+    "full_length_pct": 13.2
+   },
+   ">=10 kb": {
+    "molecules": 168,
+    "full_length_pct": 1.79
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode03",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 45,
+   "molecules": {
+    "slope": 0.9185,
+    "r2": 0.9215,
+    "spearman": 0.9661
+   },
+   "positions": {
+    "slope": 0.5955,
+    "r2": 0.918,
+    "spearman": 0.9613
+   },
+   "reads": {
+    "slope": 0.9133,
+    "r2": 0.9251,
+    "spearman": 0.9678
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.1,
+    "ERCC-00004": 1.058,
+    "ERCC-00136": 1.131,
+    "ERCC-00108": 1.075,
+    "ERCC-00116": 1.5,
+    "ERCC-00092": 1.0,
+    "ERCC-00095": 1.111,
+    "ERCC-00131": 1.125,
+    "ERCC-00062": 1.167,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00096": 1.112,
+    "ERCC-00171": 1.066,
+    "ERCC-00009": 1.053,
+    "ERCC-00042": 1.049,
+    "ERCC-00060": 1.018,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.333,
+    "ERCC-00034": 2.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.049,
+    "ERCC-00113": 1.045,
+    "ERCC-00145": 1.076,
+    "ERCC-00111": 1.056,
+    "ERCC-00076": 1.056,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 2.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.082,
+    "ERCC-00046": 1.068,
+    "ERCC-00003": 1.117,
+    "ERCC-00043": 1.1,
+    "ERCC-00022": 1.071,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.2,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.333,
+    "ERCC-00163": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3707,
+    "exact_pct": 88.427,
+    "consistent_pct": 93.121
+   },
+   "longest": {
+    "molecules": 3707,
+    "exact_pct": 82.708,
+    "consistent_pct": 87.052
+   },
+   "random_copy": {
+    "molecules": 3707,
+    "exact_pct": 79.309,
+    "consistent_pct": 84.866
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6314,
+   "cv_reads": 1.6952
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 16330,
+    "full_length_pct": 89.24
+   },
+   "2-4 kb": {
+    "molecules": 13119,
+    "full_length_pct": 88.73
+   },
+   "4-6 kb": {
+    "molecules": 107,
+    "full_length_pct": 82.24
+   },
+   "6-8 kb": {
+    "molecules": 218,
+    "full_length_pct": 29.36
+   },
+   "8-10 kb": {
+    "molecules": 737,
+    "full_length_pct": 8.55
+   },
+   ">=10 kb": {
+    "molecules": 190,
+    "full_length_pct": 0.53
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode04",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 49,
+   "molecules": {
+    "slope": 0.6687,
+    "r2": 0.8184,
+    "spearman": 0.9523
+   },
+   "positions": {
+    "slope": 0.4298,
+    "r2": 0.7777,
+    "spearman": 0.9016
+   },
+   "reads": {
+    "slope": 0.6718,
+    "r2": 0.8176,
+    "spearman": 0.9479
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.098,
+    "ERCC-00004": 1.035,
+    "ERCC-00136": 1.065,
+    "ERCC-00108": 1.082,
+    "ERCC-00116": 1.125,
+    "ERCC-00092": 1.211,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.167,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00028": 1.5,
+    "ERCC-00096": 1.083,
+    "ERCC-00171": 1.036,
+    "ERCC-00009": 1.04,
+    "ERCC-00042": 1.125,
+    "ERCC-00060": 1.105,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.25,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00117": 1.0,
+    "ERCC-00074": 1.035,
+    "ERCC-00113": 1.081,
+    "ERCC-00145": 1.083,
+    "ERCC-00111": 1.028,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.333,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00120": 1.0,
+    "ERCC-00024": 1.0,
+    "ERCC-00002": 1.081,
+    "ERCC-00046": 1.028,
+    "ERCC-00003": 1.012,
+    "ERCC-00043": 1.026,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.2,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00168": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 2648,
+    "exact_pct": 88.897,
+    "consistent_pct": 93.316
+   },
+   "longest": {
+    "molecules": 2648,
+    "exact_pct": 83.082,
+    "consistent_pct": 87.047
+   },
+   "random_copy": {
+    "molecules": 2648,
+    "exact_pct": 80.06,
+    "consistent_pct": 84.97
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.7048,
+   "cv_reads": 1.7798
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 12264,
+    "full_length_pct": 89.51
+   },
+   "2-4 kb": {
+    "molecules": 11149,
+    "full_length_pct": 89.78
+   },
+   "4-6 kb": {
+    "molecules": 107,
+    "full_length_pct": 88.79
+   },
+   "6-8 kb": {
+    "molecules": 229,
+    "full_length_pct": 41.05
+   },
+   "8-10 kb": {
+    "molecules": 723,
+    "full_length_pct": 11.76
+   },
+   ">=10 kb": {
+    "molecules": 171,
+    "full_length_pct": 2.34
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode05",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 48,
+   "molecules": {
+    "slope": 0.9021,
+    "r2": 0.9164,
+    "spearman": 0.9216
+   },
+   "positions": {
+    "slope": 0.5779,
+    "r2": 0.8639,
+    "spearman": 0.8653
+   },
+   "reads": {
+    "slope": 0.9015,
+    "r2": 0.9137,
+    "spearman": 0.9255
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.098,
+    "ERCC-00004": 1.036,
+    "ERCC-00136": 1.133,
+    "ERCC-00108": 1.1,
+    "ERCC-00116": 1.4,
+    "ERCC-00092": 1.136,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.25,
+    "ERCC-00154": 1.0,
+    "ERCC-00096": 1.102,
+    "ERCC-00171": 1.047,
+    "ERCC-00009": 1.109,
+    "ERCC-00042": 1.103,
+    "ERCC-00060": 1.021,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00074": 1.046,
+    "ERCC-00113": 1.063,
+    "ERCC-00145": 1.145,
+    "ERCC-00111": 1.094,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.083,
+    "ERCC-00162": 1.125,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 2.0,
+    "ERCC-00002": 1.096,
+    "ERCC-00046": 1.033,
+    "ERCC-00003": 1.1,
+    "ERCC-00043": 1.136,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.2,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.667,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3670,
+    "exact_pct": 88.61,
+    "consistent_pct": 93.488
+   },
+   "longest": {
+    "molecules": 3670,
+    "exact_pct": 83.488,
+    "consistent_pct": 87.711
+   },
+   "random_copy": {
+    "molecules": 3670,
+    "exact_pct": 79.7,
+    "consistent_pct": 85.64
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6784,
+   "cv_reads": 1.7481
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 15124,
+    "full_length_pct": 89.17
+   },
+   "2-4 kb": {
+    "molecules": 13719,
+    "full_length_pct": 89.18
+   },
+   "4-6 kb": {
+    "molecules": 111,
+    "full_length_pct": 88.29
+   },
+   "6-8 kb": {
+    "molecules": 228,
+    "full_length_pct": 32.02
+   },
+   "8-10 kb": {
+    "molecules": 857,
+    "full_length_pct": 11.32
+   },
+   ">=10 kb": {
+    "molecules": 184,
+    "full_length_pct": 2.72
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode06",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 44,
+   "molecules": {
+    "slope": 0.8868,
+    "r2": 0.8734,
+    "spearman": 0.9119
+   },
+   "positions": {
+    "slope": 0.553,
+    "r2": 0.8104,
+    "spearman": 0.8554
+   },
+   "reads": {
+    "slope": 0.8773,
+    "r2": 0.8695,
+    "spearman": 0.9062
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.085,
+    "ERCC-00004": 1.033,
+    "ERCC-00136": 1.138,
+    "ERCC-00108": 1.094,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.103,
+    "ERCC-00095": 1.091,
+    "ERCC-00131": 1.25,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00170": 1.333,
+    "ERCC-00028": 1.0,
+    "ERCC-00096": 1.091,
+    "ERCC-00171": 1.044,
+    "ERCC-00009": 1.119,
+    "ERCC-00042": 1.054,
+    "ERCC-00060": 1.027,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00148": 2.0,
+    "ERCC-00150": 1.0,
+    "ERCC-00074": 1.054,
+    "ERCC-00113": 1.088,
+    "ERCC-00145": 1.086,
+    "ERCC-00111": 1.054,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00143": 1.5,
+    "ERCC-00002": 1.084,
+    "ERCC-00046": 1.02,
+    "ERCC-00003": 1.063,
+    "ERCC-00043": 1.048,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 2.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3050,
+    "exact_pct": 89.279,
+    "consistent_pct": 93.279
+   },
+   "longest": {
+    "molecules": 3050,
+    "exact_pct": 83.443,
+    "consistent_pct": 87.148
+   },
+   "random_copy": {
+    "molecules": 3050,
+    "exact_pct": 81.246,
+    "consistent_pct": 85.803
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.696,
+   "cv_reads": 1.7873
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 13168,
+    "full_length_pct": 89.27
+   },
+   "2-4 kb": {
+    "molecules": 12311,
+    "full_length_pct": 89.23
+   },
+   "4-6 kb": {
+    "molecules": 105,
+    "full_length_pct": 81.9
+   },
+   "6-8 kb": {
+    "molecules": 181,
+    "full_length_pct": 28.18
+   },
+   "8-10 kb": {
+    "molecules": 664,
+    "full_length_pct": 10.69
+   },
+   ">=10 kb": {
+    "molecules": 140,
+    "full_length_pct": 2.14
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode07",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 46,
+   "molecules": {
+    "slope": 0.8578,
+    "r2": 0.9195,
+    "spearman": 0.9572
+   },
+   "positions": {
+    "slope": 0.5479,
+    "r2": 0.8854,
+    "spearman": 0.9389
+   },
+   "reads": {
+    "slope": 0.8476,
+    "r2": 0.9003,
+    "spearman": 0.9504
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.093,
+    "ERCC-00004": 1.065,
+    "ERCC-00136": 1.084,
+    "ERCC-00108": 1.068,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.0,
+    "ERCC-00095": 1.2,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.111,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00033": 3.0,
+    "ERCC-00096": 1.068,
+    "ERCC-00171": 1.054,
+    "ERCC-00009": 1.077,
+    "ERCC-00042": 1.042,
+    "ERCC-00060": 1.027,
+    "ERCC-00035": 1.2,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00031": 1.0,
+    "ERCC-00074": 1.052,
+    "ERCC-00113": 1.079,
+    "ERCC-00145": 1.023,
+    "ERCC-00111": 1.0,
+    "ERCC-00076": 1.077,
+    "ERCC-00044": 1.071,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00002": 1.066,
+    "ERCC-00046": 1.024,
+    "ERCC-00003": 1.058,
+    "ERCC-00043": 1.038,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00014": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 2779,
+    "exact_pct": 89.421,
+    "consistent_pct": 93.847
+   },
+   "longest": {
+    "molecules": 2779,
+    "exact_pct": 83.555,
+    "consistent_pct": 87.478
+   },
+   "random_copy": {
+    "molecules": 2779,
+    "exact_pct": 80.497,
+    "consistent_pct": 86.398
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6869,
+   "cv_reads": 1.7535
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 12496,
+    "full_length_pct": 89.34
+   },
+   "2-4 kb": {
+    "molecules": 11736,
+    "full_length_pct": 89.93
+   },
+   "4-6 kb": {
+    "molecules": 99,
+    "full_length_pct": 83.84
+   },
+   "6-8 kb": {
+    "molecules": 197,
+    "full_length_pct": 34.52
+   },
+   "8-10 kb": {
+    "molecules": 686,
+    "full_length_pct": 12.83
+   },
+   ">=10 kb": {
+    "molecules": 149,
+    "full_length_pct": 2.68
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode08",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 50,
+   "molecules": {
+    "slope": 0.8909,
+    "r2": 0.9302,
+    "spearman": 0.9465
+   },
+   "positions": {
+    "slope": 0.5787,
+    "r2": 0.9148,
+    "spearman": 0.9454
+   },
+   "reads": {
+    "slope": 0.8874,
+    "r2": 0.9325,
+    "spearman": 0.9526
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.11,
+    "ERCC-00004": 1.054,
+    "ERCC-00136": 1.116,
+    "ERCC-00108": 1.113,
+    "ERCC-00116": 1.2,
+    "ERCC-00092": 1.125,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.333,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.2,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.5,
+    "ERCC-00154": 2.0,
+    "ERCC-00096": 1.113,
+    "ERCC-00171": 1.056,
+    "ERCC-00009": 1.07,
+    "ERCC-00042": 1.024,
+    "ERCC-00060": 1.015,
+    "ERCC-00035": 1.25,
+    "ERCC-00025": 1.2,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00074": 1.052,
+    "ERCC-00113": 1.073,
+    "ERCC-00145": 1.109,
+    "ERCC-00111": 1.1,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.5,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00058": 1.0,
+    "ERCC-00002": 1.115,
+    "ERCC-00046": 1.053,
+    "ERCC-00003": 1.116,
+    "ERCC-00043": 1.13,
+    "ERCC-00022": 1.087,
+    "ERCC-00112": 1.125,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.5,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4132,
+    "exact_pct": 88.601,
+    "consistent_pct": 92.764
+   },
+   "longest": {
+    "molecules": 4132,
+    "exact_pct": 83.18,
+    "consistent_pct": 86.955
+   },
+   "random_copy": {
+    "molecules": 4132,
+    "exact_pct": 80.373,
+    "consistent_pct": 85.431
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6188,
+   "cv_reads": 1.6821
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 18283,
+    "full_length_pct": 89.55
+   },
+   "2-4 kb": {
+    "molecules": 14390,
+    "full_length_pct": 88.84
+   },
+   "4-6 kb": {
+    "molecules": 95,
+    "full_length_pct": 89.47
+   },
+   "6-8 kb": {
+    "molecules": 226,
+    "full_length_pct": 28.32
+   },
+   "8-10 kb": {
+    "molecules": 768,
+    "full_length_pct": 9.24
+   },
+   ">=10 kb": {
+    "molecules": 151,
+    "full_length_pct": 5.96
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode09",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 46,
+   "molecules": {
+    "slope": 0.772,
+    "r2": 0.8555,
+    "spearman": 0.9423
+   },
+   "positions": {
+    "slope": 0.4922,
+    "r2": 0.8413,
+    "spearman": 0.9263
+   },
+   "reads": {
+    "slope": 0.7789,
+    "r2": 0.8608,
+    "spearman": 0.9459
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.097,
+    "ERCC-00004": 1.034,
+    "ERCC-00136": 1.084,
+    "ERCC-00108": 1.054,
+    "ERCC-00116": 1.2,
+    "ERCC-00092": 1.0,
+    "ERCC-00095": 1.167,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.25,
+    "ERCC-00144": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00096": 1.085,
+    "ERCC-00171": 1.048,
+    "ERCC-00009": 1.068,
+    "ERCC-00042": 1.029,
+    "ERCC-00060": 1.018,
+    "ERCC-00035": 1.667,
+    "ERCC-00025": 1.4,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00138": 1.0,
+    "ERCC-00074": 1.055,
+    "ERCC-00113": 1.041,
+    "ERCC-00145": 1.073,
+    "ERCC-00111": 1.0,
+    "ERCC-00076": 1.25,
+    "ERCC-00044": 1.1,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.082,
+    "ERCC-00046": 1.045,
+    "ERCC-00003": 1.11,
+    "ERCC-00043": 1.06,
+    "ERCC-00022": 1.083,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 2700,
+    "exact_pct": 89.444,
+    "consistent_pct": 93.037
+   },
+   "longest": {
+    "molecules": 2700,
+    "exact_pct": 84.222,
+    "consistent_pct": 87.741
+   },
+   "random_copy": {
+    "molecules": 2700,
+    "exact_pct": 80.37,
+    "consistent_pct": 84.963
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6326,
+   "cv_reads": 1.6921
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 13620,
+    "full_length_pct": 89.68
+   },
+   "2-4 kb": {
+    "molecules": 11388,
+    "full_length_pct": 89.34
+   },
+   "4-6 kb": {
+    "molecules": 100,
+    "full_length_pct": 84.0
+   },
+   "6-8 kb": {
+    "molecules": 210,
+    "full_length_pct": 37.14
+   },
+   "8-10 kb": {
+    "molecules": 702,
+    "full_length_pct": 11.97
+   },
+   ">=10 kb": {
+    "molecules": 151,
+    "full_length_pct": 0.66
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode10",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 44,
+   "molecules": {
+    "slope": 0.7653,
+    "r2": 0.8604,
+    "spearman": 0.9544
+   },
+   "positions": {
+    "slope": 0.494,
+    "r2": 0.8053,
+    "spearman": 0.9183
+   },
+   "reads": {
+    "slope": 0.7726,
+    "r2": 0.861,
+    "spearman": 0.9509
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.104,
+    "ERCC-00004": 1.04,
+    "ERCC-00136": 1.088,
+    "ERCC-00108": 1.0,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.087,
+    "ERCC-00095": 1.2,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.1,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00017": 1.0,
+    "ERCC-00096": 1.082,
+    "ERCC-00171": 1.051,
+    "ERCC-00009": 1.151,
+    "ERCC-00042": 1.135,
+    "ERCC-00060": 1.017,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.038,
+    "ERCC-00113": 1.051,
+    "ERCC-00145": 1.071,
+    "ERCC-00111": 1.103,
+    "ERCC-00076": 1.143,
+    "ERCC-00044": 1.167,
+    "ERCC-00162": 1.167,
+    "ERCC-00071": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.079,
+    "ERCC-00046": 1.043,
+    "ERCC-00003": 1.056,
+    "ERCC-00043": 1.161,
+    "ERCC-00022": 1.043,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.444,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3203,
+    "exact_pct": 87.98,
+    "consistent_pct": 92.538
+   },
+   "longest": {
+    "molecules": 3203,
+    "exact_pct": 82.423,
+    "consistent_pct": 86.575
+   },
+   "random_copy": {
+    "molecules": 3203,
+    "exact_pct": 79.301,
+    "consistent_pct": 84.733
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5765,
+   "cv_reads": 1.6309
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 15185,
+    "full_length_pct": 89.39
+   },
+   "2-4 kb": {
+    "molecules": 12344,
+    "full_length_pct": 88.34
+   },
+   "4-6 kb": {
+    "molecules": 117,
+    "full_length_pct": 89.74
+   },
+   "6-8 kb": {
+    "molecules": 217,
+    "full_length_pct": 38.71
+   },
+   "8-10 kb": {
+    "molecules": 751,
+    "full_length_pct": 12.25
+   },
+   ">=10 kb": {
+    "molecules": 168,
+    "full_length_pct": 1.79
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode11",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 48,
+   "molecules": {
+    "slope": 0.8442,
+    "r2": 0.8906,
+    "spearman": 0.9437
+   },
+   "positions": {
+    "slope": 0.5537,
+    "r2": 0.8454,
+    "spearman": 0.9024
+   },
+   "reads": {
+    "slope": 0.856,
+    "r2": 0.8918,
+    "spearman": 0.9454
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.09,
+    "ERCC-00004": 1.062,
+    "ERCC-00136": 1.048,
+    "ERCC-00108": 1.077,
+    "ERCC-00116": 1.125,
+    "ERCC-00092": 1.118,
+    "ERCC-00095": 1.111,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.125,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00033": 1.0,
+    "ERCC-00097": 1.0,
+    "ERCC-00096": 1.096,
+    "ERCC-00171": 1.05,
+    "ERCC-00009": 1.093,
+    "ERCC-00042": 1.103,
+    "ERCC-00060": 1.014,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00074": 1.047,
+    "ERCC-00113": 1.052,
+    "ERCC-00145": 1.138,
+    "ERCC-00111": 1.152,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.1,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.108,
+    "ERCC-00046": 1.065,
+    "ERCC-00003": 1.093,
+    "ERCC-00043": 1.171,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.111,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00069": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3576,
+    "exact_pct": 87.724,
+    "consistent_pct": 92.422
+   },
+   "longest": {
+    "molecules": 3576,
+    "exact_pct": 82.886,
+    "consistent_pct": 87.192
+   },
+   "random_copy": {
+    "molecules": 3576,
+    "exact_pct": 79.866,
+    "consistent_pct": 85.319
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5212,
+   "cv_reads": 1.5639
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 18189,
+    "full_length_pct": 88.54
+   },
+   "2-4 kb": {
+    "molecules": 13632,
+    "full_length_pct": 88.02
+   },
+   "4-6 kb": {
+    "molecules": 100,
+    "full_length_pct": 91.0
+   },
+   "6-8 kb": {
+    "molecules": 238,
+    "full_length_pct": 30.25
+   },
+   "8-10 kb": {
+    "molecules": 756,
+    "full_length_pct": 11.51
+   },
+   ">=10 kb": {
+    "molecules": 186,
+    "full_length_pct": 1.61
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode12",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 47,
+   "molecules": {
+    "slope": 0.9312,
+    "r2": 0.926,
+    "spearman": 0.9436
+   },
+   "positions": {
+    "slope": 0.6013,
+    "r2": 0.9069,
+    "spearman": 0.9337
+   },
+   "reads": {
+    "slope": 0.9242,
+    "r2": 0.9219,
+    "spearman": 0.9425
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.123,
+    "ERCC-00004": 1.059,
+    "ERCC-00136": 1.09,
+    "ERCC-00108": 1.1,
+    "ERCC-00116": 1.25,
+    "ERCC-00092": 1.13,
+    "ERCC-00095": 1.118,
+    "ERCC-00131": 1.25,
+    "ERCC-00062": 1.133,
+    "ERCC-00019": 1.25,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00096": 1.113,
+    "ERCC-00171": 1.062,
+    "ERCC-00009": 1.094,
+    "ERCC-00042": 1.04,
+    "ERCC-00060": 1.045,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.25,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00074": 1.056,
+    "ERCC-00113": 1.052,
+    "ERCC-00145": 1.138,
+    "ERCC-00111": 1.135,
+    "ERCC-00076": 1.133,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.222,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00143": 2.0,
+    "ERCC-00002": 1.104,
+    "ERCC-00046": 1.063,
+    "ERCC-00003": 1.158,
+    "ERCC-00043": 1.101,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.143,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 2.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4199,
+    "exact_pct": 87.973,
+    "consistent_pct": 92.617
+   },
+   "longest": {
+    "molecules": 4199,
+    "exact_pct": 84.211,
+    "consistent_pct": 88.521
+   },
+   "random_copy": {
+    "molecules": 4199,
+    "exact_pct": 80.424,
+    "consistent_pct": 86.02
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5245,
+   "cv_reads": 1.5592
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 21459,
+    "full_length_pct": 88.78
+   },
+   "2-4 kb": {
+    "molecules": 14843,
+    "full_length_pct": 87.83
+   },
+   "4-6 kb": {
+    "molecules": 96,
+    "full_length_pct": 80.21
+   },
+   "6-8 kb": {
+    "molecules": 193,
+    "full_length_pct": 22.28
+   },
+   "8-10 kb": {
+    "molecules": 722,
+    "full_length_pct": 8.59
+   },
+   ">=10 kb": {
+    "molecules": 165,
+    "full_length_pct": 1.21
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode13",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 46,
+   "molecules": {
+    "slope": 0.8498,
+    "r2": 0.8995,
+    "spearman": 0.9288
+   },
+   "positions": {
+    "slope": 0.5463,
+    "r2": 0.8911,
+    "spearman": 0.9256
+   },
+   "reads": {
+    "slope": 0.8566,
+    "r2": 0.9043,
+    "spearman": 0.9371
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.072,
+    "ERCC-00004": 1.039,
+    "ERCC-00136": 1.105,
+    "ERCC-00108": 1.119,
+    "ERCC-00116": 1.2,
+    "ERCC-00092": 1.0,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00033": 1.0,
+    "ERCC-00096": 1.079,
+    "ERCC-00171": 1.027,
+    "ERCC-00009": 1.102,
+    "ERCC-00042": 1.0,
+    "ERCC-00060": 1.0,
+    "ERCC-00035": 1.333,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00074": 1.05,
+    "ERCC-00113": 1.051,
+    "ERCC-00145": 1.081,
+    "ERCC-00111": 1.0,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.167,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.5,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.083,
+    "ERCC-00046": 1.026,
+    "ERCC-00003": 1.054,
+    "ERCC-00043": 1.036,
+    "ERCC-00022": 1.091,
+    "ERCC-00112": 1.091,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 2601,
+    "exact_pct": 88.85,
+    "consistent_pct": 92.503
+   },
+   "longest": {
+    "molecules": 2601,
+    "exact_pct": 83.506,
+    "consistent_pct": 86.813
+   },
+   "random_copy": {
+    "molecules": 2601,
+    "exact_pct": 79.623,
+    "consistent_pct": 84.314
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6114,
+   "cv_reads": 1.6517
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 14226,
+    "full_length_pct": 89.15
+   },
+   "2-4 kb": {
+    "molecules": 11637,
+    "full_length_pct": 89.56
+   },
+   "4-6 kb": {
+    "molecules": 102,
+    "full_length_pct": 77.45
+   },
+   "6-8 kb": {
+    "molecules": 202,
+    "full_length_pct": 32.67
+   },
+   "8-10 kb": {
+    "molecules": 593,
+    "full_length_pct": 14.67
+   },
+   ">=10 kb": {
+    "molecules": 143,
+    "full_length_pct": 1.4
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode14",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 49,
+   "molecules": {
+    "slope": 0.7855,
+    "r2": 0.8879,
+    "spearman": 0.9685
+   },
+   "positions": {
+    "slope": 0.4764,
+    "r2": 0.8313,
+    "spearman": 0.9215
+   },
+   "reads": {
+    "slope": 0.7695,
+    "r2": 0.8524,
+    "spearman": 0.9578
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.085,
+    "ERCC-00004": 1.055,
+    "ERCC-00136": 1.082,
+    "ERCC-00108": 1.091,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.05,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00096": 1.093,
+    "ERCC-00171": 1.06,
+    "ERCC-00009": 1.099,
+    "ERCC-00042": 1.041,
+    "ERCC-00060": 1.036,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.5,
+    "ERCC-00074": 1.054,
+    "ERCC-00113": 1.062,
+    "ERCC-00145": 1.085,
+    "ERCC-00111": 1.125,
+    "ERCC-00076": 1.143,
+    "ERCC-00044": 1.071,
+    "ERCC-00162": 1.2,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00058": 1.0,
+    "ERCC-00012": 3.0,
+    "ERCC-00002": 1.084,
+    "ERCC-00046": 1.045,
+    "ERCC-00003": 1.118,
+    "ERCC-00043": 1.095,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00069": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3420,
+    "exact_pct": 87.515,
+    "consistent_pct": 92.31
+   },
+   "longest": {
+    "molecules": 3420,
+    "exact_pct": 82.427,
+    "consistent_pct": 86.52
+   },
+   "random_copy": {
+    "molecules": 3420,
+    "exact_pct": 78.801,
+    "consistent_pct": 84.737
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5728,
+   "cv_reads": 1.6272
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 16434,
+    "full_length_pct": 89.42
+   },
+   "2-4 kb": {
+    "molecules": 12942,
+    "full_length_pct": 89.14
+   },
+   "4-6 kb": {
+    "molecules": 99,
+    "full_length_pct": 77.78
+   },
+   "6-8 kb": {
+    "molecules": 209,
+    "full_length_pct": 31.58
+   },
+   "8-10 kb": {
+    "molecules": 708,
+    "full_length_pct": 13.28
+   },
+   ">=10 kb": {
+    "molecules": 182,
+    "full_length_pct": 1.65
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode15",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 49,
+   "molecules": {
+    "slope": 0.8737,
+    "r2": 0.9072,
+    "spearman": 0.9406
+   },
+   "positions": {
+    "slope": 0.5702,
+    "r2": 0.8802,
+    "spearman": 0.9209
+   },
+   "reads": {
+    "slope": 0.8769,
+    "r2": 0.9074,
+    "spearman": 0.9369
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.121,
+    "ERCC-00004": 1.078,
+    "ERCC-00136": 1.089,
+    "ERCC-00108": 1.089,
+    "ERCC-00116": 1.231,
+    "ERCC-00092": 1.125,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.2,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00096": 1.101,
+    "ERCC-00171": 1.079,
+    "ERCC-00009": 1.095,
+    "ERCC-00042": 1.023,
+    "ERCC-00060": 1.111,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.4,
+    "ERCC-00051": 1.167,
+    "ERCC-00053": 1.0,
+    "ERCC-00126": 2.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00074": 1.063,
+    "ERCC-00113": 1.059,
+    "ERCC-00145": 1.098,
+    "ERCC-00111": 1.026,
+    "ERCC-00076": 1.167,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.091,
+    "ERCC-00071": 1.125,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.112,
+    "ERCC-00046": 1.057,
+    "ERCC-00003": 1.061,
+    "ERCC-00043": 1.095,
+    "ERCC-00022": 1.069,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.333,
+    "ERCC-00160": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4170,
+    "exact_pct": 87.698,
+    "consistent_pct": 92.398
+   },
+   "longest": {
+    "molecules": 4170,
+    "exact_pct": 81.799,
+    "consistent_pct": 86.115
+   },
+   "random_copy": {
+    "molecules": 4170,
+    "exact_pct": 80.168,
+    "consistent_pct": 85.42
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5231,
+   "cv_reads": 1.5686
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 19864,
+    "full_length_pct": 88.4
+   },
+   "2-4 kb": {
+    "molecules": 14881,
+    "full_length_pct": 87.89
+   },
+   "4-6 kb": {
+    "molecules": 104,
+    "full_length_pct": 86.54
+   },
+   "6-8 kb": {
+    "molecules": 249,
+    "full_length_pct": 36.95
+   },
+   "8-10 kb": {
+    "molecules": 772,
+    "full_length_pct": 12.05
+   },
+   ">=10 kb": {
+    "molecules": 178,
+    "full_length_pct": 0.56
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode16",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 46,
+   "molecules": {
+    "slope": 0.8285,
+    "r2": 0.9206,
+    "spearman": 0.9693
+   },
+   "positions": {
+    "slope": 0.5275,
+    "r2": 0.869,
+    "spearman": 0.9276
+   },
+   "reads": {
+    "slope": 0.8328,
+    "r2": 0.9223,
+    "spearman": 0.9681
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.091,
+    "ERCC-00004": 1.052,
+    "ERCC-00136": 1.098,
+    "ERCC-00108": 1.089,
+    "ERCC-00116": 1.235,
+    "ERCC-00092": 1.105,
+    "ERCC-00095": 1.077,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.1,
+    "ERCC-00019": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00097": 1.0,
+    "ERCC-00096": 1.1,
+    "ERCC-00171": 1.053,
+    "ERCC-00009": 1.084,
+    "ERCC-00042": 1.111,
+    "ERCC-00060": 1.0,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.333,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00074": 1.053,
+    "ERCC-00113": 1.057,
+    "ERCC-00145": 1.069,
+    "ERCC-00111": 1.057,
+    "ERCC-00076": 1.091,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00002": 1.098,
+    "ERCC-00046": 1.056,
+    "ERCC-00003": 1.074,
+    "ERCC-00043": 1.091,
+    "ERCC-00022": 1.083,
+    "ERCC-00112": 1.154,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.143,
+    "ERCC-00078": 1.5,
+    "ERCC-00163": 1.5,
+    "ERCC-00077": 1.0,
+    "ERCC-00069": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3259,
+    "exact_pct": 89.844,
+    "consistent_pct": 93.434
+   },
+   "longest": {
+    "molecules": 3259,
+    "exact_pct": 85.364,
+    "consistent_pct": 88.524
+   },
+   "random_copy": {
+    "molecules": 3259,
+    "exact_pct": 82.541,
+    "consistent_pct": 86.836
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5912,
+   "cv_reads": 1.6465
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 15691,
+    "full_length_pct": 89.47
+   },
+   "2-4 kb": {
+    "molecules": 12883,
+    "full_length_pct": 89.09
+   },
+   "4-6 kb": {
+    "molecules": 97,
+    "full_length_pct": 85.57
+   },
+   "6-8 kb": {
+    "molecules": 223,
+    "full_length_pct": 34.53
+   },
+   "8-10 kb": {
+    "molecules": 740,
+    "full_length_pct": 14.19
+   },
+   ">=10 kb": {
+    "molecules": 187,
+    "full_length_pct": 4.28
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode17",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 52,
+   "molecules": {
+    "slope": 0.8719,
+    "r2": 0.8995,
+    "spearman": 0.9325
+   },
+   "positions": {
+    "slope": 0.5719,
+    "r2": 0.8647,
+    "spearman": 0.9057
+   },
+   "reads": {
+    "slope": 0.8839,
+    "r2": 0.9014,
+    "spearman": 0.9359
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.114,
+    "ERCC-00004": 1.069,
+    "ERCC-00136": 1.083,
+    "ERCC-00108": 1.059,
+    "ERCC-00116": 1.429,
+    "ERCC-00092": 1.12,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.053,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.143,
+    "ERCC-00028": 1.0,
+    "ERCC-00096": 1.115,
+    "ERCC-00171": 1.039,
+    "ERCC-00009": 1.121,
+    "ERCC-00042": 1.04,
+    "ERCC-00060": 1.013,
+    "ERCC-00035": 1.286,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.054,
+    "ERCC-00113": 1.109,
+    "ERCC-00145": 1.138,
+    "ERCC-00111": 1.146,
+    "ERCC-00076": 1.133,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.1,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.167,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00039": 1.0,
+    "ERCC-00002": 1.096,
+    "ERCC-00046": 1.053,
+    "ERCC-00003": 1.12,
+    "ERCC-00043": 1.077,
+    "ERCC-00022": 1.15,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.111,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.143,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4150,
+    "exact_pct": 87.373,
+    "consistent_pct": 92.024
+   },
+   "longest": {
+    "molecules": 4150,
+    "exact_pct": 82.627,
+    "consistent_pct": 86.771
+   },
+   "random_copy": {
+    "molecules": 4150,
+    "exact_pct": 79.47,
+    "consistent_pct": 84.723
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5133,
+   "cv_reads": 1.548
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 20249,
+    "full_length_pct": 88.92
+   },
+   "2-4 kb": {
+    "molecules": 14606,
+    "full_length_pct": 88.16
+   },
+   "4-6 kb": {
+    "molecules": 107,
+    "full_length_pct": 80.37
+   },
+   "6-8 kb": {
+    "molecules": 194,
+    "full_length_pct": 27.84
+   },
+   "8-10 kb": {
+    "molecules": 728,
+    "full_length_pct": 9.48
+   },
+   ">=10 kb": {
+    "molecules": 185,
+    "full_length_pct": 2.7
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode18",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 49,
+   "molecules": {
+    "slope": 0.8399,
+    "r2": 0.9115,
+    "spearman": 0.9432
+   },
+   "positions": {
+    "slope": 0.5627,
+    "r2": 0.8908,
+    "spearman": 0.9246
+   },
+   "reads": {
+    "slope": 0.8467,
+    "r2": 0.9172,
+    "spearman": 0.9476
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.122,
+    "ERCC-00004": 1.072,
+    "ERCC-00136": 1.111,
+    "ERCC-00108": 1.117,
+    "ERCC-00116": 1.375,
+    "ERCC-00092": 1.107,
+    "ERCC-00095": 1.16,
+    "ERCC-00131": 1.167,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.5,
+    "ERCC-00134": 1.0,
+    "ERCC-00096": 1.119,
+    "ERCC-00171": 1.071,
+    "ERCC-00009": 1.122,
+    "ERCC-00042": 1.14,
+    "ERCC-00060": 1.078,
+    "ERCC-00035": 1.111,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.125,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.071,
+    "ERCC-00113": 1.087,
+    "ERCC-00145": 1.184,
+    "ERCC-00111": 1.114,
+    "ERCC-00076": 1.067,
+    "ERCC-00044": 1.125,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.136,
+    "ERCC-00046": 1.095,
+    "ERCC-00003": 1.1,
+    "ERCC-00043": 1.093,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.273,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.333,
+    "ERCC-00163": 1.4,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.25,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 5365,
+    "exact_pct": 86.915,
+    "consistent_pct": 92.116
+   },
+   "longest": {
+    "molecules": 5365,
+    "exact_pct": 82.554,
+    "consistent_pct": 87.325
+   },
+   "random_copy": {
+    "molecules": 5365,
+    "exact_pct": 79.254,
+    "consistent_pct": 85.238
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4896,
+   "cv_reads": 1.5146
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 25381,
+    "full_length_pct": 88.72
+   },
+   "2-4 kb": {
+    "molecules": 16283,
+    "full_length_pct": 87.01
+   },
+   "4-6 kb": {
+    "molecules": 93,
+    "full_length_pct": 84.95
+   },
+   "6-8 kb": {
+    "molecules": 278,
+    "full_length_pct": 25.9
+   },
+   "8-10 kb": {
+    "molecules": 824,
+    "full_length_pct": 9.47
+   },
+   ">=10 kb": {
+    "molecules": 183,
+    "full_length_pct": 0.0
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode19",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 48,
+   "molecules": {
+    "slope": 0.8681,
+    "r2": 0.9075,
+    "spearman": 0.9424
+   },
+   "positions": {
+    "slope": 0.5752,
+    "r2": 0.8834,
+    "spearman": 0.9284
+   },
+   "reads": {
+    "slope": 0.8805,
+    "r2": 0.9143,
+    "spearman": 0.9453
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.115,
+    "ERCC-00004": 1.051,
+    "ERCC-00136": 1.133,
+    "ERCC-00108": 1.115,
+    "ERCC-00116": 1.333,
+    "ERCC-00092": 1.077,
+    "ERCC-00095": 1.091,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00096": 1.081,
+    "ERCC-00171": 1.037,
+    "ERCC-00009": 1.092,
+    "ERCC-00042": 1.171,
+    "ERCC-00060": 1.029,
+    "ERCC-00035": 1.25,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00074": 1.05,
+    "ERCC-00113": 1.097,
+    "ERCC-00145": 1.066,
+    "ERCC-00111": 1.097,
+    "ERCC-00076": 1.214,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.113,
+    "ERCC-00046": 1.033,
+    "ERCC-00003": 1.129,
+    "ERCC-00043": 1.018,
+    "ERCC-00022": 1.091,
+    "ERCC-00112": 1.167,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.2,
+    "ERCC-00059": 1.0,
+    "ERCC-00014": 1.0,
+    "ERCC-00069": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3227,
+    "exact_pct": 88.379,
+    "consistent_pct": 92.656
+   },
+   "longest": {
+    "molecules": 3227,
+    "exact_pct": 82.925,
+    "consistent_pct": 86.706
+   },
+   "random_copy": {
+    "molecules": 3227,
+    "exact_pct": 79.331,
+    "consistent_pct": 84.382
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6277,
+   "cv_reads": 1.6783
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 15684,
+    "full_length_pct": 89.3
+   },
+   "2-4 kb": {
+    "molecules": 12703,
+    "full_length_pct": 88.56
+   },
+   "4-6 kb": {
+    "molecules": 101,
+    "full_length_pct": 87.13
+   },
+   "6-8 kb": {
+    "molecules": 189,
+    "full_length_pct": 30.16
+   },
+   "8-10 kb": {
+    "molecules": 678,
+    "full_length_pct": 10.77
+   },
+   ">=10 kb": {
+    "molecules": 146,
+    "full_length_pct": 0.68
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode20",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 45,
+   "molecules": {
+    "slope": 0.89,
+    "r2": 0.9076,
+    "spearman": 0.9199
+   },
+   "positions": {
+    "slope": 0.5537,
+    "r2": 0.8404,
+    "spearman": 0.8519
+   },
+   "reads": {
+    "slope": 0.8892,
+    "r2": 0.9027,
+    "spearman": 0.9177
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.1,
+    "ERCC-00004": 1.052,
+    "ERCC-00136": 1.106,
+    "ERCC-00108": 1.087,
+    "ERCC-00116": 1.25,
+    "ERCC-00092": 1.1,
+    "ERCC-00095": 1.059,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.167,
+    "ERCC-00144": 1.5,
+    "ERCC-00170": 1.0,
+    "ERCC-00096": 1.088,
+    "ERCC-00171": 1.047,
+    "ERCC-00009": 1.078,
+    "ERCC-00042": 1.125,
+    "ERCC-00060": 1.075,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.333,
+    "ERCC-00074": 1.048,
+    "ERCC-00113": 1.085,
+    "ERCC-00145": 1.053,
+    "ERCC-00111": 1.087,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.077,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.333,
+    "ERCC-00054": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.097,
+    "ERCC-00046": 1.025,
+    "ERCC-00003": 1.108,
+    "ERCC-00043": 1.078,
+    "ERCC-00022": 1.188,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.25,
+    "ERCC-00163": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3267,
+    "exact_pct": 89.899,
+    "consistent_pct": 94.031
+   },
+   "longest": {
+    "molecules": 3267,
+    "exact_pct": 84.053,
+    "consistent_pct": 87.665
+   },
+   "random_copy": {
+    "molecules": 3267,
+    "exact_pct": 81.206,
+    "consistent_pct": 86.195
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6213,
+   "cv_reads": 1.6815
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 15741,
+    "full_length_pct": 89.44
+   },
+   "2-4 kb": {
+    "molecules": 12565,
+    "full_length_pct": 88.71
+   },
+   "4-6 kb": {
+    "molecules": 81,
+    "full_length_pct": 74.07
+   },
+   "6-8 kb": {
+    "molecules": 220,
+    "full_length_pct": 27.73
+   },
+   "8-10 kb": {
+    "molecules": 754,
+    "full_length_pct": 12.47
+   },
+   ">=10 kb": {
+    "molecules": 194,
+    "full_length_pct": 1.55
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode21",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 55,
+   "molecules": {
+    "slope": 0.8514,
+    "r2": 0.9136,
+    "spearman": 0.9585
+   },
+   "positions": {
+    "slope": 0.5557,
+    "r2": 0.8948,
+    "spearman": 0.9353
+   },
+   "reads": {
+    "slope": 0.8671,
+    "r2": 0.9136,
+    "spearman": 0.9561
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.176,
+    "ERCC-00004": 1.079,
+    "ERCC-00136": 1.146,
+    "ERCC-00108": 1.156,
+    "ERCC-00116": 1.154,
+    "ERCC-00092": 1.152,
+    "ERCC-00095": 1.05,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.059,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.143,
+    "ERCC-00085": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00096": 1.173,
+    "ERCC-00171": 1.106,
+    "ERCC-00009": 1.156,
+    "ERCC-00042": 1.071,
+    "ERCC-00060": 1.077,
+    "ERCC-00035": 1.059,
+    "ERCC-00025": 1.286,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.333,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00150": 1.0,
+    "ERCC-00074": 1.086,
+    "ERCC-00113": 1.116,
+    "ERCC-00145": 1.195,
+    "ERCC-00111": 1.152,
+    "ERCC-00076": 1.206,
+    "ERCC-00044": 1.059,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00039": 1.0,
+    "ERCC-00058": 1.0,
+    "ERCC-00002": 1.15,
+    "ERCC-00046": 1.082,
+    "ERCC-00003": 1.127,
+    "ERCC-00043": 1.14,
+    "ERCC-00022": 1.03,
+    "ERCC-00112": 1.059,
+    "ERCC-00165": 1.167,
+    "ERCC-00079": 1.15,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.125,
+    "ERCC-00059": 1.0,
+    "ERCC-00013": 1.0,
+    "ERCC-00168": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 9820,
+    "exact_pct": 88.615,
+    "consistent_pct": 93.126
+   },
+   "longest": {
+    "molecules": 9820,
+    "exact_pct": 83.31,
+    "consistent_pct": 87.251
+   },
+   "random_copy": {
+    "molecules": 9820,
+    "exact_pct": 80.163,
+    "consistent_pct": 85.214
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.6047,
+   "cv_reads": 1.7116
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 30236,
+    "full_length_pct": 89.31
+   },
+   "2-4 kb": {
+    "molecules": 23512,
+    "full_length_pct": 89.12
+   },
+   "4-6 kb": {
+    "molecules": 155,
+    "full_length_pct": 81.94
+   },
+   "6-8 kb": {
+    "molecules": 398,
+    "full_length_pct": 35.68
+   },
+   "8-10 kb": {
+    "molecules": 1327,
+    "full_length_pct": 13.72
+   },
+   ">=10 kb": {
+    "molecules": 330,
+    "full_length_pct": 2.12
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode22",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 51,
+   "molecules": {
+    "slope": 0.8252,
+    "r2": 0.8846,
+    "spearman": 0.9433
+   },
+   "positions": {
+    "slope": 0.5483,
+    "r2": 0.8798,
+    "spearman": 0.952
+   },
+   "reads": {
+    "slope": 0.8372,
+    "r2": 0.8874,
+    "spearman": 0.9437
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.13,
+    "ERCC-00004": 1.068,
+    "ERCC-00136": 1.115,
+    "ERCC-00108": 1.1,
+    "ERCC-00116": 1.286,
+    "ERCC-00092": 1.121,
+    "ERCC-00095": 1.077,
+    "ERCC-00131": 1.091,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.2,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00123": 1.0,
+    "ERCC-00096": 1.101,
+    "ERCC-00171": 1.082,
+    "ERCC-00009": 1.11,
+    "ERCC-00042": 1.113,
+    "ERCC-00060": 1.072,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.069,
+    "ERCC-00113": 1.112,
+    "ERCC-00145": 1.088,
+    "ERCC-00111": 1.043,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.119,
+    "ERCC-00046": 1.086,
+    "ERCC-00003": 1.095,
+    "ERCC-00043": 1.075,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.111,
+    "ERCC-00165": 1.167,
+    "ERCC-00079": 1.083,
+    "ERCC-00078": 1.333,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4529,
+    "exact_pct": 88.121,
+    "consistent_pct": 93.023
+   },
+   "longest": {
+    "molecules": 4529,
+    "exact_pct": 82.976,
+    "consistent_pct": 87.348
+   },
+   "random_copy": {
+    "molecules": 4529,
+    "exact_pct": 79.532,
+    "consistent_pct": 85.206
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5425,
+   "cv_reads": 1.5927
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 20568,
+    "full_length_pct": 88.67
+   },
+   "2-4 kb": {
+    "molecules": 15161,
+    "full_length_pct": 88.64
+   },
+   "4-6 kb": {
+    "molecules": 118,
+    "full_length_pct": 84.75
+   },
+   "6-8 kb": {
+    "molecules": 218,
+    "full_length_pct": 26.61
+   },
+   "8-10 kb": {
+    "molecules": 825,
+    "full_length_pct": 12.24
+   },
+   ">=10 kb": {
+    "molecules": 180,
+    "full_length_pct": 1.67
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode23",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 52,
+   "molecules": {
+    "slope": 0.7797,
+    "r2": 0.9049,
+    "spearman": 0.9505
+   },
+   "positions": {
+    "slope": 0.488,
+    "r2": 0.8156,
+    "spearman": 0.8634
+   },
+   "reads": {
+    "slope": 0.7875,
+    "r2": 0.9084,
+    "spearman": 0.9529
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.136,
+    "ERCC-00004": 1.057,
+    "ERCC-00136": 1.142,
+    "ERCC-00108": 1.153,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.233,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.25,
+    "ERCC-00062": 1.091,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.25,
+    "ERCC-00134": 1.0,
+    "ERCC-00096": 1.116,
+    "ERCC-00171": 1.059,
+    "ERCC-00009": 1.094,
+    "ERCC-00042": 1.083,
+    "ERCC-00060": 1.053,
+    "ERCC-00035": 1.091,
+    "ERCC-00025": 1.143,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.5,
+    "ERCC-00034": 1.0,
+    "ERCC-00150": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.067,
+    "ERCC-00113": 1.114,
+    "ERCC-00145": 1.146,
+    "ERCC-00111": 1.08,
+    "ERCC-00076": 1.154,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.1,
+    "ERCC-00084": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.114,
+    "ERCC-00046": 1.061,
+    "ERCC-00003": 1.144,
+    "ERCC-00043": 1.078,
+    "ERCC-00022": 1.056,
+    "ERCC-00112": 1.071,
+    "ERCC-00165": 1.111,
+    "ERCC-00079": 1.357,
+    "ERCC-00078": 1.667,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00014": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00069": 1.0,
+    "ERCC-00137": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4794,
+    "exact_pct": 88.298,
+    "consistent_pct": 92.783
+   },
+   "longest": {
+    "molecules": 4794,
+    "exact_pct": 83.146,
+    "consistent_pct": 87.213
+   },
+   "random_copy": {
+    "molecules": 4794,
+    "exact_pct": 79.746,
+    "consistent_pct": 85.315
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5174,
+   "cv_reads": 1.5612
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 22171,
+    "full_length_pct": 88.95
+   },
+   "2-4 kb": {
+    "molecules": 15915,
+    "full_length_pct": 88.07
+   },
+   "4-6 kb": {
+    "molecules": 106,
+    "full_length_pct": 80.19
+   },
+   "6-8 kb": {
+    "molecules": 236,
+    "full_length_pct": 28.81
+   },
+   "8-10 kb": {
+    "molecules": 823,
+    "full_length_pct": 10.33
+   },
+   ">=10 kb": {
+    "molecules": 197,
+    "full_length_pct": 2.03
+   }
+  }
+ },
+ {
+  "sample": "fc1_barcode24",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 51,
+   "molecules": {
+    "slope": 0.8222,
+    "r2": 0.8693,
+    "spearman": 0.9522
+   },
+   "positions": {
+    "slope": 0.5518,
+    "r2": 0.8175,
+    "spearman": 0.9045
+   },
+   "reads": {
+    "slope": 0.8247,
+    "r2": 0.8705,
+    "spearman": 0.9489
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.116,
+    "ERCC-00004": 1.071,
+    "ERCC-00136": 1.071,
+    "ERCC-00108": 1.105,
+    "ERCC-00116": 1.286,
+    "ERCC-00092": 1.094,
+    "ERCC-00095": 1.136,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.5,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00096": 1.107,
+    "ERCC-00171": 1.072,
+    "ERCC-00009": 1.094,
+    "ERCC-00042": 1.098,
+    "ERCC-00060": 1.04,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 2.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00117": 1.0,
+    "ERCC-00074": 1.073,
+    "ERCC-00113": 1.072,
+    "ERCC-00145": 1.088,
+    "ERCC-00111": 1.093,
+    "ERCC-00076": 1.111,
+    "ERCC-00044": 1.091,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.333,
+    "ERCC-00002": 1.105,
+    "ERCC-00046": 1.066,
+    "ERCC-00003": 1.127,
+    "ERCC-00043": 1.108,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.286,
+    "ERCC-00165": 1.333,
+    "ERCC-00079": 1.182,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4500,
+    "exact_pct": 87.4,
+    "consistent_pct": 92.6
+   },
+   "longest": {
+    "molecules": 4500,
+    "exact_pct": 82.778,
+    "consistent_pct": 87.356
+   },
+   "random_copy": {
+    "molecules": 4500,
+    "exact_pct": 80.511,
+    "consistent_pct": 86.556
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5296,
+   "cv_reads": 1.5725
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 21503,
+    "full_length_pct": 88.5
+   },
+   "2-4 kb": {
+    "molecules": 15136,
+    "full_length_pct": 87.85
+   },
+   "4-6 kb": {
+    "molecules": 112,
+    "full_length_pct": 76.79
+   },
+   "6-8 kb": {
+    "molecules": 219,
+    "full_length_pct": 26.94
+   },
+   "8-10 kb": {
+    "molecules": 696,
+    "full_length_pct": 9.63
+   },
+   ">=10 kb": {
+    "molecules": 162,
+    "full_length_pct": 1.23
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode01",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 50,
+   "molecules": {
+    "slope": 0.7975,
+    "r2": 0.8836,
+    "spearman": 0.9501
+   },
+   "positions": {
+    "slope": 0.5153,
+    "r2": 0.8417,
+    "spearman": 0.9073
+   },
+   "reads": {
+    "slope": 0.7941,
+    "r2": 0.889,
+    "spearman": 0.9499
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.084,
+    "ERCC-00004": 1.051,
+    "ERCC-00136": 1.048,
+    "ERCC-00108": 1.085,
+    "ERCC-00116": 1.125,
+    "ERCC-00092": 1.08,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.067,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00096": 1.075,
+    "ERCC-00171": 1.046,
+    "ERCC-00009": 1.062,
+    "ERCC-00042": 1.058,
+    "ERCC-00060": 1.048,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.2,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.5,
+    "ERCC-00148": 2.0,
+    "ERCC-00034": 1.5,
+    "ERCC-00109": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00138": 1.0,
+    "ERCC-00074": 1.042,
+    "ERCC-00113": 1.042,
+    "ERCC-00145": 1.098,
+    "ERCC-00111": 1.02,
+    "ERCC-00076": 1.048,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.5,
+    "ERCC-00054": 1.0,
+    "ERCC-00002": 1.075,
+    "ERCC-00046": 1.044,
+    "ERCC-00003": 1.049,
+    "ERCC-00043": 1.013,
+    "ERCC-00022": 1.081,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3482,
+    "exact_pct": 86.789,
+    "consistent_pct": 91.959
+   },
+   "longest": {
+    "molecules": 3482,
+    "exact_pct": 82.194,
+    "consistent_pct": 86.588
+   },
+   "random_copy": {
+    "molecules": 3482,
+    "exact_pct": 78.633,
+    "consistent_pct": 85.526
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5207,
+   "cv_reads": 1.5525
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 22530,
+    "full_length_pct": 88.65
+   },
+   "2-4 kb": {
+    "molecules": 16159,
+    "full_length_pct": 87.46
+   },
+   "4-6 kb": {
+    "molecules": 121,
+    "full_length_pct": 74.38
+   },
+   "6-8 kb": {
+    "molecules": 254,
+    "full_length_pct": 23.23
+   },
+   "8-10 kb": {
+    "molecules": 821,
+    "full_length_pct": 10.35
+   },
+   ">=10 kb": {
+    "molecules": 210,
+    "full_length_pct": 1.43
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode02",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 54,
+   "molecules": {
+    "slope": 0.7984,
+    "r2": 0.8964,
+    "spearman": 0.9562
+   },
+   "positions": {
+    "slope": 0.5409,
+    "r2": 0.8711,
+    "spearman": 0.9244
+   },
+   "reads": {
+    "slope": 0.8037,
+    "r2": 0.894,
+    "spearman": 0.9569
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.096,
+    "ERCC-00004": 1.044,
+    "ERCC-00136": 1.115,
+    "ERCC-00108": 1.092,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.185,
+    "ERCC-00095": 1.071,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00170": 1.25,
+    "ERCC-00154": 1.0,
+    "ERCC-00033": 1.333,
+    "ERCC-00134": 1.0,
+    "ERCC-00097": 1.0,
+    "ERCC-00096": 1.081,
+    "ERCC-00171": 1.036,
+    "ERCC-00009": 1.066,
+    "ERCC-00042": 1.0,
+    "ERCC-00060": 1.034,
+    "ERCC-00035": 1.2,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00109": 1.0,
+    "ERCC-00074": 1.04,
+    "ERCC-00113": 1.062,
+    "ERCC-00145": 1.062,
+    "ERCC-00111": 1.086,
+    "ERCC-00076": 1.08,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.083,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.079,
+    "ERCC-00046": 1.045,
+    "ERCC-00003": 1.028,
+    "ERCC-00043": 1.102,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.3,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00014": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00013": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3949,
+    "exact_pct": 87.794,
+    "consistent_pct": 92.201
+   },
+   "longest": {
+    "molecules": 3949,
+    "exact_pct": 82.755,
+    "consistent_pct": 86.478
+   },
+   "random_copy": {
+    "molecules": 3949,
+    "exact_pct": 79.868,
+    "consistent_pct": 85.541
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5372,
+   "cv_reads": 1.5794
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 22956,
+    "full_length_pct": 88.8
+   },
+   "2-4 kb": {
+    "molecules": 17351,
+    "full_length_pct": 87.31
+   },
+   "4-6 kb": {
+    "molecules": 116,
+    "full_length_pct": 81.9
+   },
+   "6-8 kb": {
+    "molecules": 261,
+    "full_length_pct": 29.12
+   },
+   "8-10 kb": {
+    "molecules": 912,
+    "full_length_pct": 12.39
+   },
+   ">=10 kb": {
+    "molecules": 203,
+    "full_length_pct": 0.99
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode03",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 53,
+   "molecules": {
+    "slope": 0.7991,
+    "r2": 0.8827,
+    "spearman": 0.9562
+   },
+   "positions": {
+    "slope": 0.5309,
+    "r2": 0.8602,
+    "spearman": 0.9347
+   },
+   "reads": {
+    "slope": 0.8,
+    "r2": 0.8814,
+    "spearman": 0.9553
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.123,
+    "ERCC-00004": 1.068,
+    "ERCC-00136": 1.058,
+    "ERCC-00108": 1.081,
+    "ERCC-00116": 1.125,
+    "ERCC-00092": 1.133,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.167,
+    "ERCC-00062": 1.045,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.125,
+    "ERCC-00033": 1.0,
+    "ERCC-00134": 1.0,
+    "ERCC-00156": 1.0,
+    "ERCC-00096": 1.102,
+    "ERCC-00171": 1.08,
+    "ERCC-00009": 1.112,
+    "ERCC-00042": 1.159,
+    "ERCC-00060": 1.053,
+    "ERCC-00035": 1.182,
+    "ERCC-00025": 1.25,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 2.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00150": 1.0,
+    "ERCC-00104": 1.0,
+    "ERCC-00138": 1.0,
+    "ERCC-00074": 1.066,
+    "ERCC-00113": 1.087,
+    "ERCC-00145": 1.107,
+    "ERCC-00111": 1.125,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.103,
+    "ERCC-00162": 1.118,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00120": 2.0,
+    "ERCC-00002": 1.092,
+    "ERCC-00046": 1.072,
+    "ERCC-00003": 1.125,
+    "ERCC-00043": 1.159,
+    "ERCC-00022": 1.028,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 5850,
+    "exact_pct": 86.137,
+    "consistent_pct": 91.692
+   },
+   "longest": {
+    "molecules": 5850,
+    "exact_pct": 81.573,
+    "consistent_pct": 86.41
+   },
+   "random_copy": {
+    "molecules": 5850,
+    "exact_pct": 78.479,
+    "consistent_pct": 85.521
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4913,
+   "cv_reads": 1.5031
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 34505,
+    "full_length_pct": 87.99
+   },
+   "2-4 kb": {
+    "molecules": 22003,
+    "full_length_pct": 86.01
+   },
+   "4-6 kb": {
+    "molecules": 150,
+    "full_length_pct": 69.33
+   },
+   "6-8 kb": {
+    "molecules": 282,
+    "full_length_pct": 19.86
+   },
+   "8-10 kb": {
+    "molecules": 910,
+    "full_length_pct": 6.04
+   },
+   ">=10 kb": {
+    "molecules": 233,
+    "full_length_pct": 1.29
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode04",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 50,
+   "molecules": {
+    "slope": 0.8053,
+    "r2": 0.9038,
+    "spearman": 0.9599
+   },
+   "positions": {
+    "slope": 0.5192,
+    "r2": 0.8287,
+    "spearman": 0.8966
+   },
+   "reads": {
+    "slope": 0.8003,
+    "r2": 0.8931,
+    "spearman": 0.9574
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.086,
+    "ERCC-00004": 1.05,
+    "ERCC-00136": 1.038,
+    "ERCC-00108": 1.088,
+    "ERCC-00116": 1.1,
+    "ERCC-00092": 1.04,
+    "ERCC-00095": 1.042,
+    "ERCC-00131": 1.125,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.143,
+    "ERCC-00085": 1.0,
+    "ERCC-00097": 2.0,
+    "ERCC-00096": 1.089,
+    "ERCC-00171": 1.051,
+    "ERCC-00009": 1.083,
+    "ERCC-00042": 1.055,
+    "ERCC-00060": 1.009,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.125,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00158": 1.0,
+    "ERCC-00074": 1.045,
+    "ERCC-00113": 1.06,
+    "ERCC-00145": 1.048,
+    "ERCC-00111": 1.115,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.071,
+    "ERCC-00162": 1.154,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.167,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00039": 1.0,
+    "ERCC-00002": 1.06,
+    "ERCC-00046": 1.057,
+    "ERCC-00003": 1.083,
+    "ERCC-00043": 1.018,
+    "ERCC-00022": 1.026,
+    "ERCC-00112": 1.111,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4274,
+    "exact_pct": 88.418,
+    "consistent_pct": 93.238
+   },
+   "longest": {
+    "molecules": 4274,
+    "exact_pct": 83.786,
+    "consistent_pct": 88.138
+   },
+   "random_copy": {
+    "molecules": 4274,
+    "exact_pct": 81.142,
+    "consistent_pct": 86.944
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5499,
+   "cv_reads": 1.5985
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 23231,
+    "full_length_pct": 89.07
+   },
+   "2-4 kb": {
+    "molecules": 17922,
+    "full_length_pct": 87.64
+   },
+   "4-6 kb": {
+    "molecules": 165,
+    "full_length_pct": 78.18
+   },
+   "6-8 kb": {
+    "molecules": 309,
+    "full_length_pct": 29.45
+   },
+   "8-10 kb": {
+    "molecules": 1045,
+    "full_length_pct": 13.3
+   },
+   ">=10 kb": {
+    "molecules": 226,
+    "full_length_pct": 3.54
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode05",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 60,
+   "molecules": {
+    "slope": 0.8685,
+    "r2": 0.9302,
+    "spearman": 0.957
+   },
+   "positions": {
+    "slope": 0.5751,
+    "r2": 0.9048,
+    "spearman": 0.9347
+   },
+   "reads": {
+    "slope": 0.8754,
+    "r2": 0.9304,
+    "spearman": 0.9545
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.155,
+    "ERCC-00004": 1.084,
+    "ERCC-00136": 1.087,
+    "ERCC-00108": 1.069,
+    "ERCC-00116": 1.333,
+    "ERCC-00092": 1.127,
+    "ERCC-00095": 1.034,
+    "ERCC-00131": 1.071,
+    "ERCC-00062": 1.148,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.25,
+    "ERCC-00170": 1.091,
+    "ERCC-00085": 1.0,
+    "ERCC-00033": 2.0,
+    "ERCC-00096": 1.141,
+    "ERCC-00171": 1.077,
+    "ERCC-00009": 1.136,
+    "ERCC-00042": 1.185,
+    "ERCC-00060": 1.089,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.222,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00031": 1.0,
+    "ERCC-00109": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.08,
+    "ERCC-00113": 1.109,
+    "ERCC-00145": 1.14,
+    "ERCC-00111": 1.041,
+    "ERCC-00076": 1.057,
+    "ERCC-00044": 1.118,
+    "ERCC-00162": 1.065,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.5,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00039": 1.0,
+    "ERCC-00040": 1.0,
+    "ERCC-00002": 1.127,
+    "ERCC-00046": 1.083,
+    "ERCC-00003": 1.104,
+    "ERCC-00043": 1.097,
+    "ERCC-00022": 1.125,
+    "ERCC-00112": 1.25,
+    "ERCC-00165": 1.133,
+    "ERCC-00079": 1.105,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.143,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.2,
+    "ERCC-00014": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00013": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 11416,
+    "exact_pct": 86.826,
+    "consistent_pct": 91.95
+   },
+   "longest": {
+    "molecules": 11416,
+    "exact_pct": 82.043,
+    "consistent_pct": 86.44
+   },
+   "random_copy": {
+    "molecules": 11416,
+    "exact_pct": 78.959,
+    "consistent_pct": 85.126
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5085,
+   "cv_reads": 1.5477
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 45678,
+    "full_length_pct": 88.72
+   },
+   "2-4 kb": {
+    "molecules": 31459,
+    "full_length_pct": 87.06
+   },
+   "4-6 kb": {
+    "molecules": 219,
+    "full_length_pct": 83.11
+   },
+   "6-8 kb": {
+    "molecules": 457,
+    "full_length_pct": 22.54
+   },
+   "8-10 kb": {
+    "molecules": 1621,
+    "full_length_pct": 11.47
+   },
+   ">=10 kb": {
+    "molecules": 409,
+    "full_length_pct": 1.47
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode06",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 53,
+   "molecules": {
+    "slope": 0.8404,
+    "r2": 0.9104,
+    "spearman": 0.9389
+   },
+   "positions": {
+    "slope": 0.5591,
+    "r2": 0.8798,
+    "spearman": 0.9153
+   },
+   "reads": {
+    "slope": 0.8309,
+    "r2": 0.9004,
+    "spearman": 0.939
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.08,
+    "ERCC-00004": 1.048,
+    "ERCC-00136": 1.077,
+    "ERCC-00108": 1.052,
+    "ERCC-00116": 1.2,
+    "ERCC-00092": 1.188,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.154,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00096": 1.078,
+    "ERCC-00171": 1.052,
+    "ERCC-00009": 1.089,
+    "ERCC-00042": 1.074,
+    "ERCC-00060": 1.056,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00158": 1.0,
+    "ERCC-00074": 1.039,
+    "ERCC-00113": 1.04,
+    "ERCC-00145": 1.063,
+    "ERCC-00111": 1.026,
+    "ERCC-00076": 1.036,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.091,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00039": 1.0,
+    "ERCC-00040": 3.0,
+    "ERCC-00002": 1.089,
+    "ERCC-00046": 1.044,
+    "ERCC-00003": 1.032,
+    "ERCC-00043": 1.078,
+    "ERCC-00022": 1.038,
+    "ERCC-00112": 1.111,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.059,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 2.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3849,
+    "exact_pct": 87.477,
+    "consistent_pct": 92.258
+   },
+   "longest": {
+    "molecules": 3849,
+    "exact_pct": 82.983,
+    "consistent_pct": 87.529
+   },
+   "random_copy": {
+    "molecules": 3849,
+    "exact_pct": 80.255,
+    "consistent_pct": 85.763
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5346,
+   "cv_reads": 1.5709
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 23911,
+    "full_length_pct": 88.6
+   },
+   "2-4 kb": {
+    "molecules": 17127,
+    "full_length_pct": 87.19
+   },
+   "4-6 kb": {
+    "molecules": 119,
+    "full_length_pct": 74.79
+   },
+   "6-8 kb": {
+    "molecules": 265,
+    "full_length_pct": 27.55
+   },
+   "8-10 kb": {
+    "molecules": 828,
+    "full_length_pct": 7.73
+   },
+   ">=10 kb": {
+    "molecules": 190,
+    "full_length_pct": 0.53
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode07",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 50,
+   "molecules": {
+    "slope": 0.8071,
+    "r2": 0.9,
+    "spearman": 0.9657
+   },
+   "positions": {
+    "slope": 0.5417,
+    "r2": 0.8854,
+    "spearman": 0.9568
+   },
+   "reads": {
+    "slope": 0.8168,
+    "r2": 0.9084,
+    "spearman": 0.9704
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.081,
+    "ERCC-00004": 1.033,
+    "ERCC-00136": 1.072,
+    "ERCC-00108": 1.057,
+    "ERCC-00116": 1.6,
+    "ERCC-00092": 1.038,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00033": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00123": 1.0,
+    "ERCC-00096": 1.068,
+    "ERCC-00171": 1.042,
+    "ERCC-00009": 1.085,
+    "ERCC-00042": 1.058,
+    "ERCC-00060": 1.0,
+    "ERCC-00035": 1.25,
+    "ERCC-00025": 1.125,
+    "ERCC-00051": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00031": 1.0,
+    "ERCC-00074": 1.041,
+    "ERCC-00113": 1.054,
+    "ERCC-00145": 1.056,
+    "ERCC-00111": 1.079,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00039": 1.0,
+    "ERCC-00002": 1.058,
+    "ERCC-00046": 1.03,
+    "ERCC-00003": 1.066,
+    "ERCC-00043": 1.136,
+    "ERCC-00022": 1.111,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3216,
+    "exact_pct": 88.029,
+    "consistent_pct": 92.382
+   },
+   "longest": {
+    "molecules": 3216,
+    "exact_pct": 83.769,
+    "consistent_pct": 87.127
+   },
+   "random_copy": {
+    "molecules": 3216,
+    "exact_pct": 79.882,
+    "consistent_pct": 86.101
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5339,
+   "cv_reads": 1.5676
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 20101,
+    "full_length_pct": 88.89
+   },
+   "2-4 kb": {
+    "molecules": 15586,
+    "full_length_pct": 87.71
+   },
+   "4-6 kb": {
+    "molecules": 141,
+    "full_length_pct": 79.43
+   },
+   "6-8 kb": {
+    "molecules": 252,
+    "full_length_pct": 28.97
+   },
+   "8-10 kb": {
+    "molecules": 897,
+    "full_length_pct": 12.04
+   },
+   ">=10 kb": {
+    "molecules": 212,
+    "full_length_pct": 1.89
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode08",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 53,
+   "molecules": {
+    "slope": 0.8168,
+    "r2": 0.9122,
+    "spearman": 0.9626
+   },
+   "positions": {
+    "slope": 0.5397,
+    "r2": 0.8795,
+    "spearman": 0.9338
+   },
+   "reads": {
+    "slope": 0.8196,
+    "r2": 0.9141,
+    "spearman": 0.9626
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.087,
+    "ERCC-00004": 1.045,
+    "ERCC-00136": 1.036,
+    "ERCC-00108": 1.08,
+    "ERCC-00116": 1.111,
+    "ERCC-00092": 1.0,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.077,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.143,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00097": 1.0,
+    "ERCC-00096": 1.081,
+    "ERCC-00171": 1.046,
+    "ERCC-00009": 1.094,
+    "ERCC-00042": 1.063,
+    "ERCC-00060": 1.058,
+    "ERCC-00035": 1.286,
+    "ERCC-00025": 1.333,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.167,
+    "ERCC-00126": 1.333,
+    "ERCC-00034": 1.333,
+    "ERCC-00031": 1.0,
+    "ERCC-00074": 1.046,
+    "ERCC-00113": 1.056,
+    "ERCC-00145": 1.079,
+    "ERCC-00111": 1.052,
+    "ERCC-00076": 1.025,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.182,
+    "ERCC-00071": 1.333,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00002": 1.083,
+    "ERCC-00046": 1.054,
+    "ERCC-00003": 1.067,
+    "ERCC-00043": 1.059,
+    "ERCC-00022": 1.083,
+    "ERCC-00112": 1.111,
+    "ERCC-00165": 1.182,
+    "ERCC-00079": 1.182,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00014": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00168": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3953,
+    "exact_pct": 88.136,
+    "consistent_pct": 92.259
+   },
+   "longest": {
+    "molecules": 3953,
+    "exact_pct": 83.86,
+    "consistent_pct": 87.528
+   },
+   "random_copy": {
+    "molecules": 3953,
+    "exact_pct": 80.572,
+    "consistent_pct": 85.834
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4868,
+   "cv_reads": 1.515
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 24736,
+    "full_length_pct": 88.52
+   },
+   "2-4 kb": {
+    "molecules": 17254,
+    "full_length_pct": 87.46
+   },
+   "4-6 kb": {
+    "molecules": 118,
+    "full_length_pct": 79.66
+   },
+   "6-8 kb": {
+    "molecules": 246,
+    "full_length_pct": 24.8
+   },
+   "8-10 kb": {
+    "molecules": 854,
+    "full_length_pct": 9.25
+   },
+   ">=10 kb": {
+    "molecules": 229,
+    "full_length_pct": 1.31
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode09",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 44,
+   "molecules": {
+    "slope": 0.835,
+    "r2": 0.9025,
+    "spearman": 0.9577
+   },
+   "positions": {
+    "slope": 0.5564,
+    "r2": 0.8731,
+    "spearman": 0.9473
+   },
+   "reads": {
+    "slope": 0.8274,
+    "r2": 0.9005,
+    "spearman": 0.9542
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.078,
+    "ERCC-00004": 1.045,
+    "ERCC-00136": 1.032,
+    "ERCC-00108": 1.039,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.043,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.125,
+    "ERCC-00062": 1.182,
+    "ERCC-00019": 1.333,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00097": 1.0,
+    "ERCC-00096": 1.07,
+    "ERCC-00171": 1.038,
+    "ERCC-00009": 1.092,
+    "ERCC-00042": 1.037,
+    "ERCC-00060": 1.013,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.2,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.5,
+    "ERCC-00074": 1.038,
+    "ERCC-00113": 1.044,
+    "ERCC-00145": 1.044,
+    "ERCC-00111": 1.171,
+    "ERCC-00076": 1.12,
+    "ERCC-00044": 1.091,
+    "ERCC-00162": 1.111,
+    "ERCC-00071": 1.167,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.333,
+    "ERCC-00002": 1.057,
+    "ERCC-00046": 1.036,
+    "ERCC-00003": 1.065,
+    "ERCC-00043": 1.011,
+    "ERCC-00022": 1.029,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.167
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3148,
+    "exact_pct": 87.325,
+    "consistent_pct": 92.598
+   },
+   "longest": {
+    "molecules": 3148,
+    "exact_pct": 83.482,
+    "consistent_pct": 88.024
+   },
+   "random_copy": {
+    "molecules": 3148,
+    "exact_pct": 79.479,
+    "consistent_pct": 86.118
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5506,
+   "cv_reads": 1.5872
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 19680,
+    "full_length_pct": 88.45
+   },
+   "2-4 kb": {
+    "molecules": 14954,
+    "full_length_pct": 88.02
+   },
+   "4-6 kb": {
+    "molecules": 120,
+    "full_length_pct": 87.5
+   },
+   "6-8 kb": {
+    "molecules": 252,
+    "full_length_pct": 29.76
+   },
+   "8-10 kb": {
+    "molecules": 879,
+    "full_length_pct": 13.31
+   },
+   ">=10 kb": {
+    "molecules": 230,
+    "full_length_pct": 1.3
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode10",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 46,
+   "molecules": {
+    "slope": 0.9021,
+    "r2": 0.9046,
+    "spearman": 0.9586
+   },
+   "positions": {
+    "slope": 0.6169,
+    "r2": 0.8925,
+    "spearman": 0.9503
+   },
+   "reads": {
+    "slope": 0.9063,
+    "r2": 0.9019,
+    "spearman": 0.955
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.075,
+    "ERCC-00004": 1.042,
+    "ERCC-00136": 1.031,
+    "ERCC-00108": 1.027,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.15,
+    "ERCC-00095": 1.1,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.1,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00096": 1.069,
+    "ERCC-00171": 1.035,
+    "ERCC-00009": 1.114,
+    "ERCC-00042": 1.073,
+    "ERCC-00060": 1.04,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00074": 1.039,
+    "ERCC-00113": 1.055,
+    "ERCC-00145": 1.078,
+    "ERCC-00111": 1.032,
+    "ERCC-00076": 1.143,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00164": 1.0,
+    "ERCC-00002": 1.067,
+    "ERCC-00046": 1.045,
+    "ERCC-00003": 1.054,
+    "ERCC-00043": 1.045,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.25,
+    "ERCC-00163": 1.333
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3030,
+    "exact_pct": 88.581,
+    "consistent_pct": 92.64
+   },
+   "longest": {
+    "molecules": 3030,
+    "exact_pct": 83.729,
+    "consistent_pct": 86.997
+   },
+   "random_copy": {
+    "molecules": 3030,
+    "exact_pct": 80.528,
+    "consistent_pct": 85.941
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5464,
+   "cv_reads": 1.5718
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 19649,
+    "full_length_pct": 89.09
+   },
+   "2-4 kb": {
+    "molecules": 15025,
+    "full_length_pct": 87.89
+   },
+   "4-6 kb": {
+    "molecules": 127,
+    "full_length_pct": 80.31
+   },
+   "6-8 kb": {
+    "molecules": 245,
+    "full_length_pct": 28.98
+   },
+   "8-10 kb": {
+    "molecules": 840,
+    "full_length_pct": 11.79
+   },
+   ">=10 kb": {
+    "molecules": 215,
+    "full_length_pct": 0.47
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode11",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 51,
+   "molecules": {
+    "slope": 0.8761,
+    "r2": 0.8961,
+    "spearman": 0.9392
+   },
+   "positions": {
+    "slope": 0.5902,
+    "r2": 0.8904,
+    "spearman": 0.9445
+   },
+   "reads": {
+    "slope": 0.8735,
+    "r2": 0.888,
+    "spearman": 0.9319
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.094,
+    "ERCC-00004": 1.049,
+    "ERCC-00136": 1.062,
+    "ERCC-00108": 1.089,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.071,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.167,
+    "ERCC-00144": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00134": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00096": 1.078,
+    "ERCC-00171": 1.043,
+    "ERCC-00009": 1.055,
+    "ERCC-00042": 1.157,
+    "ERCC-00060": 1.042,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.667,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00031": 2.0,
+    "ERCC-00074": 1.051,
+    "ERCC-00113": 1.07,
+    "ERCC-00145": 1.077,
+    "ERCC-00111": 1.0,
+    "ERCC-00076": 1.105,
+    "ERCC-00044": 1.125,
+    "ERCC-00162": 1.062,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.25,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.085,
+    "ERCC-00046": 1.044,
+    "ERCC-00003": 1.078,
+    "ERCC-00043": 1.093,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.111,
+    "ERCC-00165": 1.143,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00014": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3780,
+    "exact_pct": 87.619,
+    "consistent_pct": 92.513
+   },
+   "longest": {
+    "molecules": 3780,
+    "exact_pct": 82.857,
+    "consistent_pct": 87.222
+   },
+   "random_copy": {
+    "molecules": 3780,
+    "exact_pct": 79.841,
+    "consistent_pct": 85.952
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5181,
+   "cv_reads": 1.554
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 23706,
+    "full_length_pct": 88.67
+   },
+   "2-4 kb": {
+    "molecules": 16862,
+    "full_length_pct": 87.64
+   },
+   "4-6 kb": {
+    "molecules": 140,
+    "full_length_pct": 85.71
+   },
+   "6-8 kb": {
+    "molecules": 240,
+    "full_length_pct": 19.58
+   },
+   "8-10 kb": {
+    "molecules": 876,
+    "full_length_pct": 8.11
+   },
+   ">=10 kb": {
+    "molecules": 183,
+    "full_length_pct": 1.64
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode12",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 59,
+   "molecules": {
+    "slope": 0.8278,
+    "r2": 0.8929,
+    "spearman": 0.9464
+   },
+   "positions": {
+    "slope": 0.5461,
+    "r2": 0.8671,
+    "spearman": 0.9275
+   },
+   "reads": {
+    "slope": 0.8294,
+    "r2": 0.8841,
+    "spearman": 0.9419
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.114,
+    "ERCC-00004": 1.058,
+    "ERCC-00136": 1.076,
+    "ERCC-00108": 1.118,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.075,
+    "ERCC-00095": 1.056,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.069,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.125,
+    "ERCC-00170": 1.333,
+    "ERCC-00028": 1.0,
+    "ERCC-00033": 1.0,
+    "ERCC-00156": 1.0,
+    "ERCC-00096": 1.1,
+    "ERCC-00171": 1.051,
+    "ERCC-00009": 1.084,
+    "ERCC-00042": 1.147,
+    "ERCC-00060": 1.02,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.167,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00109": 1.0,
+    "ERCC-00073": 2.0,
+    "ERCC-00074": 1.06,
+    "ERCC-00113": 1.078,
+    "ERCC-00145": 1.077,
+    "ERCC-00111": 1.159,
+    "ERCC-00076": 1.031,
+    "ERCC-00044": 1.071,
+    "ERCC-00162": 1.111,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.25,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00040": 1.0,
+    "ERCC-00002": 1.092,
+    "ERCC-00046": 1.065,
+    "ERCC-00003": 1.054,
+    "ERCC-00043": 1.115,
+    "ERCC-00022": 1.022,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.125,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.143,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00014": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00137": 1.0,
+    "ERCC-00013": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 5339,
+    "exact_pct": 86.72,
+    "consistent_pct": 91.815
+   },
+   "longest": {
+    "molecules": 5339,
+    "exact_pct": 82.544,
+    "consistent_pct": 87.357
+   },
+   "random_copy": {
+    "molecules": 5339,
+    "exact_pct": 79.247,
+    "consistent_pct": 85.559
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4972,
+   "cv_reads": 1.5039
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 33715,
+    "full_length_pct": 88.35
+   },
+   "2-4 kb": {
+    "molecules": 20591,
+    "full_length_pct": 85.78
+   },
+   "4-6 kb": {
+    "molecules": 122,
+    "full_length_pct": 70.49
+   },
+   "6-8 kb": {
+    "molecules": 256,
+    "full_length_pct": 18.36
+   },
+   "8-10 kb": {
+    "molecules": 910,
+    "full_length_pct": 6.37
+   },
+   ">=10 kb": {
+    "molecules": 234,
+    "full_length_pct": 0.85
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode13",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 48,
+   "molecules": {
+    "slope": 0.7307,
+    "r2": 0.8407,
+    "spearman": 0.9542
+   },
+   "positions": {
+    "slope": 0.4809,
+    "r2": 0.8071,
+    "spearman": 0.9302
+   },
+   "reads": {
+    "slope": 0.7354,
+    "r2": 0.8409,
+    "spearman": 0.9542
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.056,
+    "ERCC-00004": 1.027,
+    "ERCC-00136": 1.029,
+    "ERCC-00108": 1.018,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.143,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00096": 1.043,
+    "ERCC-00171": 1.023,
+    "ERCC-00009": 1.042,
+    "ERCC-00042": 1.067,
+    "ERCC-00060": 1.034,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00074": 1.019,
+    "ERCC-00113": 1.014,
+    "ERCC-00145": 1.038,
+    "ERCC-00111": 1.059,
+    "ERCC-00076": 1.182,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00024": 1.0,
+    "ERCC-00002": 1.039,
+    "ERCC-00046": 1.025,
+    "ERCC-00003": 1.0,
+    "ERCC-00043": 1.025,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00013": 1.0,
+    "ERCC-00086": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 1518,
+    "exact_pct": 87.484,
+    "consistent_pct": 92.358
+   },
+   "longest": {
+    "molecules": 1518,
+    "exact_pct": 81.094,
+    "consistent_pct": 85.046
+   },
+   "random_copy": {
+    "molecules": 1518,
+    "exact_pct": 77.8,
+    "consistent_pct": 83.597
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5456,
+   "cv_reads": 1.5842
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 13073,
+    "full_length_pct": 88.64
+   },
+   "2-4 kb": {
+    "molecules": 9930,
+    "full_length_pct": 87.48
+   },
+   "4-6 kb": {
+    "molecules": 75,
+    "full_length_pct": 84.0
+   },
+   "6-8 kb": {
+    "molecules": 152,
+    "full_length_pct": 30.26
+   },
+   "8-10 kb": {
+    "molecules": 491,
+    "full_length_pct": 12.22
+   },
+   ">=10 kb": {
+    "molecules": 122,
+    "full_length_pct": 1.64
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode14",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 54,
+   "molecules": {
+    "slope": 0.8025,
+    "r2": 0.8801,
+    "spearman": 0.9389
+   },
+   "positions": {
+    "slope": 0.5371,
+    "r2": 0.8515,
+    "spearman": 0.9073
+   },
+   "reads": {
+    "slope": 0.8107,
+    "r2": 0.885,
+    "spearman": 0.9421
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.087,
+    "ERCC-00004": 1.046,
+    "ERCC-00136": 1.074,
+    "ERCC-00108": 1.087,
+    "ERCC-00116": 1.333,
+    "ERCC-00092": 1.032,
+    "ERCC-00095": 1.167,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00134": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00096": 1.07,
+    "ERCC-00171": 1.037,
+    "ERCC-00009": 1.064,
+    "ERCC-00042": 1.057,
+    "ERCC-00060": 1.041,
+    "ERCC-00035": 1.2,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.143,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.333,
+    "ERCC-00126": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00074": 1.05,
+    "ERCC-00113": 1.062,
+    "ERCC-00145": 1.063,
+    "ERCC-00111": 1.017,
+    "ERCC-00076": 1.074,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.063,
+    "ERCC-00046": 1.051,
+    "ERCC-00003": 1.068,
+    "ERCC-00043": 1.079,
+    "ERCC-00022": 1.094,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.077,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00013": 1.0,
+    "ERCC-00081": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3672,
+    "exact_pct": 87.337,
+    "consistent_pct": 92.048
+   },
+   "longest": {
+    "molecules": 3672,
+    "exact_pct": 83.007,
+    "consistent_pct": 87.309
+   },
+   "random_copy": {
+    "molecules": 3672,
+    "exact_pct": 79.984,
+    "consistent_pct": 85.648
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5137,
+   "cv_reads": 1.5388
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 24169,
+    "full_length_pct": 88.55
+   },
+   "2-4 kb": {
+    "molecules": 16448,
+    "full_length_pct": 87.45
+   },
+   "4-6 kb": {
+    "molecules": 112,
+    "full_length_pct": 81.25
+   },
+   "6-8 kb": {
+    "molecules": 234,
+    "full_length_pct": 23.93
+   },
+   "8-10 kb": {
+    "molecules": 839,
+    "full_length_pct": 9.65
+   },
+   ">=10 kb": {
+    "molecules": 209,
+    "full_length_pct": 1.91
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode15",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 51,
+   "molecules": {
+    "slope": 0.8908,
+    "r2": 0.9052,
+    "spearman": 0.9417
+   },
+   "positions": {
+    "slope": 0.5831,
+    "r2": 0.8923,
+    "spearman": 0.9277
+   },
+   "reads": {
+    "slope": 0.8953,
+    "r2": 0.9024,
+    "spearman": 0.9386
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.084,
+    "ERCC-00004": 1.044,
+    "ERCC-00136": 1.073,
+    "ERCC-00108": 1.068,
+    "ERCC-00116": 1.111,
+    "ERCC-00092": 1.079,
+    "ERCC-00095": 1.062,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.111,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.333,
+    "ERCC-00085": 1.0,
+    "ERCC-00096": 1.076,
+    "ERCC-00171": 1.042,
+    "ERCC-00009": 1.064,
+    "ERCC-00042": 1.033,
+    "ERCC-00060": 1.069,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.2,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00158": 1.0,
+    "ERCC-00074": 1.053,
+    "ERCC-00113": 1.039,
+    "ERCC-00145": 1.083,
+    "ERCC-00111": 1.2,
+    "ERCC-00076": 1.038,
+    "ERCC-00044": 1.067,
+    "ERCC-00162": 1.111,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.25,
+    "ERCC-00002": 1.062,
+    "ERCC-00046": 1.064,
+    "ERCC-00003": 1.076,
+    "ERCC-00043": 1.032,
+    "ERCC-00022": 1.065,
+    "ERCC-00112": 1.1,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.067,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4087,
+    "exact_pct": 87.032,
+    "consistent_pct": 92.097
+   },
+   "longest": {
+    "molecules": 4087,
+    "exact_pct": 82.628,
+    "consistent_pct": 87.032
+   },
+   "random_copy": {
+    "molecules": 4087,
+    "exact_pct": 79.08,
+    "consistent_pct": 85.221
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4966,
+   "cv_reads": 1.5212
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 25991,
+    "full_length_pct": 88.65
+   },
+   "2-4 kb": {
+    "molecules": 17792,
+    "full_length_pct": 87.22
+   },
+   "4-6 kb": {
+    "molecules": 143,
+    "full_length_pct": 75.52
+   },
+   "6-8 kb": {
+    "molecules": 268,
+    "full_length_pct": 26.49
+   },
+   "8-10 kb": {
+    "molecules": 872,
+    "full_length_pct": 10.55
+   },
+   ">=10 kb": {
+    "molecules": 212,
+    "full_length_pct": 0.0
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode16",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 52,
+   "molecules": {
+    "slope": 0.8658,
+    "r2": 0.9427,
+    "spearman": 0.9751
+   },
+   "positions": {
+    "slope": 0.5704,
+    "r2": 0.9145,
+    "spearman": 0.9527
+   },
+   "reads": {
+    "slope": 0.8732,
+    "r2": 0.9464,
+    "spearman": 0.978
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.072,
+    "ERCC-00004": 1.049,
+    "ERCC-00136": 1.045,
+    "ERCC-00108": 1.019,
+    "ERCC-00116": 1.231,
+    "ERCC-00092": 1.034,
+    "ERCC-00095": 1.1,
+    "ERCC-00131": 1.111,
+    "ERCC-00062": 1.25,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00033": 1.0,
+    "ERCC-00134": 1.0,
+    "ERCC-00096": 1.054,
+    "ERCC-00171": 1.051,
+    "ERCC-00009": 1.083,
+    "ERCC-00042": 1.106,
+    "ERCC-00060": 1.022,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.333,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.333,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00074": 1.048,
+    "ERCC-00113": 1.068,
+    "ERCC-00145": 1.08,
+    "ERCC-00111": 1.074,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.077,
+    "ERCC-00046": 1.041,
+    "ERCC-00003": 1.045,
+    "ERCC-00043": 1.074,
+    "ERCC-00022": 1.083,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 2968,
+    "exact_pct": 87.972,
+    "consistent_pct": 92.992
+   },
+   "longest": {
+    "molecules": 2968,
+    "exact_pct": 83.154,
+    "consistent_pct": 87.433
+   },
+   "random_copy": {
+    "molecules": 2968,
+    "exact_pct": 80.02,
+    "consistent_pct": 86.253
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5444,
+   "cv_reads": 1.5754
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 19139,
+    "full_length_pct": 89.05
+   },
+   "2-4 kb": {
+    "molecules": 14833,
+    "full_length_pct": 87.78
+   },
+   "4-6 kb": {
+    "molecules": 116,
+    "full_length_pct": 72.41
+   },
+   "6-8 kb": {
+    "molecules": 238,
+    "full_length_pct": 31.09
+   },
+   "8-10 kb": {
+    "molecules": 815,
+    "full_length_pct": 12.52
+   },
+   ">=10 kb": {
+    "molecules": 183,
+    "full_length_pct": 2.19
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode17",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 55,
+   "molecules": {
+    "slope": 0.8253,
+    "r2": 0.8919,
+    "spearman": 0.9521
+   },
+   "positions": {
+    "slope": 0.5361,
+    "r2": 0.8656,
+    "spearman": 0.9318
+   },
+   "reads": {
+    "slope": 0.8246,
+    "r2": 0.8882,
+    "spearman": 0.9495
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.105,
+    "ERCC-00004": 1.056,
+    "ERCC-00136": 1.096,
+    "ERCC-00108": 1.069,
+    "ERCC-00116": 1.062,
+    "ERCC-00092": 1.067,
+    "ERCC-00095": 1.053,
+    "ERCC-00131": 1.286,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00147": 1.0,
+    "ERCC-00156": 1.0,
+    "ERCC-00096": 1.094,
+    "ERCC-00171": 1.039,
+    "ERCC-00009": 1.083,
+    "ERCC-00042": 1.067,
+    "ERCC-00060": 1.058,
+    "ERCC-00035": 1.083,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.25,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00031": 1.0,
+    "ERCC-00074": 1.052,
+    "ERCC-00113": 1.061,
+    "ERCC-00145": 1.114,
+    "ERCC-00111": 1.02,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00039": 2.0,
+    "ERCC-00016": 1.0,
+    "ERCC-00002": 1.077,
+    "ERCC-00046": 1.056,
+    "ERCC-00003": 1.064,
+    "ERCC-00043": 1.078,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.071,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 2.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00137": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4519,
+    "exact_pct": 86.015,
+    "consistent_pct": 91.326
+   },
+   "longest": {
+    "molecules": 4519,
+    "exact_pct": 82.076,
+    "consistent_pct": 86.855
+   },
+   "random_copy": {
+    "molecules": 4519,
+    "exact_pct": 79.332,
+    "consistent_pct": 85.24
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4977,
+   "cv_reads": 1.5183
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 28685,
+    "full_length_pct": 88.27
+   },
+   "2-4 kb": {
+    "molecules": 18751,
+    "full_length_pct": 86.75
+   },
+   "4-6 kb": {
+    "molecules": 111,
+    "full_length_pct": 81.98
+   },
+   "6-8 kb": {
+    "molecules": 241,
+    "full_length_pct": 24.48
+   },
+   "8-10 kb": {
+    "molecules": 857,
+    "full_length_pct": 8.63
+   },
+   ">=10 kb": {
+    "molecules": 197,
+    "full_length_pct": 0.0
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode18",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 58,
+   "molecules": {
+    "slope": 0.8582,
+    "r2": 0.9241,
+    "spearman": 0.9611
+   },
+   "positions": {
+    "slope": 0.5783,
+    "r2": 0.9044,
+    "spearman": 0.9521
+   },
+   "reads": {
+    "slope": 0.8674,
+    "r2": 0.9233,
+    "spearman": 0.9604
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.113,
+    "ERCC-00004": 1.067,
+    "ERCC-00136": 1.107,
+    "ERCC-00108": 1.073,
+    "ERCC-00116": 1.091,
+    "ERCC-00092": 1.098,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.091,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00033": 1.0,
+    "ERCC-00134": 1.0,
+    "ERCC-00096": 1.1,
+    "ERCC-00171": 1.087,
+    "ERCC-00009": 1.077,
+    "ERCC-00042": 1.149,
+    "ERCC-00060": 1.046,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00150": 1.5,
+    "ERCC-00067": 1.0,
+    "ERCC-00109": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00158": 1.0,
+    "ERCC-00074": 1.077,
+    "ERCC-00113": 1.072,
+    "ERCC-00145": 1.145,
+    "ERCC-00111": 1.131,
+    "ERCC-00076": 1.087,
+    "ERCC-00044": 1.062,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.111,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00002": 1.089,
+    "ERCC-00046": 1.063,
+    "ERCC-00003": 1.034,
+    "ERCC-00043": 1.06,
+    "ERCC-00022": 1.032,
+    "ERCC-00112": 1.125,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 5236,
+    "exact_pct": 85.924,
+    "consistent_pct": 91.043
+   },
+   "longest": {
+    "molecules": 5236,
+    "exact_pct": 81.589,
+    "consistent_pct": 86.325
+   },
+   "random_copy": {
+    "molecules": 5236,
+    "exact_pct": 78.82,
+    "consistent_pct": 85.371
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4887,
+   "cv_reads": 1.4962
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 33290,
+    "full_length_pct": 88.13
+   },
+   "2-4 kb": {
+    "molecules": 20217,
+    "full_length_pct": 86.21
+   },
+   "4-6 kb": {
+    "molecules": 93,
+    "full_length_pct": 70.97
+   },
+   "6-8 kb": {
+    "molecules": 231,
+    "full_length_pct": 14.72
+   },
+   "8-10 kb": {
+    "molecules": 836,
+    "full_length_pct": 5.14
+   },
+   ">=10 kb": {
+    "molecules": 242,
+    "full_length_pct": 0.41
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode19",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 51,
+   "molecules": {
+    "slope": 0.8441,
+    "r2": 0.9217,
+    "spearman": 0.9603
+   },
+   "positions": {
+    "slope": 0.5547,
+    "r2": 0.8566,
+    "spearman": 0.9191
+   },
+   "reads": {
+    "slope": 0.8369,
+    "r2": 0.9132,
+    "spearman": 0.9547
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.088,
+    "ERCC-00004": 1.045,
+    "ERCC-00136": 1.073,
+    "ERCC-00108": 1.045,
+    "ERCC-00116": 1.056,
+    "ERCC-00092": 1.107,
+    "ERCC-00095": 1.043,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.077,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00085": 2.0,
+    "ERCC-00028": 1.0,
+    "ERCC-00033": 1.0,
+    "ERCC-00096": 1.079,
+    "ERCC-00171": 1.042,
+    "ERCC-00009": 1.058,
+    "ERCC-00042": 1.086,
+    "ERCC-00060": 1.085,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.111,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00074": 1.044,
+    "ERCC-00113": 1.056,
+    "ERCC-00145": 1.07,
+    "ERCC-00111": 1.0,
+    "ERCC-00076": 1.061,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00040": 1.0,
+    "ERCC-00002": 1.078,
+    "ERCC-00046": 1.048,
+    "ERCC-00003": 1.065,
+    "ERCC-00043": 1.076,
+    "ERCC-00022": 1.08,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.167,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00013": 2.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3773,
+    "exact_pct": 86.986,
+    "consistent_pct": 91.227
+   },
+   "longest": {
+    "molecules": 3773,
+    "exact_pct": 82.375,
+    "consistent_pct": 86.271
+   },
+   "random_copy": {
+    "molecules": 3773,
+    "exact_pct": 79.38,
+    "consistent_pct": 84.734
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5145,
+   "cv_reads": 1.5403
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 25160,
+    "full_length_pct": 88.33
+   },
+   "2-4 kb": {
+    "molecules": 17280,
+    "full_length_pct": 86.59
+   },
+   "4-6 kb": {
+    "molecules": 97,
+    "full_length_pct": 74.23
+   },
+   "6-8 kb": {
+    "molecules": 255,
+    "full_length_pct": 28.24
+   },
+   "8-10 kb": {
+    "molecules": 761,
+    "full_length_pct": 7.88
+   },
+   ">=10 kb": {
+    "molecules": 200,
+    "full_length_pct": 1.5
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode20",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 51,
+   "molecules": {
+    "slope": 0.8375,
+    "r2": 0.9035,
+    "spearman": 0.9602
+   },
+   "positions": {
+    "slope": 0.5497,
+    "r2": 0.8541,
+    "spearman": 0.9084
+   },
+   "reads": {
+    "slope": 0.8233,
+    "r2": 0.8871,
+    "spearman": 0.957
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.091,
+    "ERCC-00004": 1.046,
+    "ERCC-00136": 1.074,
+    "ERCC-00108": 1.055,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.065,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.091,
+    "ERCC-00062": 1.077,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 2.0,
+    "ERCC-00085": 1.0,
+    "ERCC-00096": 1.069,
+    "ERCC-00171": 1.042,
+    "ERCC-00009": 1.064,
+    "ERCC-00042": 1.041,
+    "ERCC-00060": 1.044,
+    "ERCC-00035": 1.125,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00067": 1.5,
+    "ERCC-00074": 1.038,
+    "ERCC-00113": 1.069,
+    "ERCC-00145": 1.05,
+    "ERCC-00111": 1.089,
+    "ERCC-00076": 1.048,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.25,
+    "ERCC-00099": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00002": 1.069,
+    "ERCC-00046": 1.051,
+    "ERCC-00003": 1.053,
+    "ERCC-00043": 1.07,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.0,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00137": 1.0,
+    "ERCC-00041": 2.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 3415,
+    "exact_pct": 87.643,
+    "consistent_pct": 92.416
+   },
+   "longest": {
+    "molecules": 3415,
+    "exact_pct": 83.367,
+    "consistent_pct": 87.613
+   },
+   "random_copy": {
+    "molecules": 3415,
+    "exact_pct": 79.561,
+    "consistent_pct": 85.359
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.5252,
+   "cv_reads": 1.5598
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 21285,
+    "full_length_pct": 88.44
+   },
+   "2-4 kb": {
+    "molecules": 16282,
+    "full_length_pct": 87.9
+   },
+   "4-6 kb": {
+    "molecules": 136,
+    "full_length_pct": 70.59
+   },
+   "6-8 kb": {
+    "molecules": 254,
+    "full_length_pct": 27.95
+   },
+   "8-10 kb": {
+    "molecules": 898,
+    "full_length_pct": 11.69
+   },
+   ">=10 kb": {
+    "molecules": 211,
+    "full_length_pct": 1.9
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode21",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 50,
+   "molecules": {
+    "slope": 0.8167,
+    "r2": 0.8902,
+    "spearman": 0.9562
+   },
+   "positions": {
+    "slope": 0.4962,
+    "r2": 0.8176,
+    "spearman": 0.9063
+   },
+   "reads": {
+    "slope": 0.7957,
+    "r2": 0.862,
+    "spearman": 0.9404
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.092,
+    "ERCC-00004": 1.036,
+    "ERCC-00136": 1.063,
+    "ERCC-00108": 1.062,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.053,
+    "ERCC-00095": 1.0,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.111,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00033": 2.0,
+    "ERCC-00096": 1.087,
+    "ERCC-00171": 1.03,
+    "ERCC-00009": 1.062,
+    "ERCC-00042": 1.065,
+    "ERCC-00060": 1.021,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.091,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 2.0,
+    "ERCC-00031": 1.0,
+    "ERCC-00104": 2.0,
+    "ERCC-00074": 1.035,
+    "ERCC-00113": 1.08,
+    "ERCC-00145": 1.115,
+    "ERCC-00111": 1.03,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.2,
+    "ERCC-00099": 1.5,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00039": 1.0,
+    "ERCC-00002": 1.078,
+    "ERCC-00046": 1.036,
+    "ERCC-00003": 1.073,
+    "ERCC-00043": 1.098,
+    "ERCC-00022": 1.0,
+    "ERCC-00112": 1.2,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.2,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00014": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4138,
+    "exact_pct": 90.333,
+    "consistent_pct": 94.321
+   },
+   "longest": {
+    "molecules": 4138,
+    "exact_pct": 84.848,
+    "consistent_pct": 88.183
+   },
+   "random_copy": {
+    "molecules": 4138,
+    "exact_pct": 80.401,
+    "consistent_pct": 85.452
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 2.3912,
+   "cv_reads": 2.5231
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 9942,
+    "full_length_pct": 92.57
+   },
+   "2-4 kb": {
+    "molecules": 15623,
+    "full_length_pct": 90.72
+   },
+   "4-6 kb": {
+    "molecules": 157,
+    "full_length_pct": 79.62
+   },
+   "6-8 kb": {
+    "molecules": 288,
+    "full_length_pct": 32.99
+   },
+   "8-10 kb": {
+    "molecules": 1148,
+    "full_length_pct": 11.67
+   },
+   ">=10 kb": {
+    "molecules": 272,
+    "full_length_pct": 2.21
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode22",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 55,
+   "molecules": {
+    "slope": 0.8295,
+    "r2": 0.9034,
+    "spearman": 0.9611
+   },
+   "positions": {
+    "slope": 0.5504,
+    "r2": 0.8617,
+    "spearman": 0.9255
+   },
+   "reads": {
+    "slope": 0.8261,
+    "r2": 0.8974,
+    "spearman": 0.9574
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.094,
+    "ERCC-00004": 1.066,
+    "ERCC-00136": 1.061,
+    "ERCC-00108": 1.115,
+    "ERCC-00116": 1.154,
+    "ERCC-00092": 1.042,
+    "ERCC-00095": 1.08,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.077,
+    "ERCC-00019": 1.0,
+    "ERCC-00144": 1.167,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00156": 1.0,
+    "ERCC-00096": 1.094,
+    "ERCC-00171": 1.052,
+    "ERCC-00009": 1.071,
+    "ERCC-00042": 1.056,
+    "ERCC-00060": 1.057,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.091,
+    "ERCC-00053": 1.2,
+    "ERCC-00148": 1.25,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00067": 1.0,
+    "ERCC-00073": 2.0,
+    "ERCC-00074": 1.067,
+    "ERCC-00113": 1.072,
+    "ERCC-00145": 1.095,
+    "ERCC-00111": 1.0,
+    "ERCC-00076": 1.033,
+    "ERCC-00044": 1.111,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.5,
+    "ERCC-00054": 1.0,
+    "ERCC-00157": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00024": 1.0,
+    "ERCC-00002": 1.086,
+    "ERCC-00046": 1.064,
+    "ERCC-00003": 1.059,
+    "ERCC-00043": 1.137,
+    "ERCC-00022": 1.037,
+    "ERCC-00112": 1.083,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.429,
+    "ERCC-00163": 1.167,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 4994,
+    "exact_pct": 87.545,
+    "consistent_pct": 92.07
+   },
+   "longest": {
+    "molecules": 4994,
+    "exact_pct": 83.04,
+    "consistent_pct": 87.125
+   },
+   "random_copy": {
+    "molecules": 4994,
+    "exact_pct": 79.816,
+    "consistent_pct": 85.563
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4942,
+   "cv_reads": 1.5205
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 29248,
+    "full_length_pct": 87.87
+   },
+   "2-4 kb": {
+    "molecules": 19593,
+    "full_length_pct": 86.48
+   },
+   "4-6 kb": {
+    "molecules": 116,
+    "full_length_pct": 75.0
+   },
+   "6-8 kb": {
+    "molecules": 286,
+    "full_length_pct": 24.13
+   },
+   "8-10 kb": {
+    "molecules": 960,
+    "full_length_pct": 8.85
+   },
+   ">=10 kb": {
+    "molecules": 247,
+    "full_length_pct": 1.21
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode23",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 53,
+   "molecules": {
+    "slope": 0.8727,
+    "r2": 0.9113,
+    "spearman": 0.9556
+   },
+   "positions": {
+    "slope": 0.5746,
+    "r2": 0.8894,
+    "spearman": 0.941
+   },
+   "reads": {
+    "slope": 0.8764,
+    "r2": 0.9142,
+    "spearman": 0.9585
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.115,
+    "ERCC-00004": 1.056,
+    "ERCC-00136": 1.095,
+    "ERCC-00108": 1.027,
+    "ERCC-00116": 1.0,
+    "ERCC-00092": 1.088,
+    "ERCC-00095": 1.074,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.125,
+    "ERCC-00019": 1.167,
+    "ERCC-00144": 1.5,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00085": 1.5,
+    "ERCC-00028": 1.0,
+    "ERCC-00134": 1.0,
+    "ERCC-00096": 1.091,
+    "ERCC-00171": 1.042,
+    "ERCC-00009": 1.082,
+    "ERCC-00042": 1.029,
+    "ERCC-00060": 1.052,
+    "ERCC-00035": 1.333,
+    "ERCC-00025": 1.0,
+    "ERCC-00051": 1.0,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00126": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00074": 1.06,
+    "ERCC-00113": 1.055,
+    "ERCC-00145": 1.091,
+    "ERCC-00111": 1.074,
+    "ERCC-00076": 1.075,
+    "ERCC-00044": 1.056,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.0,
+    "ERCC-00099": 1.25,
+    "ERCC-00054": 1.0,
+    "ERCC-00143": 1.0,
+    "ERCC-00024": 1.0,
+    "ERCC-00002": 1.073,
+    "ERCC-00046": 1.063,
+    "ERCC-00003": 1.08,
+    "ERCC-00043": 1.05,
+    "ERCC-00022": 1.026,
+    "ERCC-00112": 1.25,
+    "ERCC-00165": 1.0,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00077": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 5052,
+    "exact_pct": 86.758,
+    "consistent_pct": 91.706
+   },
+   "longest": {
+    "molecules": 5052,
+    "exact_pct": 82.898,
+    "consistent_pct": 87.391
+   },
+   "random_copy": {
+    "molecules": 5052,
+    "exact_pct": 79.256,
+    "consistent_pct": 85.372
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4838,
+   "cv_reads": 1.4981
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 30563,
+    "full_length_pct": 88.19
+   },
+   "2-4 kb": {
+    "molecules": 20038,
+    "full_length_pct": 86.53
+   },
+   "4-6 kb": {
+    "molecules": 146,
+    "full_length_pct": 79.45
+   },
+   "6-8 kb": {
+    "molecules": 291,
+    "full_length_pct": 23.37
+   },
+   "8-10 kb": {
+    "molecules": 939,
+    "full_length_pct": 7.14
+   },
+   ">=10 kb": {
+    "molecules": 238,
+    "full_length_pct": 0.84
+   }
+  }
+ },
+ {
+  "sample": "fc2_barcode24",
+  "truth_transcripts": 84,
+  "gtf_transcripts_ignored": 0,
+  "truth_missing_from_gtf": [],
+  "ercc": {
+   "erccs": 92,
+   "detected": 52,
+   "molecules": {
+    "slope": 0.865,
+    "r2": 0.9189,
+    "spearman": 0.9576
+   },
+   "positions": {
+    "slope": 0.5563,
+    "r2": 0.8518,
+    "spearman": 0.9116
+   },
+   "reads": {
+    "slope": 0.857,
+    "r2": 0.9078,
+    "spearman": 0.9556
+   },
+   "reads_per_molecule": {
+    "ERCC-00130": 1.108,
+    "ERCC-00004": 1.058,
+    "ERCC-00136": 1.082,
+    "ERCC-00108": 1.103,
+    "ERCC-00116": 1.133,
+    "ERCC-00092": 1.026,
+    "ERCC-00095": 1.12,
+    "ERCC-00131": 1.0,
+    "ERCC-00062": 1.0,
+    "ERCC-00019": 1.167,
+    "ERCC-00144": 1.0,
+    "ERCC-00170": 1.0,
+    "ERCC-00154": 1.0,
+    "ERCC-00096": 1.096,
+    "ERCC-00171": 1.065,
+    "ERCC-00009": 1.098,
+    "ERCC-00042": 1.123,
+    "ERCC-00060": 1.032,
+    "ERCC-00035": 1.0,
+    "ERCC-00025": 1.125,
+    "ERCC-00051": 1.091,
+    "ERCC-00053": 1.0,
+    "ERCC-00148": 1.0,
+    "ERCC-00034": 1.0,
+    "ERCC-00073": 1.0,
+    "ERCC-00158": 2.0,
+    "ERCC-00074": 1.061,
+    "ERCC-00113": 1.054,
+    "ERCC-00145": 1.108,
+    "ERCC-00111": 1.058,
+    "ERCC-00076": 1.0,
+    "ERCC-00044": 1.0,
+    "ERCC-00162": 1.0,
+    "ERCC-00071": 1.0,
+    "ERCC-00084": 1.333,
+    "ERCC-00099": 1.0,
+    "ERCC-00054": 1.0,
+    "ERCC-00002": 1.088,
+    "ERCC-00046": 1.07,
+    "ERCC-00003": 1.088,
+    "ERCC-00043": 1.102,
+    "ERCC-00022": 1.061,
+    "ERCC-00112": 1.133,
+    "ERCC-00165": 1.143,
+    "ERCC-00079": 1.0,
+    "ERCC-00078": 1.0,
+    "ERCC-00163": 1.0,
+    "ERCC-00059": 1.0,
+    "ERCC-00160": 1.0,
+    "ERCC-00014": 2.0,
+    "ERCC-00077": 1.0,
+    "ERCC-00013": 1.0
+   }
+  },
+  "sirv_representatives": {
+   "flumi": {
+    "molecules": 5344,
+    "exact_pct": 87.35,
+    "consistent_pct": 91.804
+   },
+   "longest": {
+    "molecules": 5344,
+    "exact_pct": 83.103,
+    "consistent_pct": 87.201
+   },
+   "random_copy": {
+    "molecules": 5344,
+    "exact_pct": 80.09,
+    "consistent_pct": 85.704
+   }
+  },
+  "sirv_equimolar": {
+   "isoforms": 60,
+   "detected": 56,
+   "cv_molecules": 1.4952,
+   "cv_reads": 1.5095
+  },
+  "full_length_by_length": {
+   "<2 kb": {
+    "molecules": 33026,
+    "full_length_pct": 88.03
+   },
+   "2-4 kb": {
+    "molecules": 21045,
+    "full_length_pct": 86.12
+   },
+   "4-6 kb": {
+    "molecules": 140,
+    "full_length_pct": 80.0
+   },
+   "6-8 kb": {
+    "molecules": 286,
+    "full_length_pct": 17.83
+   },
+   "8-10 kb": {
+    "molecules": 908,
+    "full_length_pct": 5.4
+   },
+   ">=10 kb": {
+    "molecules": 200,
+    "full_length_pct": 0.0
+   }
+  }
+ }
+]

@@ -135,6 +135,7 @@ footer { border-top: 1px solid var(--line); color: var(--muted); text-align: cen
     <a href="#output">Output</a>
     <a href="#simulated">Simulated benchmark</a>
     <a href="#real">Real data</a>
+    <a href="#spikes">Spike-ins</a>
     <a href="#limits">Limitations</a>
   </div>
 </nav>
@@ -302,7 +303,7 @@ done</code></pre>
   <ul>
     <li><b>No molecule truth.</b> HG002 cannot say how many molecules there were. These numbers show how flumi behaves
       on real dorado output at scale and bound its errors with controls; per-molecule accuracy rests on the
-      simulation above and, soon, on the UHRR spike-ins.</li>
+      simulation above and on the UHRR spike-ins below.</li>
     <li><b>The checks</b> are independent of flumi's code: every full-length call and gene label is re-derived from
       the representative's CIGAR and the GTF, and both error counts must be zero.</li>
     <li><b>Dense loci are where the errors are.</b> Over half of all molecules sit in 5&prime; neighbourhoods of more
@@ -313,8 +314,52 @@ done</code></pre>
       excess variance shows that PCR copy number, not sampling, dominated the read counts; it does not show that every
       molecule is right.</li>
   </ul>
-  <p class="muted">The evaluation scripts (downloads, SLURM jobs, controls and scoring) are not yet public; they will be
-  released together with the UHRR spike-in results.</p>
+</section>
+
+<section id="spikes">
+  <h2>How well it works: spike-in truth</h2>
+  <p>The same dataset's UHRR libraries carry Lexogen SIRV-Set 4: 69 SIRV isoforms at equal molarity, 15 long SIRVs of
+  4&ndash;12 kb, and 92 ERCC transcripts spanning six orders of magnitude in concentration. That is the only truth in
+  the data: known isoform structures and known input amounts. The published UHRR basecalls had been trimmed without
+  keeping <code>RX</code>, so both flow cells (24 barcodes each) were re-basecalled the way this page recommends, in one
+  pass with <code>--kit-name SQK-PCB114-24 --estimate-poly-a</code> and trimming on (dorado 2.1.2, HAC v6.0.0), aligned
+  to GRCh38 plus the SIRV-Set 4 sequences, and run through flumi and the same controls as HG002. Only the transcripts
+  actually in the mix count as truth; the decoys of Lexogen's over-annotated annotation do not.</p>
+
+  <div class="note status" id="spike-status">Loading results&hellip;</div>
+  <div class="tiles" id="spike-tiles"></div>
+
+  <h3>Representatives against the known isoforms</h3>
+  <p>For SIRV molecules with &ge; 2 reads: how often the chosen read's intron chain is exactly that of a SIRV isoform in
+  the mix, for flumi's choice, the longest copy and a random copy of the same molecules.</p>
+  <figure class="chart" id="chart-sirv-reps" aria-label="SIRV representatives with the exact isoform structure"></figure>
+  <p class="muted" id="sirv-reps-note"></p>
+
+  <h3>Counting against known input: ERCC</h3>
+  <p>Slope of log<sub>2</sub> count against log<sub>2</sub> input concentration over the detected ERCCs, per barcode:
+  1 means counts proportional to input.</p>
+  <figure class="chart" id="chart-ercc" aria-label="ERCC dose-response slopes"></figure>
+  <p class="muted" id="ercc-note"></p>
+
+  <h3>Full length by transcript length</h3>
+  <figure class="chart" id="chart-fl-length" aria-label="Full-length rate by SIRV length"></figure>
+  <p class="muted" id="fl-length-note"></p>
+
+  <h3>The rest of the UHRR results</h3>
+  <div class="table-wrap"><table id="uhrr-table"><thead><tr><th>metric</th><th>48 barcodes (median)</th></tr></thead><tbody></tbody></table></div>
+
+  <h3>How to read this</h3>
+  <ul>
+    <li><b>The SIRV comparison is the truth-based test of flumi's representatives</b>, and it is clear: the junction
+      consensus picks the right structure more often than either alternative, on every barcode.</li>
+    <li><b>These libraries are shallow</b> (median 2.5 M reads per barcode, about 11 % PCR duplicates; ERCC molecules
+      have about one read each), so deduplication changes ERCC and isoform counts little, and the spike-ins cannot show
+      the PCR-noise reduction that the HG002 replicates do. What they do show is that grouping by 5&prime; end without
+      UMIs saturates against real input.</li>
+    <li><b>Unequal counts of equimolar isoforms</b> come from the library and sequencing (reverse transcription,
+      truncation, isoform-specific capture), not from PCR copies, so no deduplication fixes them.</li>
+  </ul>
+  <p class="muted">The evaluation scripts (downloads, SLURM jobs, controls and scoring) are not yet public.</p>
 </section>
 
 <section id="limits">
@@ -561,7 +606,7 @@ done</code></pre>
     document.getElementById("reps-note").textContent = "Dots: barcodes; ticks: medians. flumi's choice is " + range(gain, 1, " points") +
       " more often fully annotated than the longest copy, on every barcode. The 5′ end lies within 50 bp of an annotated " +
       "transcript start for " + range(tss, 1, " %") + " of flumi's representatives and " + range(tssL, 1, " %") + " of the longest copies: " +
-      "the choice changes the junctions, not the start. Annotation is not truth (unannotated junctions can be real); the SIRV spike-ins will test structure against known isoforms.";
+      "the choice changes the junctions, not the start. Annotation is not truth (unannotated junctions can be real); the SIRV spike-ins below test structure against known isoforms.";
   }
 
   function table(S) {
@@ -584,12 +629,157 @@ done</code></pre>
     cols.forEach(function (c) { var tr = html("tr"); tr.appendChild(html("td", c[0])); S.forEach(function (s) { tr.appendChild(html("td", c[1](s))); }); t.tBodies[0].appendChild(tr); });
   }
 
+
+  // ---- UHRR + SIRV-Set 4 -------------------------------------------------
+  function dotRows(fig, rows, o) {
+    var tip = tipFor(fig);
+    var W = 720, L = 200, Rm = 70, T = 10, B = 40, rh = 40, H = T + B + rh * rows.length, pw = W - L - Rm;
+    var s = svg(fig, W, H);
+    var all = []; rows.forEach(function (r) { r.points.forEach(function (p) { all.push(p.v); }); });
+    if (o.ref != null) all.push(o.ref);
+    var lo = Math.floor(Math.min.apply(null, all) / o.step) * o.step, hi = Math.ceil(Math.max.apply(null, all) / o.step) * o.step;
+    var X = function (v) { return L + (v - lo) / (hi - lo) * pw; };
+    for (var g = lo; g <= hi + 1e-9; g += o.step) { el("line", { x1: X(g), x2: X(g), y1: T, y2: H - B, class: "grid" }, s);
+      el("text", { x: X(g), y: H - B + 16, "text-anchor": "middle" }, s, fmt(g, o.tickDigits) + (o.unit || "")); }
+    if (o.ref != null) { el("line", { x1: X(o.ref), x2: X(o.ref), y1: T, y2: H - B, stroke: "#c3c2b7", "stroke-width": 1, "stroke-dasharray": "4 4" }, s);
+      el("text", { x: X(o.ref) + 6, y: T + 12 }, s, o.refLabel); }
+    el("text", { x: L + pw / 2, y: H - 6, "text-anchor": "middle" }, s, o.axis);
+    rows.forEach(function (r, i) {
+      var yy = T + rh * i + rh / 2;
+      el("text", { x: 4, y: yy + 4 }, s, r.label);
+      r.points.forEach(function (p) {
+        var c = el("circle", { cx: X(p.v), cy: yy, r: 4.5, fill: r.color, stroke: "#16100c", "stroke-width": 2 }, s);
+        hover(tip, c, r.label + ", " + p.name + ": " + fmt(p.v, o.digits) + (o.unit || ""));
+      });
+      var v = r.points.map(function (p) { return p.v; }), m = median(v);
+      el("line", { x1: X(m), x2: X(m), y1: yy - 11, y2: yy + 11, stroke: "#f3ebe4", "stroke-width": 2 }, s);
+      el("text", { x: X(Math.max.apply(null, v)) + 12, y: yy + 4, class: "value" }, s, fmt(m, o.digits) + (o.unit || ""));
+    });
+  }
+
+  function spikeTiles(E, P) {
+    var box = document.getElementById("spike-tiles");
+    var reads = 0, checked = 0, bad = 0, sirv = 0;
+    E.forEach(function (s) { reads += s.primary_reads; checked += s.check.full_length_calls + s.check.gene_labels;
+      bad += s.check.full_length_calls_below_80pct + s.check.gene_labels_without_exon_base; });
+    P.forEach(function (s) { sirv += s.sirv_representatives.flumi.molecules; });
+    var exact = P.map(function (s) { return s.sirv_representatives.flumi.exact_pct; });
+    [[String(E.length), "barcodes on 2 flow cells, " + fmt(reads / 1e6, 0) + " M reads"],
+     [fmt(median(exact), 1) + " %", "of SIRV molecules get the exact isoform structure from flumi (" + fmt(sirv / 1e3, 0) + " k molecules)"],
+     [fmt(median(E.map(function (s) { return s.pcr_duplicate_pct; })), 0) + " %", "PCR duplicates (median): shallow libraries"],
+     [String(bad), "errors in " + fmt(checked / 1e6, 0) + " M full-length calls and gene labels, re-derived from the CIGAR"]
+    ].forEach(function (t) { var d = html("div", null, "tile"); d.appendChild(html("div", t[0], "value")); d.appendChild(html("div", t[1], "label")); box.appendChild(d); });
+  }
+
+  function sirvReps(P) {
+    var fig = document.getElementById("chart-sirv-reps");
+    var defs = [["flumi (junction consensus)", "flumi", C.flumi], ["longest copy", "longest", C.reads], ["random copy", "random_copy", C.pos]];
+    dotRows(fig, defs.map(function (d) { return { label: d[0], color: d[2],
+      points: P.map(function (s) { return { v: s.sirv_representatives[d[1]].exact_pct, name: s.sample }; }) }; }),
+      { axis: "representatives with exactly the intron chain of a SIRV isoform in the mix (molecules with ≥ 2 reads)", unit: " %", digits: 1, tickDigits: 0, step: 2 });
+    var gain = P.map(function (s) { return s.sirv_representatives.flumi.exact_pct - s.sirv_representatives.longest.exact_pct; });
+    var cons = function (k) { return P.map(function (s) { return s.sirv_representatives[k].consistent_pct; }); };
+    document.getElementById("sirv-reps-note").textContent = "Dots: the " + P.length + " barcodes; ticks: medians. flumi's choice is exact " +
+      range(gain, 1, " points") + " more often than the longest copy, on every barcode. Counting chains that are a contiguous " +
+      "part of a SIRV isoform as well (truncated but not wrong): flumi " + range(cons("flumi"), 1, " %") + ", longest " +
+      range(cons("longest"), 1, " %") + ", random " + range(cons("random_copy"), 1, " %") + ".";
+  }
+
+  function ercc(P) {
+    var fig = document.getElementById("chart-ercc");
+    var defs = [["flumi molecules", "molecules", C.flumi], ["reads", "reads", C.reads], ["5′-end groups (no UMI)", "positions", C.pos]];
+    dotRows(fig, defs.map(function (d) { return { label: d[0], color: d[2],
+      points: P.filter(function (s) { return s.ercc[d[1]]; }).map(function (s) { return { v: s.ercc[d[1]].slope, name: s.sample }; }) }; }),
+      { axis: "slope of log2 count against log2 input concentration", digits: 2, tickDigits: 1, step: 0.1, ref: 1, refLabel: "proportional" });
+    var det = P.map(function (s) { return s.ercc.detected; });
+    var r2 = function (k) { return P.map(function (s) { return s.ercc[k].r2; }); };
+    var rpm = []; P.forEach(function (s) { for (var k in s.ercc.reads_per_molecule) rpm.push(s.ercc.reads_per_molecule[k]); });
+    document.getElementById("ercc-note").textContent = range(det, 0) + " of the 92 ERCCs are detected per barcode. Detection follows concentration: the ~33 " +
+      "most concentrated are found in nearly every barcode, and below that detection becomes chance, as expected near one " +
+      "molecule per library. R²: molecules " + range(r2("molecules"), 2) + ", reads " + range(r2("reads"), 2) +
+      ", 5′-end groups " + range(r2("positions"), 2) + ". ERCC molecules have a median of " + fmt(median(rpm), 2) + " reads, so molecule " +
+      "and read counts are nearly the same and their slopes coincide; grouping by 5′ end without UMIs flattens the slope, " +
+      "because many molecules of one ERCC share its start.";
+  }
+
+  function flByLength(P) {
+    var fig = document.getElementById("chart-fl-length"), tip = tipFor(fig);
+    var bins = ["<2 kb", "2-4 kb", "4-6 kb", "6-8 kb", "8-10 kb", ">=10 kb"];
+    var W = 720, H = 280, L = 54, R = 12, T = 22, B = 56, pw = W - L - R, ph = H - T - B;
+    var s = svg(fig, W, H);
+    var y = function (v) { return T + ph - v / 100 * ph; };
+    for (var g = 0; g <= 100; g += 25) { el("line", { x1: L, x2: W - R, y1: y(g), y2: y(g), class: g ? "grid" : "axis" }, s);
+      el("text", { x: L - 8, y: y(g) + 4, "text-anchor": "end" }, s, g + " %"); }
+    var bw = pw / bins.length;
+    bins.forEach(function (b, i) {
+      var v = P.filter(function (x) { return x.full_length_by_length[b]; }).map(function (x) { return x.full_length_by_length[b].full_length_pct; });
+      var n = P.filter(function (x) { return x.full_length_by_length[b]; }).map(function (x) { return x.full_length_by_length[b].molecules; });
+      if (!v.length) return;
+      var m = median(v), lo = Math.min.apply(null, v), hi = Math.max.apply(null, v), cx = L + bw * i + bw / 2, w = Math.min(56, bw * 0.5);
+      var h = Math.max(1, y(0) - y(m));
+      el("path", { d: h > 5 ? "M" + (cx - w / 2) + "," + y(0) + "v" + (-(h - 4)) + "q0,-4 4,-4h" + (w - 8) + "q4,0 4,4v" + (h - 4) + "z"
+        : "M" + (cx - w / 2) + "," + y(0) + "h" + w + "v" + (-h) + "h" + (-w) + "z", fill: C.flumi }, s);
+      el("line", { x1: cx, x2: cx, y1: y(lo), y2: y(hi), stroke: "#c3c2b7", "stroke-width": 1.5 }, s);
+      el("text", { x: cx, y: y(hi) - 7, "text-anchor": "middle", class: "value" }, s, fmt(m, 0) + " %");
+      el("text", { x: cx, y: H - B + 18, "text-anchor": "middle" }, s, b.replace(">=", "≥ "));
+      el("text", { x: cx, y: H - B + 34, "text-anchor": "middle" }, s, fmt(median(n), 0) + " molecules");
+      var hit = el("rect", { x: cx - bw / 2, y: T, width: bw, height: ph, fill: "transparent" }, s);
+      hover(tip, hit, b + ": " + fmt(m, 1) + " % full length (" + fmt(lo, 1) + "–" + fmt(hi, 1) + " % over " + v.length + " barcodes), median " + fmt(median(n), 0) + " molecules per barcode");
+    });
+    el("text", { x: L + pw / 2, y: H - 6, "text-anchor": "middle" }, s, "length of the longest truth transcript on the SIRV's contig; molecules per barcode, median");
+    document.getElementById("fl-length-note").textContent = "Full length judged from the representative's alignment against " +
+      "the truth transcript: more than 80 % of its exonic bases and ≥ 25 bases of each terminal exon. Bars: medians over the " +
+      P.length + " barcodes, whiskers their range. The E0 isoforms are 0.16–2.5 kb and fill the first two bins; the long " +
+      "SIRVs are nominally 4, 6, 8, 10 and 12 kb (three each), but by measured length two of the 4 kb ones (3,997 and 3,999 nt) " +
+      "fall in the 2–4 kb bin, leaving one transcript in the 4–6 kb bin, and two of the 10 kb ones (9,941 and 9,970 nt) fall in " +
+      "the 8–10 kb bin. Beyond about 6 kb few molecules are full length; " +
+      "that is the library (reverse transcription and PCR of long cDNA) and the sequencing, not something deduplication changes.";
+  }
+
+  function uhrrTable(E, P) {
+    var tb = document.querySelector("#uhrr-table tbody");
+    var R = UHRR_R;
+    var col = function (f, d, unit) { var v = E.map(f); return range(v, d, unit) + " (" + fmt(median(v), d) + ")"; };
+    var dens = E.filter(function (s) { return s.false_merges.by_density[">1000"]; });
+    [["primary reads per barcode", col(function (s) { return s.primary_reads / 1e6; }, 1, " M")],
+     ["with RX", col(function (s) { return s.rx_pct; }, 1, " %")],
+     ["PCR duplicates", col(function (s) { return s.pcr_duplicate_pct; }, 1, " %")],
+     ["flumi filter mode, time", col(function (s) { return s["flumi.filter_wall_s"]; }, 0, " s")],
+     ["lost to false merges (UMI swap)", col(function (s) { return s.false_merges.molecules_lost_to_false_merges_pct; }, 2, " %")],
+     ["merged falsely, > 1,000-molecule neighbourhoods", range(dens.map(function (s) { return s.false_merges.by_density[">1000"].false_merge_pct; }), 2, " %") +
+       " (" + fmt(median(dens.map(function (s) { return s.false_merges.by_density[">1000"].false_merge_pct; })), 2) + ")"],
+     ["missed merges beyond chance (2 substitutions)", col(function (s) { return s.missed_merges.two_sub_pct - s.missed_merges.two_sub_null_pct; }, 2, " points")],
+     ["representatives with all junctions annotated: flumi / longest / random",
+       fmt(median(E.map(function (s) { return s.representatives.flumi.all_junctions_annotated_pct; })), 1) + " / " +
+       fmt(median(E.map(function (s) { return s.representatives.longest.all_junctions_annotated_pct; })), 1) + " / " +
+       fmt(median(E.map(function (s) { return s.representatives.random_copy.all_junctions_annotated_pct; })), 1) + " %"],
+     ["replicate noise beyond Poisson: molecules / reads (" + fmt(R.length, 0) + " pairs)",
+       fmt(median(R.map(function (p) { return p.excess_var_molecules; })), 4) + " / " + fmt(median(R.map(function (p) { return p.excess_var_reads; })), 4)],
+     ["equimolar SIRV isoforms, CV of counts: molecules / reads",
+       fmt(median(P.map(function (s) { return s.sirv_equimolar.cv_molecules; })), 2) + " / " + fmt(median(P.map(function (s) { return s.sirv_equimolar.cv_reads; })), 2) +
+       " (" + P[0].sirv_equimolar.isoforms + " isoforms with a unique chain, " + P[0].sirv_equimolar.detected + " detected)"]
+    ].forEach(function (r) { var tr = html("tr"); tr.appendChild(html("td", r[0])); tr.appendChild(html("td", r[1])); tb.appendChild(tr); });
+  }
+
+  var UHRR_R = [];
+  Promise.all([fetch("results/uhrr.json", { cache: "no-cache" }), fetch("results/uhrr_spikes.json", { cache: "no-cache" })])
+    .then(function (rs) { rs.forEach(function (r) { if (!r.ok) throw new Error(r.status); }); return Promise.all(rs.map(function (r) { return r.json(); })); })
+    .then(function (d) {
+      var E = d[0].samples || [], P = d[1] || [];
+      UHRR_R = d[0].replicates || [];
+      document.getElementById("spike-status").textContent = "UHRR: " + E.length + " barcodes, " + d[0].note + ", annotation GENCODE v49 plus SIRV-Set 4.";
+      spikeTiles(E, P); sirvReps(P); ercc(P); flByLength(P); uhrrTable(E, P);
+    })
+    .catch(function (e) {
+      document.getElementById("spike-status").textContent = "The spike-in results could not be loaded (" + e.message + "); see docs/results/ in the repository.";
+    });
+
   fetch("results/hg002.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (d) {
       var S = d.samples || [], R = d.replicates || [];
       status.textContent = "HG002: " + S.length + " of 8 barcodes, " + (d.region === "genome" ? "genome-wide" : d.region) +
-        ", " + d.note + ". UHRR with the SIRV-Set 4 spike-ins (the only truth in this dataset) is being processed.";
+        ", " + d.note + ". The UHRR spike-in results follow below.";
       tiles(S); falseMerges(S); missed(S); replicates(R); positions(S, R); saturation(S); reps(S); table(S);
     })
     .catch(function (e) {
