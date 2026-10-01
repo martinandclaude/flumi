@@ -313,16 +313,17 @@ done</code></pre>
       excess variance shows that PCR copy number, not sampling, dominated the read counts; it does not show that every
       molecule is right.</li>
   </ul>
-  <p class="muted">The evaluation pipeline (downloads, SLURM jobs, controls and scoring) will be published alongside the
-  UHRR results.</p>
+  <p class="muted">The evaluation scripts (downloads, SLURM jobs, controls and scoring) are not yet public; they will be
+  released together with the UHRR spike-in results.</p>
 </section>
 
 <section id="limits">
   <h2>Limitations</h2>
   <ul>
     <li>At high molecule density a 16-base UMI runs out of room. On HG002, 0.8&ndash;1.1 % of molecules are lost to
-      false merges overall, about 3 % in neighbourhoods of more than 1,000 molecules (mostly unrelated singletons one
-      substitution from a larger molecule, which nothing distinguishes from a PCR copy with one error).</li>
+      false merges overall; in neighbourhoods of more than 1,000 molecules about 3 % end up merged with an unrelated
+      one (mostly unrelated singletons one substitution from a larger molecule, which nothing distinguishes from a PCR
+      copy with one error).</li>
     <li>The density gate assumes uniformly drawn UMIs. Biased UMI synthesis makes collisions likelier than it
       predicts; lower the budgets if you suspect that.</li>
     <li>Reads without <code>RX</code> cannot be assigned (5&ndash;6 % of reads on HG002): dropped in filter mode,
@@ -432,8 +433,9 @@ done</code></pre>
     var lost = S.map(function (x) { return x.false_merges.molecules_lost_to_false_merges_pct; });
     var ks = S.map(function (x) { var k = x.false_merges.absorbed_by_kind, n = 0; for (var q in k) n += k[q]; return 100 * k.clean_singleton / n; });
     var art = S.map(function (x) { return 100 * x.false_merges.events_with_donors_from_one_neighbourhood / x.false_merges.false_merge_events; });
-    document.getElementById("false-merge-note").textContent = "Bars: median false-merge rate over the " + S.length +
-      " barcodes, whiskers their range. Overall " + range(lost, 2, " %") + " of molecules are lost to false merges. " +
+    document.getElementById("false-merge-note").textContent = "Bars: share of molecules that end up merged with an " +
+      "unrelated one, median over the " + S.length + " barcodes, whiskers their range. Counting only the absorbed side, " +
+      range(lost, 2, " %") + " of all molecules are lost to false merges. " +
       fmt(median(ks), 0) + " % of what is absorbed are clean singletons, typically one substitution from a larger molecule. " +
       "At most " + fmt(Math.max.apply(null, art), 2) + " % of false merges could instead be two halves of one molecule the original run had split.";
   }

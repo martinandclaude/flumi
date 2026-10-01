@@ -268,16 +268,22 @@ density UMIs one edit apart are sometimes different molecules, and neither the
 UMI nor the shared 5′ end can tell them apart. That is the capacity limit of a
 16-base UMI.
 
-**Real data.** `bench/realdata/run_sample.sh` runs flumi on the public ONT
-dataset [UHRR_HG002_2026.06](https://epi2me.nanoporetech.com/uhrr_hg002_2026.06/)
-(HG002, SQK-PCB114-24, two flow cells of four barcodes, basecalled with
-`--no-trim`): it streams a barcode's reads (one chromosome or all), adds
-`RX`/`TS` with `dorado trim`, realigns and runs flumi. `bench/realdata/summarize.py`
-tabulates the runs, re-derives every gene label and full-length call from the
-CIGAR, tests the densest locus for UMIs left unmerged, and compares replicates.
-There is no molecule truth in real data, so this shows consistency, not
-accuracy. The current results are on the
-[site](https://martinandclaude.github.io/flumi/#real).
+**Real data.** On the public ONT dataset
+[UHRR_HG002_2026.06](https://epi2me.nanoporetech.com/uhrr_hg002_2026.06/)
+(HG002, SQK-PCB114-24, eight barcodes of 17-21 M reads, genome-wide), flumi
+takes 2-3 minutes and under 1 GB per barcode. Every gene label and full-length
+call agrees with the representative's alignment when re-derived independently
+from its CIGAR. A UMI-swap control, which gives
+molecules unrelated UMIs at their real loci, finds 0.8-1.1 % of molecules lost
+to false merges; where more than 1,000 molecules share a 5′ neighbourhood,
+about 3 % end up merged with an unrelated one. Between replicate barcodes, molecule counts carry far less
+noise beyond Poisson than read counts (median 19 times less within a flow cell,
+7 times between flow cells). Real data has no molecule truth, so these are
+bounds and consistency checks, not accuracy; the site has the full results,
+charts and what they do and do not show:
+[martinandclaude.github.io/flumi](https://martinandclaude.github.io/flumi/#real).
+The evaluation scripts are not yet public; they will be released with the UHRR
+spike-in results.
 
 Reproduce with:
 
